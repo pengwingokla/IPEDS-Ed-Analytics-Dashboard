@@ -126,7 +126,7 @@ def create_school_pie_chart(data, selected_schools, selected_years):
 st.title("Enrollment Analysis Dashboard")
 
 # Select years
-selected_years = st.multiselect("Select Years", [2018, 2019, 2020, 2021, 2022], default=[2022])
+selected_years = st.multiselect("Select Years", [2018, 2019, 2020, 2021, 2022, 2023], default=[2022])
 effy_fpath = "effy/NJ_enrollment_data.csv"
 adms_fpath = "adm/NJ_admission_data.csv"
 effy_data = load_data(effy_fpath)
