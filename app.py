@@ -61,11 +61,11 @@ if st.session_state.active_page == "Enrollment":
 
     with st.sidebar:
         st.markdown('<div class="sidebar-button">', unsafe_allow_html=True)
-        if st.button("NJIT’s Position in Statewide Enrollment Trends"):
+        if st.button("NJIT’s Position in Statewide Trends"):
             st.session_state.enrollment_section = "section1"
-        if st.button("Enrollment & Admissions Insights for Selected Institution"):
+        if st.button("Insights for Selected Institution"):
             st.session_state.enrollment_section = "section2"
-        if st.button("Enrollment Comparison Across Institutions"):
+        if st.button("Comparison Across Institutions"):
             st.session_state.enrollment_section = "section3"
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -97,6 +97,7 @@ if st.session_state.active_page == "Enrollment":
             chart_placeholder.plotly_chart(create_njit_vs_others_pie(adms_data, [selected_year]), use_container_width=True)
         with col2:
             st.plotly_chart(plot_njit_share_change(adms_data), use_container_width=True)
+            st.button("𝒾", help="This bar chart illustrates undergraduate enrollment trends over time, comparing the selected institution's enrollment to that of all other NJ schools. It also shows the annual change in the selected institution’s share of total enrollment compared to the year before it to evaluate relative growth or decline over multiple years.")
 
     elif st.session_state.enrollment_section == "section2":
         st.markdown("<br>", unsafe_allow_html=True)
@@ -113,18 +114,18 @@ if st.session_state.active_page == "Enrollment":
             available_years = sorted(adms_data["year"].dropna().unique())
             selected_year = st.selectbox("Select a Year", available_years, index=len(available_years) - 1)
 
-        col1, col2 = st.columns(2)
-        with col1:
+        col3, col4 = st.columns(2)
+        with col3:
             st.plotly_chart(create_full_vs_part_time_trend(adms_data, trend_school), use_container_width=True)
-            st.button("𝒾", help="Full-time vs Part-time enrollment trend for selected school.")
+            st.button("𝒾", help="This line chart visualizes the yearly trend of first-time, degree/certificate-seeking students enrollment categorized by full-time and part-time status to help identifying shifts in institutional attendance patterns.")
 
-        with col2:
+        with col4:
             st.plotly_chart(plot_admission_funnel(adms_data, trend_school, selected_year=selected_year), use_container_width=True)
-            st.button("𝒾", help="Admissions funnel: Applicants → Admitted → Enrolled.")
+            st.button("𝒾", help="This funnel chart illustrates the admissions pipeline for a selected institution and year. It breaks down the total number of applicants, how many were admitted, and how many ultimately enrolled, providing a clear view of conversion at each stage of the enrollment process.")
 
     elif st.session_state.enrollment_section == "section3":
         st.markdown("<br>", unsafe_allow_html=True)
-        st.markdown("""### :orange[Enrollment Comparison Across Institutions]""")
+        st.markdown("""### :orange[Undergraduate Enrollment Comparison Across Institutions]""")
 
         col1, col2 = st.columns([1, 3])
         with col1:
@@ -140,20 +141,21 @@ if st.session_state.active_page == "Enrollment":
             ]
             selected_schools = st.multiselect(
                 "Select Schools", all_schools, default=default_schools)
-    
-        col1, col2 = st.columns(2)
-        with col1:
-            st.plotly_chart(create_total_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
-            st.button("𝒾", help="Total undergraduate enrollment by institution.")
 
-        with col2:
-            st.plotly_chart(create_gender_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
-            st.button("𝒾", help="Enrollment by gender for selected institutions.")
+        if selected_years and selected_schools:
+            col1, col2 = st.columns(2)
+            with col1:
+                st.plotly_chart(create_total_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
+                st.button("𝒾", help="Total undergraduate enrollment by institution.")
+            with col2:
+                st.plotly_chart(create_gender_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
+                st.button("𝒾", help="Enrollment by gender for selected institutions.")
+            st.plotly_chart(create_admission_yield_rate_chart(adms_data, selected_schools, selected_years), use_container_width=True)
+            st.button("𝒾", help="This grouped bar chart compares the admission rate and yield rate across selected institutions for a specific year. Admission rate represents the percentage of applicants who were admitted, while yield rate indicates the percentage of admitted students who chose to enroll. This visualization helps assess the selectivity and enrollment effectiveness of different institutions.")
+            st.plotly_chart(create_full_vs_part_time_trend_multiple(adms_data, selected_schools), use_container_width=True)
+        else:
+            st.warning("Please select at least one school and one year to view the charts.")
 
-        st.plotly_chart(create_admission_yield_rate_chart(adms_data, selected_schools, selected_years), use_container_width=True)
-        st.button("𝒾", help="Admission and Yield Rates by Institution.")
-
-        st.plotly_chart(create_full_vs_part_time_trend_multiple(adms_data, selected_schools), use_container_width=True)
 
 # 🔸🔸 Graduation Page 🔸🔸
 elif st.session_state.active_page == "Graduation":
@@ -166,45 +168,56 @@ elif st.session_state.active_page == "Graduation":
     selected_years = st.multiselect(
         "Select Years", available_years, default=available_years[-1:])
 
-    filtered_df = grad_data[grad_data["year"].isin(selected_years)]
-    all_schools = sorted(filtered_df["university_name"].dropna().unique())
-    default_schools = [
-        school for school in all_schools if "New Jersey Institute of Technology" in school or "Rutgers University-Newark" in school
-    ]
-    selected_school = st.selectbox("Select a School", all_schools, index=all_schools.index(default_schools[0]))
-    selected_unitid = filtered_df[filtered_df["university_name"] == selected_school]["unitid"].iloc[0]
+    if selected_years:
+        filtered_df = grad_data[grad_data["year"].isin(selected_years)]
+        all_schools = sorted(filtered_df["university_name"].dropna().unique())
 
-    col1, col2 = st.columns(2)
-    with col1:
-        fig = graduation_funnel_chart(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
-        st.plotly_chart(fig, use_container_width=True)
-        st.button("𝒾", help="Graduation funnel for Bachelor's cohort.")
+        if all_schools:
+            default_schools = [
+                school for school in all_schools if "New Jersey Institute of Technology" in school or "Rutgers University-Newark" in school
+            ]
+            selected_school = st.selectbox("Select a School", all_schools, index=all_schools.index(default_schools[0]))
+            selected_unitid = filtered_df[filtered_df["university_name"] == selected_school]["unitid"].iloc[0]
 
-    with col2:
-        fig = plot_graduation_rate_trend(grad_data, selected_unitid=selected_unitid)
-        st.plotly_chart(fig, use_container_width=True)
+            col1, col2 = st.columns(2)
+            with col1:
+                fig = graduation_funnel_chart(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
+                st.plotly_chart(fig, use_container_width=True)
+                st.button("𝒾", help="Graduation funnel for Bachelor's cohort.")
 
-    col3, col4 = st.columns(2)
-    with col3:
-        available_years = sorted(grad_data["year"].dropna().unique())
-        selected_year = st.selectbox("Select a Year", available_years, index=len(available_years) - 1, key="grad_year_for_pie")
-    with col4:
-        selected_school = st.selectbox("Select a School", all_schools, index=all_schools.index(default_schools[0]), key="grad_school_for_pie")
-        selected_unitid = filtered_df[filtered_df["university_name"] == selected_school]["unitid"].iloc[0]
+            with col2:
+                fig = plot_graduation_rate_trend(grad_data, selected_unitid=selected_unitid)
+                st.plotly_chart(fig, use_container_width=True)
 
-    col5, col6 = st.columns(2)
-    with col5:
-        fig = plot_school_graduation_share_pie(grad_data, selected_school="New Jersey Institute of Technology", selected_year=selected_year)
-        st.plotly_chart(fig, use_container_width=True)
-    with col6:
-        fig = plot_school_graduation_share_pie_by_unitid(grad_data, selected_unitid=selected_unitid, selected_year=selected_year)
-        if fig is not None:
+            col3, col4 = st.columns(2)
+            with col3:
+                selected_year = st.selectbox("Select a Year", available_years, index=len(available_years) - 1, key="grad_year_for_pie")
+            with col4:
+                selected_school = st.selectbox("Select a School", all_schools, index=all_schools.index(default_schools[0]), key="grad_school_for_pie")
+                selected_unitid = filtered_df[filtered_df["university_name"] == selected_school]["unitid"].iloc[0]
+
+            col5, col6 = st.columns(2)
+            with col5:
+                fig = plot_school_graduation_share_pie(grad_data, selected_school=selected_school, selected_year=selected_year)
+                if fig:
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.warning("⚠️ No data available to render graduation share pie chart for the selected school and year.")
+
+            with col6:
+                fig = plot_school_graduation_share_pie_by_unitid(grad_data, selected_unitid=selected_unitid, selected_year=selected_year)
+                if fig:
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.warning("⚠️ No valid graduation data found for the selected school and year.")
+
+            fig = plot_graduation_by_race_treemap(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
             st.plotly_chart(fig, use_container_width=True)
+
         else:
-            st.warning("⚠️ No valid graduation data found for the selected school and year.")
-    
-    fig = plot_graduation_by_race_treemap(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
-    st.plotly_chart(fig, use_container_width=True)
+            st.warning("⚠️ No schools found for the selected year(s).")
+    else:
+        st.warning("⚠️ Please select at least one year to begin viewing graduation insights.")
 
 # You can uncomment this if needed
 # fig = plot_graduation_by_gender_bar(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
