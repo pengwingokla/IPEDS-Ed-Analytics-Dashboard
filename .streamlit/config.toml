@@ -1,0 +1,5 @@
+[theme]
+base = "light"  # or "light" if you're using a light theme
+
+[layout]
+sidebar_width = 400  # minimum width in pixels
