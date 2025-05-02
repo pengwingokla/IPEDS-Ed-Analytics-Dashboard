@@ -22,12 +22,14 @@ from charts_graduation import (
     plot_school_graduation_share_pie_by_unitid
 )
 
+# ---- Set Page Config ----
 st.set_page_config(
     page_title="University Insights",
-    page_icon="img/njit_logo.jpg",  # tab icon e.g. :bar_chart:
+    page_icon="img/njit_logo.jpg",  # Make sure this path exists in the repo
     layout="wide"
 )
 
+# ---- Custom CSS for Sidebar Buttons ----
 st.markdown("""
     <style>
         .sidebar-button button {
@@ -37,21 +39,21 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 🔹 Load data with caching
+# ---- Load Data with Caching ----
 @st.cache_data
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-# 🔹 Side Bar Navigation Buttons
+# ---- Sidebar Navigation ----
 st.sidebar.markdown("## 📚 Navigation")
 
-# Initialize session state to track active page
+# Initialize session states
 if "active_page" not in st.session_state:
     st.session_state.active_page = "Enrollment"
 if "enrollment_section" not in st.session_state:
-    st.session_state.enrollment_section = "NJIT Position"
+    st.session_state.enrollment_section = None
 
-# ---- High-level navigation ----
+# ---- High-level Navigation Buttons ----
 with st.sidebar:
     st.markdown('<div class="sidebar-button">', unsafe_allow_html=True)
     if st.button("Enrollment"):
@@ -60,10 +62,9 @@ with st.sidebar:
         st.session_state.active_page = "Graduation"
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ---- Sub-section navigation (Enrollment only) ----
+# ---- Sub-Section Buttons for Enrollment ----
 if st.session_state.active_page == "Enrollment":
     st.sidebar.markdown("### Enrollment Sections")
-
     with st.sidebar:
         st.markdown('<div class="sidebar-button">', unsafe_allow_html=True)
         if st.button("NJIT’s Position in Statewide Trends"):
@@ -75,8 +76,26 @@ if st.session_state.active_page == "Enrollment":
         st.markdown('</div>', unsafe_allow_html=True)
 
 # 🔹 Page Config
+# ---- Main Title ----
+st.title("Institutional Analytics")
 
-st.title("University Insights")
+# ---- Default Welcome Page ----
+if (
+    st.session_state.active_page == "Enrollment" and 
+    st.session_state.enrollment_section is None
+):
+    st.markdown("# 👋")
+    st.markdown("### Welcome to a Comprehensive View of :red[NJIT]’s Performance")
+    st.markdown("""
+        This dashboard provides insights into institutional trends for NJIT and its 
+        peer universities across New Jersey. Use the navigation menu on the left to explore:
+        
+        - **Statewide Enrollment Trends**
+        - **Institution-Specific Enrollment & Admission**
+        - **Multi-Institution Comparisons**
+        
+        Start by choosing a section from the sidebar.
+    """)
 
 # 🔹 Load datasets
 adms_fpath = "data/NJ_admission_data.csv"
