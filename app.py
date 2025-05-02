@@ -24,7 +24,7 @@ from charts_graduation import (
 
 st.set_page_config(
     page_title="University Insights",
-    page_icon=":bar_chart:",  # tab icon
+    page_icon="img/njit_logo.jpg",  # tab icon e.g. :bar_chart:
     layout="wide"
 )
 
