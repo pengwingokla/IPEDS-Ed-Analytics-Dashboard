@@ -22,7 +22,12 @@ from charts_graduation import (
     plot_school_graduation_share_pie_by_unitid
 )
 
-st.set_page_config(page_title="University Insights", layout="wide")
+st.set_page_config(
+    page_title="University Insights",
+    page_icon=":bar_chart:",  # tab icon
+    layout="wide"
+)
+
 st.markdown("""
     <style>
         .sidebar-button button {
