@@ -74,8 +74,8 @@ if st.session_state.active_page == "Enrollment":
 st.title("University Insights")
 
 # 🔹 Load datasets
-adms_fpath = "adm/NJ_admission_data.csv"
-effy_fpath = "effy/NJ_enrollment_data.csv"
+adms_fpath = "data/NJ_admission_data.csv"
+effy_fpath = "data/NJ_enrollment_data.csv"
 adms_data = load_data(adms_fpath)
 effy_data = load_data(effy_fpath)
 
@@ -159,7 +159,7 @@ if st.session_state.active_page == "Enrollment":
 elif st.session_state.active_page == "Graduation":
 
     st.markdown("""### :orange[Graduation]""")
-    grad_fpath = "NJ_graduation_data.csv"
+    grad_fpath = "data/NJ_graduation_data.csv"
     grad_data = load_data(grad_fpath)
 
     available_years = sorted(grad_data["year"].dropna().unique())
