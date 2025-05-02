@@ -1,0 +1,1829 @@
+unitid,university_name,level_of_study,headcount,year
+183488,Eastwick College-Hackensack,Undergraduate,376,2018
+183488,Eastwick College-Hackensack,Graduate,376,2018
+183488,Eastwick College-Hackensack,Undergraduate,442,2019
+183488,Eastwick College-Hackensack,Graduate,442,2019
+183488,Eastwick College-Hackensack,Undergraduate,786,2020
+183488,Eastwick College-Hackensack,Graduate,786,2020
+183488,Eastwick College-Hackensack,Undergraduate,942,2021
+183488,Eastwick College-Hackensack,Graduate,942,2021
+183488,Eastwick College-Hackensack,Undergraduate,873,2022
+183488,Eastwick College-Hackensack,Graduate,873,2022
+183488,Eastwick College-Hackensack,Undergraduate,1083,2023
+183488,Eastwick College-Hackensack,Graduate,1083,2023
+183600,Assumption College for Sisters,Undergraduate,53,2018
+183600,Assumption College for Sisters,Graduate,53,2018
+183600,Assumption College for Sisters,Undergraduate,55,2019
+183600,Assumption College for Sisters,Graduate,55,2019
+183600,Assumption College for Sisters,Undergraduate,61,2020
+183600,Assumption College for Sisters,Graduate,61,2020
+183600,Assumption College for Sisters,Undergraduate,52,2021
+183600,Assumption College for Sisters,Graduate,52,2021
+183600,Assumption College for Sisters,Undergraduate,36,2022
+183600,Assumption College for Sisters,Graduate,36,2022
+183600,Assumption College for Sisters,Undergraduate,39,2023
+183600,Assumption College for Sisters,Graduate,39,2023
+183655,Atlantic Cape Community College,Undergraduate,4973,2018
+183655,Atlantic Cape Community College,Graduate,4973,2018
+183655,Atlantic Cape Community College,Undergraduate,5048,2019
+183655,Atlantic Cape Community College,Graduate,5048,2019
+183655,Atlantic Cape Community College,Undergraduate,6948,2020
+183655,Atlantic Cape Community College,Graduate,6948,2020
+183655,Atlantic Cape Community College,Undergraduate,6166,2021
+183655,Atlantic Cape Community College,Graduate,6166,2021
+183655,Atlantic Cape Community College,Undergraduate,6313,2022
+183655,Atlantic Cape Community College,Graduate,6313,2022
+183655,Atlantic Cape Community College,Undergraduate,6324,2023
+183655,Atlantic Cape Community College,Graduate,6324,2023
+183725,Fortis Institute-Wayne,Undergraduate,539,2018
+183725,Fortis Institute-Wayne,Graduate,539,2018
+183725,Fortis Institute-Wayne,Undergraduate,554,2019
+183725,Fortis Institute-Wayne,Graduate,554,2019
+183725,Fortis Institute-Wayne,Undergraduate,772,2020
+183725,Fortis Institute-Wayne,Graduate,772,2020
+183725,Fortis Institute-Wayne,Undergraduate,831,2021
+183725,Fortis Institute-Wayne,Graduate,831,2021
+183725,Fortis Institute-Wayne,Undergraduate,669,2022
+183725,Fortis Institute-Wayne,Graduate,669,2022
+183725,Fortis Institute-Wayne,Undergraduate,580,2023
+183725,Fortis Institute-Wayne,Graduate,580,2023
+183743,Bergen Community College,Undergraduate,13352,2018
+183743,Bergen Community College,Graduate,13352,2018
+183743,Bergen Community College,Undergraduate,12968,2019
+183743,Bergen Community College,Graduate,12968,2019
+183743,Bergen Community College,Undergraduate,17685,2020
+183743,Bergen Community College,Graduate,17685,2020
+183743,Bergen Community College,Undergraduate,15928,2021
+183743,Bergen Community College,Graduate,15928,2021
+183743,Bergen Community College,Undergraduate,15447,2022
+183743,Bergen Community College,Graduate,15447,2022
+183743,Bergen Community College,Undergraduate,15858,2023
+183743,Bergen Community College,Graduate,15858,2023
+183789,Berkeley College-Woodland Park,Undergraduate,3468,2018
+183789,Berkeley College-Woodland Park,Graduate,3324,2018
+183789,Berkeley College-Woodland Park,Undergraduate,2858,2019
+183789,Berkeley College-Woodland Park,Graduate,2682,2019
+183789,Berkeley College-Woodland Park,Undergraduate,4228,2020
+183789,Berkeley College-Woodland Park,Graduate,3987,2020
+183789,Berkeley College-Woodland Park,Undergraduate,4098,2021
+183789,Berkeley College-Woodland Park,Graduate,3838,2021
+183789,Berkeley College-Woodland Park,Undergraduate,3532,2022
+183789,Berkeley College-Woodland Park,Graduate,3281,2022
+183789,Berkeley College-Woodland Park,Undergraduate,2852,2023
+183789,Berkeley College-Woodland Park,Graduate,2696,2023
+183804,Beth Medrash Govoha,Undergraduate,6655,2018
+183804,Beth Medrash Govoha,Graduate,2680,2018
+183804,Beth Medrash Govoha,Undergraduate,6772,2019
+183804,Beth Medrash Govoha,Graduate,2726,2019
+183804,Beth Medrash Govoha,Undergraduate,7800,2020
+183804,Beth Medrash Govoha,Graduate,3613,2020
+183804,Beth Medrash Govoha,Undergraduate,8283,2021
+183804,Beth Medrash Govoha,Graduate,3875,2021
+183804,Beth Medrash Govoha,Undergraduate,8745,2022
+183804,Beth Medrash Govoha,Graduate,4135,2022
+183804,Beth Medrash Govoha,Undergraduate,9305,2023
+183804,Beth Medrash Govoha,Graduate,4426,2023
+183822,Bloomfield College,Undergraduate,1685,2018
+183822,Bloomfield College,Graduate,1662,2018
+183822,Bloomfield College,Undergraduate,1628,2019
+183822,Bloomfield College,Graduate,1612,2019
+183822,Bloomfield College,Undergraduate,1737,2020
+183822,Bloomfield College,Graduate,1721,2020
+183822,Bloomfield College,Undergraduate,1630,2021
+183822,Bloomfield College,Graduate,1630,2021
+183822,Bloomfield College,Undergraduate,1391,2022
+183822,Bloomfield College,Graduate,1390,2022
+183822,Bloomfield College,Undergraduate,1226,2023
+183822,Bloomfield College,Graduate,1225,2023
+183859,Brookdale Community College,Undergraduate,11856,2018
+183859,Brookdale Community College,Graduate,11856,2018
+183859,Brookdale Community College,Undergraduate,11489,2019
+183859,Brookdale Community College,Graduate,11489,2019
+183859,Brookdale Community College,Undergraduate,16439,2020
+183859,Brookdale Community College,Graduate,16439,2020
+183859,Brookdale Community College,Undergraduate,14796,2021
+183859,Brookdale Community College,Graduate,14796,2021
+183859,Brookdale Community College,Undergraduate,13920,2022
+183859,Brookdale Community College,Graduate,13920,2022
+183859,Brookdale Community College,Undergraduate,14610,2023
+183859,Brookdale Community College,Graduate,14610,2023
+183877,Rowan College at Burlington County,Undergraduate,8890,2018
+183877,Rowan College at Burlington County,Graduate,8890,2018
+183877,Rowan College at Burlington County,Undergraduate,8439,2019
+183877,Rowan College at Burlington County,Graduate,8439,2019
+183877,Rowan College at Burlington County,Undergraduate,13715,2020
+183877,Rowan College at Burlington County,Graduate,13715,2020
+183877,Rowan College at Burlington County,Undergraduate,12098,2021
+183877,Rowan College at Burlington County,Graduate,12098,2021
+183877,Rowan College at Burlington County,Undergraduate,11033,2022
+183877,Rowan College at Burlington County,Graduate,11033,2022
+183877,Rowan College at Burlington County,Undergraduate,11117,2023
+183877,Rowan College at Burlington County,Graduate,11117,2023
+183910,Caldwell University,Undergraduate,2189,2018
+183910,Caldwell University,Graduate,1651,2018
+183910,Caldwell University,Undergraduate,2206,2019
+183910,Caldwell University,Graduate,1709,2019
+183910,Caldwell University,Undergraduate,2435,2020
+183910,Caldwell University,Graduate,1781,2020
+183910,Caldwell University,Undergraduate,2491,2021
+183910,Caldwell University,Graduate,1830,2021
+183910,Caldwell University,Undergraduate,2309,2022
+183910,Caldwell University,Graduate,1741,2022
+183910,Caldwell University,Undergraduate,2160,2023
+183910,Caldwell University,Graduate,1674,2023
+183938,Camden County College,Undergraduate,9675,2018
+183938,Camden County College,Graduate,9675,2018
+183938,Camden County College,Undergraduate,9735,2019
+183938,Camden County College,Graduate,9735,2019
+183938,Camden County College,Undergraduate,16904,2020
+183938,Camden County College,Graduate,16904,2020
+183938,Camden County College,Undergraduate,15991,2021
+183938,Camden County College,Graduate,15991,2021
+183938,Camden County College,Undergraduate,15728,2022
+183938,Camden County College,Graduate,15728,2022
+183938,Camden County College,Undergraduate,15437,2023
+183938,Camden County College,Graduate,15437,2023
+183974,Centenary University,Undergraduate,1802,2018
+183974,Centenary University,Graduate,1266,2018
+183974,Centenary University,Undergraduate,1681,2019
+183974,Centenary University,Graduate,1193,2019
+183974,Centenary University,Undergraduate,2062,2020
+183974,Centenary University,Graduate,1362,2020
+183974,Centenary University,Undergraduate,1940,2021
+183974,Centenary University,Graduate,1372,2021
+183974,Centenary University,Undergraduate,1755,2022
+183974,Centenary University,Graduate,1221,2022
+183974,Centenary University,Undergraduate,1686,2023
+183974,Centenary University,Graduate,1093,2023
+183983,Adult and Continuing Education-BCTS,Undergraduate,70,2018
+183983,Adult and Continuing Education-BCTS,Graduate,70,2018
+183983,Adult and Continuing Education-BCTS,Undergraduate,92,2019
+183983,Adult and Continuing Education-BCTS,Graduate,92,2019
+183983,Adult and Continuing Education-BCTS,Undergraduate,215,2020
+183983,Adult and Continuing Education-BCTS,Graduate,215,2020
+183983,Adult and Continuing Education-BCTS,Undergraduate,186,2021
+183983,Adult and Continuing Education-BCTS,Graduate,186,2021
+183983,Adult and Continuing Education-BCTS,Undergraduate,206,2022
+183983,Adult and Continuing Education-BCTS,Graduate,206,2022
+183983,Adult and Continuing Education-BCTS,Undergraduate,195,2023
+183983,Adult and Continuing Education-BCTS,Graduate,195,2023
+184047,Branford Hall Career Institute-Parsippany,Undergraduate,14,2018
+184047,Branford Hall Career Institute-Parsippany,Graduate,14,2018
+184047,Branford Hall Career Institute-Parsippany,Undergraduate,36,2019
+184047,Branford Hall Career Institute-Parsippany,Graduate,36,2019
+184056,Lincoln Technical Institute-Iselin,Undergraduate,459,2018
+184056,Lincoln Technical Institute-Iselin,Graduate,459,2018
+184056,Lincoln Technical Institute-Iselin,Undergraduate,504,2019
+184056,Lincoln Technical Institute-Iselin,Graduate,504,2019
+184056,Lincoln Technical Institute-Iselin,Undergraduate,789,2020
+184056,Lincoln Technical Institute-Iselin,Graduate,789,2020
+184056,Lincoln Technical Institute-Iselin,Undergraduate,956,2021
+184056,Lincoln Technical Institute-Iselin,Graduate,956,2021
+184056,Lincoln Technical Institute-Iselin,Undergraduate,1009,2022
+184056,Lincoln Technical Institute-Iselin,Graduate,1009,2022
+184056,Lincoln Technical Institute-Iselin,Undergraduate,981,2023
+184056,Lincoln Technical Institute-Iselin,Graduate,981,2023
+184092,American Institute-Clifton,Undergraduate,655,2018
+184092,American Institute-Clifton,Graduate,655,2018
+184092,American Institute-Clifton,Undergraduate,695,2019
+184092,American Institute-Clifton,Graduate,695,2019
+184092,American Institute-Clifton,Undergraduate,1016,2020
+184092,American Institute-Clifton,Graduate,1016,2020
+184092,American Institute-Clifton,Undergraduate,1075,2021
+184092,American Institute-Clifton,Graduate,1075,2021
+184092,American Institute-Clifton,Undergraduate,1023,2022
+184092,American Institute-Clifton,Graduate,1023,2022
+184092,American Institute-Clifton,Undergraduate,1094,2023
+184092,American Institute-Clifton,Graduate,1094,2023
+184180,County College of Morris,Undergraduate,7556,2018
+184180,County College of Morris,Graduate,7556,2018
+184180,County College of Morris,Undergraduate,7488,2019
+184180,County College of Morris,Graduate,7488,2019
+184180,County College of Morris,Undergraduate,10889,2020
+184180,County College of Morris,Graduate,10889,2020
+184180,County College of Morris,Undergraduate,9527,2021
+184180,County College of Morris,Graduate,9527,2021
+184180,County College of Morris,Undergraduate,8801,2022
+184180,County College of Morris,Graduate,8801,2022
+184180,County College of Morris,Undergraduate,8511,2023
+184180,County College of Morris,Graduate,8511,2023
+184205,Cumberland County College,Undergraduate,2934,2018
+184205,Cumberland County College,Graduate,2934,2018
+184205,Cumberland County College,Undergraduate,2989,2019
+184205,Cumberland County College,Graduate,2989,2019
+184205,Cumberland County College,Undergraduate,4006,2020
+184205,Cumberland County College,Graduate,4006,2020
+184205,Cumberland County College,Undergraduate,3647,2021
+184205,Cumberland County College,Graduate,3647,2021
+184205,Cumberland County College,Undergraduate,3357,2022
+184205,Cumberland County College,Graduate,3357,2022
+184205,Cumberland County College,Undergraduate,3771,2023
+184205,Cumberland County College,Graduate,3771,2023
+184278,Divers Academy International,Undergraduate,27,2018
+184278,Divers Academy International,Graduate,27,2018
+184278,Divers Academy International,Undergraduate,38,2019
+184278,Divers Academy International,Graduate,38,2019
+184278,Divers Academy International,Undergraduate,66,2020
+184278,Divers Academy International,Graduate,66,2020
+184278,Divers Academy International,Undergraduate,90,2021
+184278,Divers Academy International,Graduate,90,2021
+184348,Drew University,Undergraduate,2263,2018
+184348,Drew University,Graduate,1668,2018
+184348,Drew University,Undergraduate,2319,2019
+184348,Drew University,Graduate,1712,2019
+184348,Drew University,Undergraduate,2656,2020
+184348,Drew University,Graduate,1877,2020
+184348,Drew University,Undergraduate,2571,2021
+184348,Drew University,Graduate,1782,2021
+184348,Drew University,Undergraduate,2424,2022
+184348,Drew University,Graduate,1797,2022
+184348,Drew University,Undergraduate,2405,2023
+184348,Drew University,Graduate,1690,2023
+184427,Lincoln Technical Institute-South Plainfield,Undergraduate,318,2018
+184427,Lincoln Technical Institute-South Plainfield,Graduate,318,2018
+184427,Lincoln Technical Institute-South Plainfield,Undergraduate,310,2019
+184427,Lincoln Technical Institute-South Plainfield,Graduate,310,2019
+184427,Lincoln Technical Institute-South Plainfield,Undergraduate,443,2020
+184427,Lincoln Technical Institute-South Plainfield,Graduate,443,2020
+184427,Lincoln Technical Institute-South Plainfield,Undergraduate,502,2021
+184427,Lincoln Technical Institute-South Plainfield,Graduate,502,2021
+184427,Lincoln Technical Institute-South Plainfield,Undergraduate,495,2022
+184427,Lincoln Technical Institute-South Plainfield,Graduate,495,2022
+184427,Lincoln Technical Institute-South Plainfield,Undergraduate,477,2023
+184427,Lincoln Technical Institute-South Plainfield,Graduate,477,2023
+184481,Essex County College,Undergraduate,7514,2018
+184481,Essex County College,Graduate,7514,2018
+184481,Essex County College,Undergraduate,7434,2019
+184481,Essex County College,Graduate,7434,2019
+184481,Essex County College,Undergraduate,10217,2020
+184481,Essex County College,Graduate,10217,2020
+184481,Essex County College,Undergraduate,9039,2021
+184481,Essex County College,Graduate,9039,2021
+184481,Essex County College,Undergraduate,8883,2022
+184481,Essex County College,Graduate,8883,2022
+184481,Essex County College,Undergraduate,9206,2023
+184481,Essex County College,Graduate,9206,2023
+184506,Empire Beauty School-Union,Undergraduate,113,2018
+184506,Empire Beauty School-Union,Graduate,113,2018
+184506,Empire Beauty School-Union,Undergraduate,90,2019
+184506,Empire Beauty School-Union,Graduate,90,2019
+184506,Empire Beauty School-Union,Undergraduate,166,2020
+184506,Empire Beauty School-Union,Graduate,166,2020
+184506,Empire Beauty School-Union,Undergraduate,211,2021
+184506,Empire Beauty School-Union,Graduate,211,2021
+184506,Empire Beauty School-Union,Undergraduate,176,2022
+184506,Empire Beauty School-Union,Graduate,176,2022
+184506,Empire Beauty School-Union,Undergraduate,165,2023
+184506,Empire Beauty School-Union,Graduate,165,2023
+184603,Fairleigh Dickinson University-Metropolitan Campus,Undergraduate,7871,2018
+184603,Fairleigh Dickinson University-Metropolitan Campus,Graduate,5860,2018
+184603,Fairleigh Dickinson University-Metropolitan Campus,Undergraduate,8206,2019
+184603,Fairleigh Dickinson University-Metropolitan Campus,Graduate,6353,2019
+184603,Fairleigh Dickinson University-Metropolitan Campus,Undergraduate,9692,2020
+184603,Fairleigh Dickinson University-Metropolitan Campus,Graduate,7328,2020
+184603,Fairleigh Dickinson University-Metropolitan Campus,Undergraduate,10584,2021
+184603,Fairleigh Dickinson University-Metropolitan Campus,Graduate,8204,2021
+184603,Fairleigh Dickinson University-Metropolitan Campus,Undergraduate,9451,2022
+184603,Fairleigh Dickinson University-Metropolitan Campus,Graduate,7031,2022
+184603,Fairleigh Dickinson University-Metropolitan Campus,Undergraduate,9210,2023
+184603,Fairleigh Dickinson University-Metropolitan Campus,Graduate,6720,2023
+184612,Felician University,Undergraduate,2004,2018
+184612,Felician University,Graduate,1624,2018
+184612,Felician University,Undergraduate,2262,2019
+184612,Felician University,Graduate,1852,2019
+184612,Felician University,Undergraduate,2882,2020
+184612,Felician University,Graduate,2380,2020
+184612,Felician University,Undergraduate,3052,2021
+184612,Felician University,Graduate,2545,2021
+184612,Felician University,Undergraduate,2941,2022
+184612,Felician University,Graduate,2451,2022
+184612,Felician University,Undergraduate,2682,2023
+184612,Felician University,Graduate,2156,2023
+184694,Fairleigh Dickinson University-Florham Campus,Undergraduate,3483,2018
+184694,Fairleigh Dickinson University-Florham Campus,Graduate,2730,2018
+184694,Fairleigh Dickinson University-Florham Campus,Undergraduate,3366,2019
+184694,Fairleigh Dickinson University-Florham Campus,Graduate,2620,2019
+184694,Fairleigh Dickinson University-Florham Campus,Undergraduate,3626,2020
+184694,Fairleigh Dickinson University-Florham Campus,Graduate,2801,2020
+184694,Fairleigh Dickinson University-Florham Campus,Undergraduate,5182,2021
+184694,Fairleigh Dickinson University-Florham Campus,Graduate,4318,2021
+184694,Fairleigh Dickinson University-Florham Campus,Undergraduate,3920,2022
+184694,Fairleigh Dickinson University-Florham Campus,Graduate,3019,2022
+184694,Fairleigh Dickinson University-Florham Campus,Undergraduate,3545,2023
+184694,Fairleigh Dickinson University-Florham Campus,Graduate,2548,2023
+184746,Hohokus School of Trade and Technical Sciences,Undergraduate,214,2018
+184746,Hohokus School of Trade and Technical Sciences,Graduate,214,2018
+184746,Hohokus School of Trade and Technical Sciences,Undergraduate,177,2019
+184746,Hohokus School of Trade and Technical Sciences,Graduate,177,2019
+184746,Hohokus School of Trade and Technical Sciences,Undergraduate,227,2020
+184746,Hohokus School of Trade and Technical Sciences,Graduate,227,2020
+184746,Hohokus School of Trade and Technical Sciences,Undergraduate,199,2021
+184746,Hohokus School of Trade and Technical Sciences,Graduate,199,2021
+184746,Hohokus School of Trade and Technical Sciences,Undergraduate,274,2022
+184746,Hohokus School of Trade and Technical Sciences,Graduate,274,2022
+184746,Hohokus School of Trade and Technical Sciences,Undergraduate,209,2023
+184746,Hohokus School of Trade and Technical Sciences,Graduate,209,2023
+184773,Georgian Court University,Undergraduate,2458,2018
+184773,Georgian Court University,Graduate,1783,2018
+184773,Georgian Court University,Undergraduate,2411,2019
+184773,Georgian Court University,Graduate,1793,2019
+184773,Georgian Court University,Undergraduate,2981,2020
+184773,Georgian Court University,Graduate,2138,2020
+184773,Georgian Court University,Undergraduate,2722,2021
+184773,Georgian Court University,Graduate,1953,2021
+184773,Georgian Court University,Undergraduate,2503,2022
+184773,Georgian Court University,Graduate,1856,2022
+184773,Georgian Court University,Undergraduate,2363,2023
+184773,Georgian Court University,Graduate,1733,2023
+184782,Rowan University,Undergraduate,19465,2018
+184782,Rowan University,Graduate,16120,2018
+184782,Rowan University,Undergraduate,19618,2019
+184782,Rowan University,Graduate,16011,2019
+184782,Rowan University,Undergraduate,23231,2020
+184782,Rowan University,Graduate,18638,2020
+184782,Rowan University,Undergraduate,22640,2021
+184782,Rowan University,Graduate,18085,2021
+184782,Rowan University,Undergraduate,22080,2022
+184782,Rowan University,Graduate,17319,2022
+184782,Rowan University,Undergraduate,22472,2023
+184782,Rowan University,Graduate,17292,2023
+184791,Rowan College of South Jersey Gloucester Campus,Undergraduate,7130,2018
+184791,Rowan College of South Jersey Gloucester Campus,Graduate,7130,2018
+184791,Rowan College of South Jersey Gloucester Campus,Undergraduate,6953,2019
+184791,Rowan College of South Jersey Gloucester Campus,Graduate,6953,2019
+184791,Rowan College of South Jersey Gloucester Campus,Undergraduate,9953,2020
+184791,Rowan College of South Jersey Gloucester Campus,Graduate,9953,2020
+184791,Rowan College of South Jersey Gloucester Campus,Undergraduate,9052,2021
+184791,Rowan College of South Jersey Gloucester Campus,Graduate,9052,2021
+184791,Rowan College of South Jersey Gloucester Campus,Undergraduate,7996,2022
+184791,Rowan College of South Jersey Gloucester Campus,Graduate,7996,2022
+184791,Rowan College of South Jersey Gloucester Campus,Undergraduate,7803,2023
+184791,Rowan College of South Jersey Gloucester Campus,Graduate,7803,2023
+184816,Empire Beauty School-Cherry Hill,Undergraduate,71,2018
+184816,Empire Beauty School-Cherry Hill,Graduate,71,2018
+184816,Empire Beauty School-Cherry Hill,Undergraduate,75,2019
+184816,Empire Beauty School-Cherry Hill,Graduate,75,2019
+184816,Empire Beauty School-Cherry Hill,Undergraduate,131,2020
+184816,Empire Beauty School-Cherry Hill,Graduate,131,2020
+184816,Empire Beauty School-Cherry Hill,Undergraduate,159,2021
+184816,Empire Beauty School-Cherry Hill,Graduate,159,2021
+184816,Empire Beauty School-Cherry Hill,Undergraduate,155,2022
+184816,Empire Beauty School-Cherry Hill,Graduate,155,2022
+184816,Empire Beauty School-Cherry Hill,Undergraduate,169,2023
+184816,Empire Beauty School-Cherry Hill,Graduate,169,2023
+184870,Harris School of Business-Cherry Hill Campus,Undergraduate,191,2018
+184870,Harris School of Business-Cherry Hill Campus,Graduate,191,2018
+184870,Harris School of Business-Cherry Hill Campus,Undergraduate,138,2019
+184870,Harris School of Business-Cherry Hill Campus,Graduate,138,2019
+184959,Eastwick College-Ramsey,Undergraduate,740,2018
+184959,Eastwick College-Ramsey,Graduate,740,2018
+184959,Eastwick College-Ramsey,Undergraduate,824,2019
+184959,Eastwick College-Ramsey,Graduate,824,2019
+184959,Eastwick College-Ramsey,Undergraduate,1109,2020
+184959,Eastwick College-Ramsey,Graduate,1109,2020
+184959,Eastwick College-Ramsey,Undergraduate,1102,2021
+184959,Eastwick College-Ramsey,Graduate,1102,2021
+184959,Eastwick College-Ramsey,Undergraduate,1015,2022
+184959,Eastwick College-Ramsey,Graduate,1015,2022
+184959,Eastwick College-Ramsey,Undergraduate,1075,2023
+184959,Eastwick College-Ramsey,Graduate,1075,2023
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Undergraduate,151,2018
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Graduate,151,2018
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Undergraduate,137,2019
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Graduate,137,2019
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Undergraduate,153,2020
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Graduate,153,2020
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Undergraduate,194,2021
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Graduate,194,2021
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Undergraduate,194,2022
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Graduate,194,2022
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Undergraduate,204,2023
+184968,Holy Name Medical Center-Sister Claire Tynan School of Nursing,Graduate,204,2023
+184995,Hudson County Community College,Undergraduate,8408,2018
+184995,Hudson County Community College,Graduate,8408,2018
+184995,Hudson County Community College,Undergraduate,8202,2019
+184995,Hudson County Community College,Graduate,8202,2019
+184995,Hudson County Community College,Undergraduate,11404,2020
+184995,Hudson County Community College,Graduate,11404,2020
+184995,Hudson County Community College,Undergraduate,10000,2021
+184995,Hudson County Community College,Graduate,10000,2021
+184995,Hudson County Community College,Undergraduate,10040,2022
+184995,Hudson County Community College,Graduate,10040,2022
+184995,Hudson County Community College,Undergraduate,10169,2023
+184995,Hudson County Community College,Graduate,10169,2023
+185129,New Jersey City University,Undergraduate,7991,2018
+185129,New Jersey City University,Graduate,6237,2018
+185129,New Jersey City University,Undergraduate,7949,2019
+185129,New Jersey City University,Graduate,6137,2019
+185129,New Jersey City University,Undergraduate,9320,2020
+185129,New Jersey City University,Graduate,7017,2020
+185129,New Jersey City University,Undergraduate,8981,2021
+185129,New Jersey City University,Graduate,6656,2021
+185129,New Jersey City University,Undergraduate,8313,2022
+185129,New Jersey City University,Graduate,6043,2022
+185129,New Jersey City University,Undergraduate,7694,2023
+185129,New Jersey City University,Graduate,5445,2023
+185174,Joe Kubert School of Cartoon and Graphic Art,Undergraduate,86,2018
+185174,Joe Kubert School of Cartoon and Graphic Art,Graduate,86,2018
+185174,Joe Kubert School of Cartoon and Graphic Art,Undergraduate,86,2019
+185174,Joe Kubert School of Cartoon and Graphic Art,Graduate,86,2019
+185174,Joe Kubert School of Cartoon and Graphic Art,Undergraduate,86,2020
+185174,Joe Kubert School of Cartoon and Graphic Art,Graduate,86,2020
+185174,Joe Kubert School of Cartoon and Graphic Art,Undergraduate,72,2021
+185174,Joe Kubert School of Cartoon and Graphic Art,Graduate,72,2021
+185174,Joe Kubert School of Cartoon and Graphic Art,Undergraduate,86,2022
+185174,Joe Kubert School of Cartoon and Graphic Art,Graduate,86,2022
+185262,Kean University,Undergraduate,14056,2018
+185262,Kean University,Graduate,11824,2018
+185262,Kean University,Undergraduate,14309,2019
+185262,Kean University,Graduate,12120,2019
+185262,Kean University,Undergraduate,16991,2020
+185262,Kean University,Graduate,14180,2020
+185262,Kean University,Undergraduate,16448,2021
+185262,Kean University,Graduate,13546,2021
+185262,Kean University,Undergraduate,15070,2022
+185262,Kean University,Graduate,12446,2022
+185262,Kean University,Undergraduate,15023,2023
+185262,Kean University,Graduate,12548,2023
+185332,Harris School of Business-Voorhees Campus,Undergraduate,274,2018
+185332,Harris School of Business-Voorhees Campus,Graduate,274,2018
+185332,Harris School of Business-Voorhees Campus,Undergraduate,269,2019
+185332,Harris School of Business-Voorhees Campus,Graduate,269,2019
+185396,Lincoln Technical Institute-Union,Undergraduate,1368,2018
+185396,Lincoln Technical Institute-Union,Graduate,1368,2018
+185396,Lincoln Technical Institute-Union,Undergraduate,1427,2019
+185396,Lincoln Technical Institute-Union,Graduate,1427,2019
+185396,Lincoln Technical Institute-Union,Undergraduate,2045,2020
+185396,Lincoln Technical Institute-Union,Graduate,2045,2020
+185396,Lincoln Technical Institute-Union,Undergraduate,2192,2021
+185396,Lincoln Technical Institute-Union,Graduate,2192,2021
+185396,Lincoln Technical Institute-Union,Undergraduate,2323,2022
+185396,Lincoln Technical Institute-Union,Graduate,2323,2022
+185396,Lincoln Technical Institute-Union,Undergraduate,2444,2023
+185396,Lincoln Technical Institute-Union,Graduate,2444,2023
+185466,Rizzieri Aveda School for Beauty and Wellness,Undergraduate,295,2018
+185466,Rizzieri Aveda School for Beauty and Wellness,Graduate,295,2018
+185466,Rizzieri Aveda School for Beauty and Wellness,Undergraduate,252,2019
+185466,Rizzieri Aveda School for Beauty and Wellness,Graduate,252,2019
+185466,Rizzieri Aveda School for Beauty and Wellness,Undergraduate,413,2020
+185466,Rizzieri Aveda School for Beauty and Wellness,Graduate,413,2020
+185466,Rizzieri Aveda School for Beauty and Wellness,Undergraduate,465,2021
+185466,Rizzieri Aveda School for Beauty and Wellness,Graduate,465,2021
+185466,Rizzieri Aveda School for Beauty and Wellness,Undergraduate,556,2022
+185466,Rizzieri Aveda School for Beauty and Wellness,Graduate,556,2022
+185466,Rizzieri Aveda School for Beauty and Wellness,Undergraduate,614,2023
+185466,Rizzieri Aveda School for Beauty and Wellness,Graduate,614,2023
+185509,Mercer County Community College,Undergraduate,7686,2018
+185509,Mercer County Community College,Graduate,7686,2018
+185509,Mercer County Community College,Undergraduate,7480,2019
+185509,Mercer County Community College,Graduate,7480,2019
+185509,Mercer County Community College,Undergraduate,10448,2020
+185509,Mercer County Community College,Graduate,10448,2020
+185509,Mercer County Community College,Undergraduate,9058,2021
+185509,Mercer County Community College,Graduate,9058,2021
+185509,Mercer County Community College,Undergraduate,8619,2022
+185509,Mercer County Community College,Graduate,8619,2022
+185509,Mercer County Community College,Undergraduate,8392,2023
+185509,Mercer County Community College,Graduate,8392,2023
+185536,Middlesex County College,Undergraduate,10894,2018
+185536,Middlesex County College,Graduate,10894,2018
+185536,Middlesex County College,Undergraduate,11142,2019
+185536,Middlesex County College,Graduate,11142,2019
+185536,Middlesex County College,Undergraduate,16466,2020
+185536,Middlesex County College,Graduate,16466,2020
+185536,Middlesex County College,Undergraduate,15190,2021
+185536,Middlesex County College,Graduate,15190,2021
+185536,Middlesex County College,Undergraduate,15043,2022
+185536,Middlesex County College,Graduate,15043,2022
+185536,Middlesex County College,Undergraduate,15660,2023
+185536,Middlesex County College,Graduate,15660,2023
+185572,Monmouth University,Undergraduate,6167,2018
+185572,Monmouth University,Graduate,4630,2018
+185572,Monmouth University,Undergraduate,5953,2019
+185572,Monmouth University,Graduate,4450,2019
+185572,Monmouth University,Undergraduate,6618,2020
+185572,Monmouth University,Graduate,4775,2020
+185572,Monmouth University,Undergraduate,6166,2021
+185572,Monmouth University,Graduate,4469,2021
+185572,Monmouth University,Undergraduate,6034,2022
+185572,Monmouth University,Graduate,4357,2022
+185572,Monmouth University,Undergraduate,5428,2023
+185572,Monmouth University,Graduate,4024,2023
+185590,Montclair State University,Undergraduate,21115,2018
+185590,Montclair State University,Graduate,16988,2018
+185590,Montclair State University,Undergraduate,21007,2019
+185590,Montclair State University,Graduate,16687,2019
+185590,Montclair State University,Undergraduate,24101,2020
+185590,Montclair State University,Graduate,18661,2020
+185590,Montclair State University,Undergraduate,24137,2021
+185590,Montclair State University,Graduate,18199,2021
+185590,Montclair State University,Undergraduate,23783,2022
+185590,Montclair State University,Graduate,18050,2022
+185590,Montclair State University,Undergraduate,24972,2023
+185590,Montclair State University,Graduate,19283,2023
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Undergraduate,587,2018
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Graduate,587,2018
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Undergraduate,611,2019
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Graduate,611,2019
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Undergraduate,805,2020
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Graduate,805,2020
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Undergraduate,834,2021
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Graduate,834,2021
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Undergraduate,797,2022
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Graduate,797,2022
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Undergraduate,607,2023
+185679,JFK Muhlenberg Harold B. and Dorothy A. Snyder Schools,Graduate,607,2023
+185721,Eastwick College-Nutley,Undergraduate,487,2018
+185721,Eastwick College-Nutley,Graduate,487,2018
+185721,Eastwick College-Nutley,Undergraduate,511,2019
+185721,Eastwick College-Nutley,Graduate,511,2019
+185721,Eastwick College-Nutley,Undergraduate,735,2020
+185721,Eastwick College-Nutley,Graduate,735,2020
+185721,Eastwick College-Nutley,Undergraduate,698,2021
+185721,Eastwick College-Nutley,Graduate,698,2021
+185721,Eastwick College-Nutley,Undergraduate,634,2022
+185721,Eastwick College-Nutley,Graduate,634,2022
+185721,Eastwick College-Nutley,Undergraduate,664,2023
+185721,Eastwick College-Nutley,Graduate,664,2023
+185758,New Brunswick Theological Seminary,Undergraduate,128,2018
+185758,New Brunswick Theological Seminary,Undergraduate,140,2019
+185758,New Brunswick Theological Seminary,Undergraduate,159,2020
+185758,New Brunswick Theological Seminary,Undergraduate,128,2021
+185758,New Brunswick Theological Seminary,Undergraduate,151,2022
+185758,New Brunswick Theological Seminary,Undergraduate,150,2023
+185767,Robert Fiance Beauty Schools-West New York,Undergraduate,64,2018
+185767,Robert Fiance Beauty Schools-West New York,Graduate,64,2018
+185767,Robert Fiance Beauty Schools-West New York,Undergraduate,271,2019
+185767,Robert Fiance Beauty Schools-West New York,Graduate,271,2019
+185767,Robert Fiance Beauty Schools-West New York,Undergraduate,403,2020
+185767,Robert Fiance Beauty Schools-West New York,Graduate,403,2020
+185767,Robert Fiance Beauty Schools-West New York,Undergraduate,292,2021
+185767,Robert Fiance Beauty Schools-West New York,Graduate,292,2021
+185767,Robert Fiance Beauty Schools-West New York,Undergraduate,378,2022
+185767,Robert Fiance Beauty Schools-West New York,Graduate,378,2022
+185767,Robert Fiance Beauty Schools-West New York,Undergraduate,409,2023
+185767,Robert Fiance Beauty Schools-West New York,Graduate,409,2023
+185828,New Jersey Institute of Technology,Undergraduate,11423,2018
+185828,New Jersey Institute of Technology,Graduate,8532,2018
+185828,New Jersey Institute of Technology,Undergraduate,11518,2019
+185828,New Jersey Institute of Technology,Graduate,8794,2019
+185828,New Jersey Institute of Technology,Undergraduate,13619,2020
+185828,New Jersey Institute of Technology,Graduate,10275,2020
+185828,New Jersey Institute of Technology,Undergraduate,13687,2021
+185828,New Jersey Institute of Technology,Graduate,10441,2021
+185828,New Jersey Institute of Technology,Undergraduate,13649,2022
+185828,New Jersey Institute of Technology,Graduate,10299,2022
+185828,New Jersey Institute of Technology,Undergraduate,13931,2023
+185828,New Jersey Institute of Technology,Graduate,9945,2023
+185873,Ocean County College,Undergraduate,8176,2018
+185873,Ocean County College,Graduate,8176,2018
+185873,Ocean County College,Undergraduate,8171,2019
+185873,Ocean County College,Graduate,8171,2019
+185873,Ocean County College,Undergraduate,14718,2020
+185873,Ocean County College,Graduate,14718,2020
+185873,Ocean County College,Undergraduate,13214,2021
+185873,Ocean County College,Graduate,13214,2021
+185873,Ocean County College,Undergraduate,12610,2022
+185873,Ocean County College,Graduate,12610,2022
+185873,Ocean County College,Undergraduate,12367,2023
+185873,Ocean County College,Graduate,12367,2023
+185970,P B Cosmetology Education Center,Undergraduate,132,2018
+185970,P B Cosmetology Education Center,Graduate,132,2018
+185970,P B Cosmetology Education Center,Undergraduate,125,2019
+185970,P B Cosmetology Education Center,Graduate,125,2019
+185970,P B Cosmetology Education Center,Undergraduate,198,2020
+185970,P B Cosmetology Education Center,Graduate,198,2020
+185970,P B Cosmetology Education Center,Undergraduate,212,2021
+185970,P B Cosmetology Education Center,Graduate,212,2021
+185970,P B Cosmetology Education Center,Undergraduate,214,2022
+185970,P B Cosmetology Education Center,Graduate,214,2022
+185970,P B Cosmetology Education Center,Undergraduate,200,2023
+185970,P B Cosmetology Education Center,Graduate,200,2023
+186016,Parisian Beauty School,Undergraduate,412,2018
+186016,Parisian Beauty School,Graduate,412,2018
+186016,Parisian Beauty School,Undergraduate,464,2019
+186016,Parisian Beauty School,Graduate,464,2019
+186016,Parisian Beauty School,Undergraduate,790,2020
+186016,Parisian Beauty School,Graduate,790,2020
+186016,Parisian Beauty School,Undergraduate,719,2021
+186016,Parisian Beauty School,Graduate,719,2021
+186016,Parisian Beauty School,Undergraduate,750,2022
+186016,Parisian Beauty School,Graduate,750,2022
+186016,Parisian Beauty School,Undergraduate,674,2023
+186016,Parisian Beauty School,Graduate,674,2023
+186034,Passaic County Community College,Undergraduate,6480,2018
+186034,Passaic County Community College,Graduate,6480,2018
+186034,Passaic County Community College,Undergraduate,6497,2019
+186034,Passaic County Community College,Graduate,6497,2019
+186034,Passaic County Community College,Undergraduate,8827,2020
+186034,Passaic County Community College,Graduate,8827,2020
+186034,Passaic County Community College,Undergraduate,7438,2021
+186034,Passaic County Community College,Graduate,7438,2021
+186034,Passaic County Community College,Undergraduate,7189,2022
+186034,Passaic County Community College,Graduate,7189,2022
+186034,Passaic County Community College,Undergraduate,8222,2023
+186034,Passaic County Community College,Graduate,8222,2023
+186052,Pennco Tech-Blackwood,Undergraduate,558,2018
+186052,Pennco Tech-Blackwood,Graduate,558,2018
+186052,Pennco Tech-Blackwood,Undergraduate,668,2019
+186052,Pennco Tech-Blackwood,Graduate,668,2019
+186052,Pennco Tech-Blackwood,Undergraduate,900,2020
+186052,Pennco Tech-Blackwood,Graduate,900,2020
+186052,Pennco Tech-Blackwood,Undergraduate,1250,2021
+186052,Pennco Tech-Blackwood,Graduate,1250,2021
+186052,Pennco Tech-Blackwood,Undergraduate,1343,2022
+186052,Pennco Tech-Blackwood,Graduate,1343,2022
+186052,Pennco Tech-Blackwood,Undergraduate,1460,2023
+186052,Pennco Tech-Blackwood,Graduate,1460,2023
+186122,Princeton Theological Seminary,Undergraduate,441,2018
+186122,Princeton Theological Seminary,Undergraduate,364,2019
+186122,Princeton Theological Seminary,Undergraduate,370,2020
+186122,Princeton Theological Seminary,Undergraduate,354,2021
+186122,Princeton Theological Seminary,Undergraduate,341,2022
+186122,Princeton Theological Seminary,Undergraduate,350,2023
+186131,Princeton University,Undergraduate,8374,2018
+186131,Princeton University,Graduate,5428,2018
+186131,Princeton University,Undergraduate,8419,2019
+186131,Princeton University,Graduate,5422,2019
+186131,Princeton University,Undergraduate,8532,2020
+186131,Princeton University,Graduate,5516,2020
+186131,Princeton University,Undergraduate,7942,2021
+186131,Princeton University,Graduate,4845,2021
+186131,Princeton University,Undergraduate,8631,2022
+186131,Princeton University,Graduate,5444,2022
+186131,Princeton University,Undergraduate,8946,2023
+186131,Princeton University,Graduate,5690,2023
+186186,Rabbinical College of America,Undergraduate,230,2018
+186186,Rabbinical College of America,Graduate,224,2018
+186186,Rabbinical College of America,Undergraduate,222,2019
+186186,Rabbinical College of America,Graduate,216,2019
+186186,Rabbinical College of America,Undergraduate,353,2020
+186186,Rabbinical College of America,Graduate,342,2020
+186186,Rabbinical College of America,Undergraduate,380,2021
+186186,Rabbinical College of America,Graduate,368,2021
+186186,Rabbinical College of America,Undergraduate,389,2022
+186186,Rabbinical College of America,Graduate,369,2022
+186186,Rabbinical College of America,Undergraduate,245,2023
+186186,Rabbinical College of America,Graduate,228,2023
+186201,Ramapo College of New Jersey,Undergraduate,6174,2018
+186201,Ramapo College of New Jersey,Graduate,5609,2018
+186201,Ramapo College of New Jersey,Undergraduate,6142,2019
+186201,Ramapo College of New Jersey,Graduate,5574,2019
+186201,Ramapo College of New Jersey,Undergraduate,6913,2020
+186201,Ramapo College of New Jersey,Graduate,6225,2020
+186201,Ramapo College of New Jersey,Undergraduate,6766,2021
+186201,Ramapo College of New Jersey,Graduate,5959,2021
+186201,Ramapo College of New Jersey,Undergraduate,6413,2022
+186201,Ramapo College of New Jersey,Graduate,5705,2022
+186201,Ramapo College of New Jersey,Undergraduate,6183,2023
+186201,Ramapo College of New Jersey,Graduate,5516,2023
+186283,Rider University,Undergraduate,4824,2018
+186283,Rider University,Graduate,3920,2018
+186283,Rider University,Undergraduate,4674,2019
+186283,Rider University,Graduate,3770,2019
+186283,Rider University,Undergraduate,5515,2020
+186283,Rider University,Graduate,4368,2020
+186283,Rider University,Undergraduate,5196,2021
+186283,Rider University,Graduate,3864,2021
+186283,Rider University,Undergraduate,4868,2022
+186283,Rider University,Graduate,3552,2022
+186283,Rider University,Undergraduate,4816,2023
+186283,Rider University,Graduate,3646,2023
+186371,Rutgers University-Camden,Undergraduate,7171,2018
+186371,Rutgers University-Camden,Graduate,5776,2018
+186371,Rutgers University-Camden,Undergraduate,7233,2019
+186371,Rutgers University-Camden,Graduate,5739,2019
+186371,Rutgers University-Camden,Undergraduate,8113,2020
+186371,Rutgers University-Camden,Graduate,6428,2020
+186371,Rutgers University-Camden,Undergraduate,7991,2021
+186371,Rutgers University-Camden,Graduate,6192,2021
+186371,Rutgers University-Camden,Undergraduate,7470,2022
+186371,Rutgers University-Camden,Graduate,5504,2022
+186371,Rutgers University-Camden,Undergraduate,6841,2023
+186371,Rutgers University-Camden,Graduate,4787,2023
+186380,Rutgers University-New Brunswick,Undergraduate,50254,2018
+186380,Rutgers University-New Brunswick,Graduate,36039,2018
+186380,Rutgers University-New Brunswick,Undergraduate,50173,2019
+186380,Rutgers University-New Brunswick,Graduate,36158,2019
+186380,Rutgers University-New Brunswick,Undergraduate,56178,2020
+186380,Rutgers University-New Brunswick,Graduate,40730,2020
+186380,Rutgers University-New Brunswick,Undergraduate,56771,2021
+186380,Rutgers University-New Brunswick,Graduate,40466,2021
+186380,Rutgers University-New Brunswick,Undergraduate,56603,2022
+186380,Rutgers University-New Brunswick,Graduate,40323,2022
+186380,Rutgers University-New Brunswick,Undergraduate,56943,2023
+186380,Rutgers University-New Brunswick,Graduate,40978,2023
+186399,Rutgers University-Newark,Undergraduate,13451,2018
+186399,Rutgers University-Newark,Graduate,9142,2018
+186399,Rutgers University-Newark,Undergraduate,13605,2019
+186399,Rutgers University-Newark,Graduate,9319,2019
+186399,Rutgers University-Newark,Undergraduate,15633,2020
+186399,Rutgers University-Newark,Graduate,10793,2020
+186399,Rutgers University-Newark,Undergraduate,15444,2021
+186399,Rutgers University-Newark,Graduate,10683,2021
+186399,Rutgers University-Newark,Undergraduate,14168,2022
+186399,Rutgers University-Newark,Graduate,9771,2022
+186399,Rutgers University-Newark,Undergraduate,12906,2023
+186399,Rutgers University-Newark,Graduate,8850,2023
+186405,St Francis Medical Center-School of Radiologic Technology,Undergraduate,15,2018
+186405,St Francis Medical Center-School of Radiologic Technology,Graduate,15,2018
+186405,St Francis Medical Center-School of Radiologic Technology,Undergraduate,17,2019
+186405,St Francis Medical Center-School of Radiologic Technology,Graduate,17,2019
+186405,St Francis Medical Center-School of Radiologic Technology,Undergraduate,17,2020
+186405,St Francis Medical Center-School of Radiologic Technology,Graduate,17,2020
+186405,St Francis Medical Center-School of Radiologic Technology,Undergraduate,24,2021
+186405,St Francis Medical Center-School of Radiologic Technology,Graduate,24,2021
+186405,St Francis Medical Center-School of Radiologic Technology,Undergraduate,16,2022
+186405,St Francis Medical Center-School of Radiologic Technology,Graduate,16,2022
+186405,St Francis Medical Center-School of Radiologic Technology,Undergraduate,16,2023
+186405,St Francis Medical Center-School of Radiologic Technology,Graduate,16,2023
+186423,Saint Francis Medical Center School of Nursing,Undergraduate,85,2018
+186423,Saint Francis Medical Center School of Nursing,Graduate,85,2018
+186423,Saint Francis Medical Center School of Nursing,Undergraduate,89,2019
+186423,Saint Francis Medical Center School of Nursing,Graduate,89,2019
+186423,Saint Francis Medical Center School of Nursing,Undergraduate,89,2020
+186423,Saint Francis Medical Center School of Nursing,Graduate,89,2020
+186423,Saint Francis Medical Center School of Nursing,Undergraduate,85,2021
+186423,Saint Francis Medical Center School of Nursing,Graduate,85,2021
+186423,Saint Francis Medical Center School of Nursing,Undergraduate,74,2022
+186423,Saint Francis Medical Center School of Nursing,Graduate,74,2022
+186423,Saint Francis Medical Center School of Nursing,Undergraduate,53,2023
+186423,Saint Francis Medical Center School of Nursing,Graduate,53,2023
+186432,Saint Peter's University,Undergraduate,3452,2018
+186432,Saint Peter's University,Graduate,2641,2018
+186432,Saint Peter's University,Undergraduate,3233,2019
+186432,Saint Peter's University,Graduate,2423,2019
+186432,Saint Peter's University,Undergraduate,3788,2020
+186432,Saint Peter's University,Graduate,2685,2020
+186432,Saint Peter's University,Undergraduate,3890,2021
+186432,Saint Peter's University,Graduate,2657,2021
+186432,Saint Peter's University,Undergraduate,3613,2022
+186432,Saint Peter's University,Graduate,2357,2022
+186432,Saint Peter's University,Undergraduate,4448,2023
+186432,Saint Peter's University,Graduate,2568,2023
+186469,Salem Community College,Undergraduate,879,2018
+186469,Salem Community College,Graduate,879,2018
+186469,Salem Community College,Undergraduate,996,2019
+186469,Salem Community College,Graduate,996,2019
+186469,Salem Community College,Undergraduate,1732,2020
+186469,Salem Community College,Graduate,1732,2020
+186469,Salem Community College,Undergraduate,1724,2021
+186469,Salem Community College,Graduate,1724,2021
+186469,Salem Community College,Undergraduate,2096,2022
+186469,Salem Community College,Graduate,2096,2022
+186469,Salem Community College,Undergraduate,2080,2023
+186469,Salem Community College,Graduate,2080,2023
+186584,Seton Hall University,Undergraduate,10162,2018
+186584,Seton Hall University,Graduate,6136,2018
+186584,Seton Hall University,Undergraduate,10219,2019
+186584,Seton Hall University,Graduate,6102,2019
+186584,Seton Hall University,Undergraduate,11390,2020
+186584,Seton Hall University,Graduate,6468,2020
+186584,Seton Hall University,Undergraduate,10971,2021
+186584,Seton Hall University,Graduate,6315,2021
+186584,Seton Hall University,Undergraduate,10834,2022
+186584,Seton Hall University,Graduate,6389,2022
+186584,Seton Hall University,Undergraduate,12550,2023
+186584,Seton Hall University,Graduate,8537,2023
+186593,Atlantic Beauty & Spa Academy LLC,Undergraduate,115,2018
+186593,Atlantic Beauty & Spa Academy LLC,Graduate,115,2018
+186593,Atlantic Beauty & Spa Academy LLC,Undergraduate,146,2019
+186593,Atlantic Beauty & Spa Academy LLC,Graduate,146,2019
+186593,Atlantic Beauty & Spa Academy LLC,Undergraduate,205,2020
+186593,Atlantic Beauty & Spa Academy LLC,Graduate,205,2020
+186593,Atlantic Beauty & Spa Academy LLC,Undergraduate,266,2021
+186593,Atlantic Beauty & Spa Academy LLC,Graduate,266,2021
+186593,Atlantic Beauty & Spa Academy LLC,Undergraduate,268,2022
+186593,Atlantic Beauty & Spa Academy LLC,Graduate,268,2022
+186593,Atlantic Beauty & Spa Academy LLC,Undergraduate,310,2023
+186593,Atlantic Beauty & Spa Academy LLC,Graduate,310,2023
+186618,Saint Elizabeth University,Undergraduate,1186,2018
+186618,Saint Elizabeth University,Graduate,800,2018
+186618,Saint Elizabeth University,Undergraduate,1287,2019
+186618,Saint Elizabeth University,Graduate,834,2019
+186618,Saint Elizabeth University,Undergraduate,1509,2020
+186618,Saint Elizabeth University,Graduate,928,2020
+186618,Saint Elizabeth University,Undergraduate,1412,2021
+186618,Saint Elizabeth University,Graduate,860,2021
+186618,Saint Elizabeth University,Undergraduate,1341,2022
+186618,Saint Elizabeth University,Graduate,816,2022
+186618,Saint Elizabeth University,Undergraduate,1220,2023
+186618,Saint Elizabeth University,Graduate,784,2023
+186645,Raritan Valley Community College,Undergraduate,7887,2018
+186645,Raritan Valley Community College,Graduate,7887,2018
+186645,Raritan Valley Community College,Undergraduate,7793,2019
+186645,Raritan Valley Community College,Graduate,7793,2019
+186645,Raritan Valley Community College,Undergraduate,11029,2020
+186645,Raritan Valley Community College,Graduate,11029,2020
+186645,Raritan Valley Community College,Undergraduate,10243,2021
+186645,Raritan Valley Community College,Graduate,10243,2021
+186645,Raritan Valley Community College,Undergraduate,9385,2022
+186645,Raritan Valley Community College,Graduate,9385,2022
+186645,Raritan Valley Community College,Undergraduate,9275,2023
+186645,Raritan Valley Community College,Graduate,9275,2023
+186867,Stevens Institute of Technology,Undergraduate,6929,2018
+186867,Stevens Institute of Technology,Graduate,3431,2018
+186867,Stevens Institute of Technology,Undergraduate,7283,2019
+186867,Stevens Institute of Technology,Graduate,3659,2019
+186867,Stevens Institute of Technology,Undergraduate,8158,2020
+186867,Stevens Institute of Technology,Graduate,3753,2020
+186867,Stevens Institute of Technology,Undergraduate,8436,2021
+186867,Stevens Institute of Technology,Graduate,3887,2021
+186867,Stevens Institute of Technology,Undergraduate,9111,2022
+186867,Stevens Institute of Technology,Graduate,4163,2022
+186867,Stevens Institute of Technology,Undergraduate,10402,2023
+186867,Stevens Institute of Technology,Graduate,4217,2023
+186876,Stockton University,Undergraduate,9621,2018
+186876,Stockton University,Graduate,8604,2018
+186876,Stockton University,Undergraduate,9934,2019
+186876,Stockton University,Graduate,8893,2019
+186876,Stockton University,Undergraduate,11925,2020
+186876,Stockton University,Graduate,10727,2020
+186876,Stockton University,Undergraduate,11788,2021
+186876,Stockton University,Graduate,10621,2021
+186876,Stockton University,Undergraduate,11602,2022
+186876,Stockton University,Graduate,10528,2022
+186876,Stockton University,Undergraduate,11694,2023
+186876,Stockton University,Graduate,10621,2023
+186900,Talmudical Academy-New Jersey,Undergraduate,58,2018
+186900,Talmudical Academy-New Jersey,Graduate,58,2018
+186900,Talmudical Academy-New Jersey,Undergraduate,60,2019
+186900,Talmudical Academy-New Jersey,Graduate,60,2019
+186900,Talmudical Academy-New Jersey,Undergraduate,75,2020
+186900,Talmudical Academy-New Jersey,Graduate,75,2020
+186900,Talmudical Academy-New Jersey,Undergraduate,109,2021
+186900,Talmudical Academy-New Jersey,Graduate,109,2021
+186900,Talmudical Academy-New Jersey,Undergraduate,94,2022
+186900,Talmudical Academy-New Jersey,Graduate,94,2022
+186900,Talmudical Academy-New Jersey,Undergraduate,92,2023
+186900,Talmudical Academy-New Jersey,Graduate,92,2023
+187000,Teterboro School of Aeronautics,Undergraduate,233,2018
+187000,Teterboro School of Aeronautics,Graduate,233,2018
+187000,Teterboro School of Aeronautics,Undergraduate,182,2019
+187000,Teterboro School of Aeronautics,Graduate,182,2019
+187000,Teterboro School of Aeronautics,Undergraduate,392,2020
+187000,Teterboro School of Aeronautics,Graduate,392,2020
+187000,Teterboro School of Aeronautics,Undergraduate,503,2021
+187000,Teterboro School of Aeronautics,Graduate,503,2021
+187000,Teterboro School of Aeronautics,Undergraduate,527,2022
+187000,Teterboro School of Aeronautics,Graduate,527,2022
+187000,Teterboro School of Aeronautics,Undergraduate,692,2023
+187000,Teterboro School of Aeronautics,Graduate,692,2023
+187046,Thomas Edison State University,Undergraduate,10934,2018
+187046,Thomas Edison State University,Graduate,10217,2018
+187046,Thomas Edison State University,Undergraduate,10227,2019
+187046,Thomas Edison State University,Graduate,9544,2019
+187046,Thomas Edison State University,Undergraduate,14726,2020
+187046,Thomas Edison State University,Graduate,13738,2020
+187046,Thomas Edison State University,Undergraduate,14351,2021
+187046,Thomas Edison State University,Graduate,13157,2021
+187046,Thomas Edison State University,Undergraduate,12829,2022
+187046,Thomas Edison State University,Graduate,11630,2022
+187046,Thomas Edison State University,Undergraduate,11431,2023
+187046,Thomas Edison State University,Graduate,10307,2023
+187134,The College of New Jersey,Undergraduate,7686,2018
+187134,The College of New Jersey,Graduate,7048,2018
+187134,The College of New Jersey,Undergraduate,7821,2019
+187134,The College of New Jersey,Graduate,7189,2019
+187134,The College of New Jersey,Undergraduate,8943,2020
+187134,The College of New Jersey,Graduate,7596,2020
+187134,The College of New Jersey,Undergraduate,8773,2021
+187134,The College of New Jersey,Graduate,7420,2021
+187134,The College of New Jersey,Undergraduate,8566,2022
+187134,The College of New Jersey,Graduate,7406,2022
+187134,The College of New Jersey,Undergraduate,8754,2023
+187134,The College of New Jersey,Graduate,7671,2023
+187198,Union County College,Undergraduate,9412,2018
+187198,Union County College,Graduate,9412,2018
+187198,Union County College,Undergraduate,9181,2019
+187198,Union County College,Graduate,9181,2019
+187198,Union County College,Undergraduate,12441,2020
+187198,Union County College,Graduate,12441,2020
+187198,Union County College,Undergraduate,11353,2021
+187198,Union County College,Graduate,11353,2021
+187198,Union County College,Undergraduate,10974,2022
+187198,Union County College,Graduate,10974,2022
+187198,Union County College,Undergraduate,10973,2023
+187198,Union County College,Graduate,10973,2023
+187444,William Paterson University of New Jersey,Undergraduate,10198,2018
+187444,William Paterson University of New Jersey,Graduate,8735,2018
+187444,William Paterson University of New Jersey,Undergraduate,10105,2019
+187444,William Paterson University of New Jersey,Graduate,8605,2019
+187444,William Paterson University of New Jersey,Undergraduate,12020,2020
+187444,William Paterson University of New Jersey,Graduate,10049,2020
+187444,William Paterson University of New Jersey,Undergraduate,11681,2021
+187444,William Paterson University of New Jersey,Graduate,9297,2021
+187444,William Paterson University of New Jersey,Undergraduate,11619,2022
+187444,William Paterson University of New Jersey,Graduate,8742,2022
+187444,William Paterson University of New Jersey,Undergraduate,11340,2023
+187444,William Paterson University of New Jersey,Graduate,8043,2023
+194718,Rabbinical Seminary Mkor Chaim,Undergraduate,20,2020
+194718,Rabbinical Seminary Mkor Chaim,Graduate,20,2020
+194718,Rabbinical Seminary Mkor Chaim,Undergraduate,34,2021
+194718,Rabbinical Seminary Mkor Chaim,Graduate,34,2021
+194718,Rabbinical Seminary Mkor Chaim,Undergraduate,72,2022
+194718,Rabbinical Seminary Mkor Chaim,Graduate,72,2022
+194718,Rabbinical Seminary Mkor Chaim,Undergraduate,85,2023
+194718,Rabbinical Seminary Mkor Chaim,Graduate,85,2023
+245625,Warren County Community College,Undergraduate,3496,2018
+245625,Warren County Community College,Graduate,3496,2018
+245625,Warren County Community College,Undergraduate,3243,2019
+245625,Warren County Community College,Graduate,3243,2019
+245625,Warren County Community College,Undergraduate,3584,2020
+245625,Warren County Community College,Graduate,3584,2020
+245625,Warren County Community College,Undergraduate,3692,2021
+245625,Warren County Community College,Graduate,3692,2021
+245625,Warren County Community College,Undergraduate,3393,2022
+245625,Warren County Community College,Graduate,3393,2022
+245625,Warren County Community College,Undergraduate,3340,2023
+245625,Warren County Community College,Graduate,3340,2023
+247603,Sussex County Community College,Undergraduate,2300,2018
+247603,Sussex County Community College,Graduate,2300,2018
+247603,Sussex County Community College,Undergraduate,2318,2019
+247603,Sussex County Community College,Graduate,2318,2019
+247603,Sussex County Community College,Undergraduate,3508,2020
+247603,Sussex County Community College,Graduate,3508,2020
+247603,Sussex County Community College,Undergraduate,3277,2021
+247603,Sussex County Community College,Graduate,3277,2021
+247603,Sussex County Community College,Undergraduate,3041,2022
+247603,Sussex County Community College,Graduate,3041,2022
+247603,Sussex County Community College,Undergraduate,3272,2023
+247603,Sussex County Community College,Graduate,3272,2023
+249140,Branford Hall Career Institute-Jersey City,Undergraduate,195,2018
+249140,Branford Hall Career Institute-Jersey City,Graduate,195,2018
+249140,Branford Hall Career Institute-Jersey City,Undergraduate,208,2019
+249140,Branford Hall Career Institute-Jersey City,Graduate,208,2019
+363077,Capri Institute of Hair Design-Clifton,Undergraduate,155,2018
+363077,Capri Institute of Hair Design-Clifton,Graduate,155,2018
+363077,Capri Institute of Hair Design-Clifton,Undergraduate,130,2019
+363077,Capri Institute of Hair Design-Clifton,Graduate,130,2019
+363077,Capri Institute of Hair Design-Clifton,Undergraduate,150,2020
+363077,Capri Institute of Hair Design-Clifton,Graduate,150,2020
+363077,Capri Institute of Hair Design-Clifton,Undergraduate,203,2021
+363077,Capri Institute of Hair Design-Clifton,Graduate,203,2021
+363077,Capri Institute of Hair Design-Clifton,Undergraduate,124,2022
+363077,Capri Institute of Hair Design-Clifton,Graduate,124,2022
+365763,Morris County Vocational School District,Undergraduate,37,2018
+365763,Morris County Vocational School District,Graduate,37,2018
+365763,Morris County Vocational School District,Undergraduate,42,2019
+365763,Morris County Vocational School District,Graduate,42,2019
+365763,Morris County Vocational School District,Undergraduate,60,2020
+365763,Morris County Vocational School District,Graduate,60,2020
+365763,Morris County Vocational School District,Undergraduate,61,2021
+365763,Morris County Vocational School District,Graduate,61,2021
+365763,Morris County Vocational School District,Undergraduate,68,2022
+365763,Morris County Vocational School District,Graduate,68,2022
+365763,Morris County Vocational School District,Undergraduate,61,2023
+365763,Morris County Vocational School District,Graduate,61,2023
+368230,Empire Beauty School-Bloomfield,Undergraduate,112,2018
+368230,Empire Beauty School-Bloomfield,Graduate,112,2018
+368230,Empire Beauty School-Bloomfield,Undergraduate,94,2019
+368230,Empire Beauty School-Bloomfield,Graduate,94,2019
+368230,Empire Beauty School-Bloomfield,Undergraduate,147,2020
+368230,Empire Beauty School-Bloomfield,Graduate,147,2020
+368230,Empire Beauty School-Bloomfield,Undergraduate,166,2021
+368230,Empire Beauty School-Bloomfield,Graduate,166,2021
+368230,Empire Beauty School-Bloomfield,Undergraduate,170,2022
+368230,Empire Beauty School-Bloomfield,Graduate,170,2022
+368230,Empire Beauty School-Bloomfield,Undergraduate,182,2023
+368230,Empire Beauty School-Bloomfield,Graduate,182,2023
+374574,Lincoln Technical Institute-Moorestown,Undergraduate,579,2018
+374574,Lincoln Technical Institute-Moorestown,Graduate,579,2018
+374574,Lincoln Technical Institute-Moorestown,Undergraduate,648,2019
+374574,Lincoln Technical Institute-Moorestown,Graduate,648,2019
+374574,Lincoln Technical Institute-Moorestown,Undergraduate,1002,2020
+374574,Lincoln Technical Institute-Moorestown,Graduate,1002,2020
+374574,Lincoln Technical Institute-Moorestown,Undergraduate,1163,2021
+374574,Lincoln Technical Institute-Moorestown,Graduate,1163,2021
+374574,Lincoln Technical Institute-Moorestown,Undergraduate,1227,2022
+374574,Lincoln Technical Institute-Moorestown,Graduate,1227,2022
+374574,Lincoln Technical Institute-Moorestown,Undergraduate,1222,2023
+374574,Lincoln Technical Institute-Moorestown,Graduate,1222,2023
+374592,MCVSD,Undergraduate,54,2018
+374592,MCVSD,Graduate,54,2018
+374592,MCVSD,Undergraduate,52,2019
+374592,MCVSD,Graduate,52,2019
+374592,MCVSD,Undergraduate,74,2020
+374592,MCVSD,Graduate,74,2020
+374592,MCVSD,Undergraduate,86,2021
+374592,MCVSD,Graduate,86,2021
+374592,MCVSD,Undergraduate,76,2022
+374592,MCVSD,Graduate,76,2022
+374592,MCVSD,Undergraduate,72,2023
+374592,MCVSD,Graduate,72,2023
+383279,Robert Fiance Beauty Schools-North Plainfield,Undergraduate,64,2018
+383279,Robert Fiance Beauty Schools-North Plainfield,Graduate,64,2018
+383279,Robert Fiance Beauty Schools-North Plainfield,Undergraduate,135,2019
+383279,Robert Fiance Beauty Schools-North Plainfield,Graduate,135,2019
+383279,Robert Fiance Beauty Schools-North Plainfield,Undergraduate,213,2020
+383279,Robert Fiance Beauty Schools-North Plainfield,Graduate,213,2020
+383279,Robert Fiance Beauty Schools-North Plainfield,Undergraduate,196,2021
+383279,Robert Fiance Beauty Schools-North Plainfield,Graduate,196,2021
+383279,Robert Fiance Beauty Schools-North Plainfield,Undergraduate,156,2022
+383279,Robert Fiance Beauty Schools-North Plainfield,Graduate,156,2022
+383279,Robert Fiance Beauty Schools-North Plainfield,Undergraduate,287,2023
+383279,Robert Fiance Beauty Schools-North Plainfield,Graduate,287,2023
+384421,Rabbi Jacob Joseph School,Undergraduate,57,2018
+384421,Rabbi Jacob Joseph School,Graduate,57,2018
+384421,Rabbi Jacob Joseph School,Undergraduate,73,2019
+384421,Rabbi Jacob Joseph School,Graduate,73,2019
+384421,Rabbi Jacob Joseph School,Undergraduate,84,2020
+384421,Rabbi Jacob Joseph School,Graduate,84,2020
+384421,Rabbi Jacob Joseph School,Undergraduate,92,2021
+384421,Rabbi Jacob Joseph School,Graduate,92,2021
+384421,Rabbi Jacob Joseph School,Undergraduate,106,2022
+384421,Rabbi Jacob Joseph School,Graduate,106,2022
+384421,Rabbi Jacob Joseph School,Undergraduate,104,2023
+384421,Rabbi Jacob Joseph School,Graduate,104,2023
+407391,Capri Institute of Hair Design-Brick,Undergraduate,128,2018
+407391,Capri Institute of Hair Design-Brick,Graduate,128,2018
+407391,Capri Institute of Hair Design-Brick,Undergraduate,103,2019
+407391,Capri Institute of Hair Design-Brick,Graduate,103,2019
+407391,Capri Institute of Hair Design-Brick,Undergraduate,130,2020
+407391,Capri Institute of Hair Design-Brick,Graduate,130,2020
+407391,Capri Institute of Hair Design-Brick,Undergraduate,182,2021
+407391,Capri Institute of Hair Design-Brick,Graduate,182,2021
+407391,Capri Institute of Hair Design-Brick,Undergraduate,122,2022
+407391,Capri Institute of Hair Design-Brick,Graduate,122,2022
+407407,Capri Institute of Hair Design-Kenilworth,Undergraduate,107,2018
+407407,Capri Institute of Hair Design-Kenilworth,Graduate,107,2018
+407407,Capri Institute of Hair Design-Kenilworth,Undergraduate,107,2019
+407407,Capri Institute of Hair Design-Kenilworth,Graduate,107,2019
+407407,Capri Institute of Hair Design-Kenilworth,Undergraduate,91,2020
+407407,Capri Institute of Hair Design-Kenilworth,Graduate,91,2020
+407407,Capri Institute of Hair Design-Kenilworth,Undergraduate,123,2021
+407407,Capri Institute of Hair Design-Kenilworth,Graduate,123,2021
+407407,Capri Institute of Hair Design-Kenilworth,Undergraduate,75,2022
+407407,Capri Institute of Hair Design-Kenilworth,Graduate,75,2022
+407425,Capri Institute of Hair Design-Paramus,Undergraduate,97,2018
+407425,Capri Institute of Hair Design-Paramus,Graduate,97,2018
+407425,Capri Institute of Hair Design-Paramus,Undergraduate,93,2019
+407425,Capri Institute of Hair Design-Paramus,Graduate,93,2019
+407425,Capri Institute of Hair Design-Paramus,Undergraduate,117,2020
+407425,Capri Institute of Hair Design-Paramus,Graduate,117,2020
+407425,Capri Institute of Hair Design-Paramus,Undergraduate,109,2021
+407425,Capri Institute of Hair Design-Paramus,Graduate,109,2021
+407425,Capri Institute of Hair Design-Paramus,Undergraduate,65,2022
+407425,Capri Institute of Hair Design-Paramus,Graduate,65,2022
+414063,Artistic Academy of Hair Design,Undergraduate,137,2018
+414063,Artistic Academy of Hair Design,Graduate,137,2018
+414063,Artistic Academy of Hair Design,Undergraduate,125,2019
+414063,Artistic Academy of Hair Design,Graduate,125,2019
+414063,Artistic Academy of Hair Design,Undergraduate,194,2020
+414063,Artistic Academy of Hair Design,Graduate,194,2020
+414063,Artistic Academy of Hair Design,Undergraduate,174,2021
+414063,Artistic Academy of Hair Design,Graduate,174,2021
+414063,Artistic Academy of Hair Design,Undergraduate,196,2022
+414063,Artistic Academy of Hair Design,Graduate,196,2022
+414063,Artistic Academy of Hair Design,Undergraduate,170,2023
+414063,Artistic Academy of Hair Design,Graduate,170,2023
+417831,Union County Vocational Technical School,Undergraduate,96,2018
+417831,Union County Vocational Technical School,Graduate,96,2018
+417831,Union County Vocational Technical School,Undergraduate,105,2019
+417831,Union County Vocational Technical School,Graduate,105,2019
+417831,Union County Vocational Technical School,Undergraduate,141,2020
+417831,Union County Vocational Technical School,Graduate,141,2020
+417831,Union County Vocational Technical School,Undergraduate,152,2021
+417831,Union County Vocational Technical School,Graduate,152,2021
+417831,Union County Vocational Technical School,Undergraduate,131,2022
+417831,Union County Vocational Technical School,Graduate,131,2022
+417831,Union County Vocational Technical School,Undergraduate,123,2023
+417831,Union County Vocational Technical School,Graduate,123,2023
+420130,Prism Career Institute-Cherry Hill,Undergraduate,61,2018
+420130,Prism Career Institute-Cherry Hill,Graduate,61,2018
+420130,Prism Career Institute-Cherry Hill,Undergraduate,266,2019
+420130,Prism Career Institute-Cherry Hill,Graduate,266,2019
+420130,Prism Career Institute-Cherry Hill,Undergraduate,280,2020
+420130,Prism Career Institute-Cherry Hill,Graduate,280,2020
+420130,Prism Career Institute-Cherry Hill,Undergraduate,462,2021
+420130,Prism Career Institute-Cherry Hill,Graduate,462,2021
+420130,Prism Career Institute-Cherry Hill,Undergraduate,315,2022
+420130,Prism Career Institute-Cherry Hill,Graduate,315,2022
+420130,Prism Career Institute-Cherry Hill,Undergraduate,297,2023
+420130,Prism Career Institute-Cherry Hill,Graduate,297,2023
+420343,Lincoln Technical Institute-Mahwah,Undergraduate,857,2018
+420343,Lincoln Technical Institute-Mahwah,Graduate,857,2018
+420343,Lincoln Technical Institute-Mahwah,Undergraduate,847,2019
+420343,Lincoln Technical Institute-Mahwah,Graduate,847,2019
+420343,Lincoln Technical Institute-Mahwah,Undergraduate,1133,2020
+420343,Lincoln Technical Institute-Mahwah,Graduate,1133,2020
+420343,Lincoln Technical Institute-Mahwah,Undergraduate,1335,2021
+420343,Lincoln Technical Institute-Mahwah,Graduate,1335,2021
+420343,Lincoln Technical Institute-Mahwah,Undergraduate,1371,2022
+420343,Lincoln Technical Institute-Mahwah,Graduate,1371,2022
+420343,Lincoln Technical Institute-Mahwah,Undergraduate,1374,2023
+420343,Lincoln Technical Institute-Mahwah,Graduate,1374,2023
+421878,Eastern International College-Jersey City,Undergraduate,295,2018
+421878,Eastern International College-Jersey City,Graduate,295,2018
+421878,Eastern International College-Jersey City,Undergraduate,336,2019
+421878,Eastern International College-Jersey City,Graduate,336,2019
+421878,Eastern International College-Jersey City,Undergraduate,478,2020
+421878,Eastern International College-Jersey City,Graduate,478,2020
+421878,Eastern International College-Jersey City,Undergraduate,505,2021
+421878,Eastern International College-Jersey City,Graduate,505,2021
+421878,Eastern International College-Jersey City,Undergraduate,542,2022
+421878,Eastern International College-Jersey City,Graduate,542,2022
+421878,Eastern International College-Jersey City,Undergraduate,681,2023
+421878,Eastern International College-Jersey City,Graduate,681,2023
+430218,Empire Beauty School-Bordentown,Undergraduate,75,2018
+430218,Empire Beauty School-Bordentown,Graduate,75,2018
+430218,Empire Beauty School-Bordentown,Undergraduate,64,2019
+430218,Empire Beauty School-Bordentown,Graduate,64,2019
+430218,Empire Beauty School-Bordentown,Undergraduate,91,2020
+430218,Empire Beauty School-Bordentown,Graduate,91,2020
+430403,Prism Career Institute-West Atlantic City,Undergraduate,56,2018
+430403,Prism Career Institute-West Atlantic City,Graduate,56,2018
+430403,Prism Career Institute-West Atlantic City,Undergraduate,64,2019
+430403,Prism Career Institute-West Atlantic City,Graduate,64,2019
+430403,Prism Career Institute-West Atlantic City,Undergraduate,236,2020
+430403,Prism Career Institute-West Atlantic City,Graduate,236,2020
+430403,Prism Career Institute-West Atlantic City,Undergraduate,306,2021
+430403,Prism Career Institute-West Atlantic City,Graduate,306,2021
+430403,Prism Career Institute-West Atlantic City,Undergraduate,365,2022
+430403,Prism Career Institute-West Atlantic City,Graduate,365,2022
+430403,Prism Career Institute-West Atlantic City,Undergraduate,270,2023
+430403,Prism Career Institute-West Atlantic City,Graduate,270,2023
+431716,Ocean County Vocational-Technical School,Undergraduate,369,2018
+431716,Ocean County Vocational-Technical School,Graduate,369,2018
+431716,Ocean County Vocational-Technical School,Undergraduate,364,2019
+431716,Ocean County Vocational-Technical School,Graduate,364,2019
+431716,Ocean County Vocational-Technical School,Undergraduate,368,2020
+431716,Ocean County Vocational-Technical School,Graduate,368,2020
+431716,Ocean County Vocational-Technical School,Undergraduate,349,2021
+431716,Ocean County Vocational-Technical School,Graduate,349,2021
+431716,Ocean County Vocational-Technical School,Undergraduate,456,2022
+431716,Ocean County Vocational-Technical School,Graduate,456,2022
+431716,Ocean County Vocational-Technical School,Undergraduate,467,2023
+431716,Ocean County Vocational-Technical School,Graduate,467,2023
+436003,Central Career Institute LLC,Undergraduate,44,2018
+436003,Central Career Institute LLC,Graduate,44,2018
+436003,Central Career Institute LLC,Undergraduate,294,2020
+436003,Central Career Institute LLC,Graduate,294,2020
+436003,Central Career Institute LLC,Undergraduate,70,2021
+436003,Central Career Institute LLC,Graduate,70,2021
+437723,New Community Career & Technical Institute,Undergraduate,97,2018
+437723,New Community Career & Technical Institute,Graduate,97,2018
+437723,New Community Career & Technical Institute,Undergraduate,78,2019
+437723,New Community Career & Technical Institute,Graduate,78,2019
+437723,New Community Career & Technical Institute,Undergraduate,100,2020
+437723,New Community Career & Technical Institute,Graduate,100,2020
+437723,New Community Career & Technical Institute,Undergraduate,139,2021
+437723,New Community Career & Technical Institute,Graduate,139,2021
+437723,New Community Career & Technical Institute,Undergraduate,83,2022
+437723,New Community Career & Technical Institute,Graduate,83,2022
+437723,New Community Career & Technical Institute,Undergraduate,104,2023
+437723,New Community Career & Technical Institute,Graduate,104,2023
+440794,Pillar College,Undergraduate,584,2018
+440794,Pillar College,Graduate,505,2018
+440794,Pillar College,Undergraduate,604,2019
+440794,Pillar College,Graduate,494,2019
+440794,Pillar College,Undergraduate,744,2020
+440794,Pillar College,Graduate,583,2020
+440794,Pillar College,Undergraduate,685,2021
+440794,Pillar College,Graduate,539,2021
+440794,Pillar College,Undergraduate,668,2022
+440794,Pillar College,Graduate,531,2022
+440794,Pillar College,Undergraduate,723,2023
+440794,Pillar College,Graduate,615,2023
+441548,Institute for Therapeutic Massage,Undergraduate,77,2018
+441548,Institute for Therapeutic Massage,Graduate,77,2018
+441548,Institute for Therapeutic Massage,Undergraduate,92,2019
+441548,Institute for Therapeutic Massage,Graduate,92,2019
+441548,Institute for Therapeutic Massage,Undergraduate,115,2020
+441548,Institute for Therapeutic Massage,Graduate,115,2020
+441548,Institute for Therapeutic Massage,Undergraduate,82,2021
+441548,Institute for Therapeutic Massage,Graduate,82,2021
+442073,Lincoln Technical Institute-Paramus,Undergraduate,489,2018
+442073,Lincoln Technical Institute-Paramus,Graduate,489,2018
+442073,Lincoln Technical Institute-Paramus,Undergraduate,561,2019
+442073,Lincoln Technical Institute-Paramus,Graduate,561,2019
+442073,Lincoln Technical Institute-Paramus,Undergraduate,875,2020
+442073,Lincoln Technical Institute-Paramus,Graduate,875,2020
+442073,Lincoln Technical Institute-Paramus,Undergraduate,1093,2021
+442073,Lincoln Technical Institute-Paramus,Graduate,1093,2021
+442073,Lincoln Technical Institute-Paramus,Undergraduate,1090,2022
+442073,Lincoln Technical Institute-Paramus,Graduate,1090,2022
+442073,Lincoln Technical Institute-Paramus,Undergraduate,1088,2023
+442073,Lincoln Technical Institute-Paramus,Graduate,1088,2023
+443216,P C Age-Jersey City,Undergraduate,227,2018
+443216,P C Age-Jersey City,Graduate,227,2018
+443216,P C Age-Jersey City,Undergraduate,217,2019
+443216,P C Age-Jersey City,Graduate,217,2019
+443216,P C Age-Jersey City,Undergraduate,335,2020
+443216,P C Age-Jersey City,Graduate,335,2020
+443216,P C Age-Jersey City,Undergraduate,306,2021
+443216,P C Age-Jersey City,Graduate,306,2021
+443216,P C Age-Jersey City,Undergraduate,231,2022
+443216,P C Age-Jersey City,Graduate,231,2022
+443216,P C Age-Jersey City,Undergraduate,249,2023
+443216,P C Age-Jersey City,Graduate,249,2023
+443225,PC AGE-Metropark,Undergraduate,142,2018
+443225,PC AGE-Metropark,Graduate,142,2018
+443225,PC AGE-Metropark,Undergraduate,89,2019
+443225,PC AGE-Metropark,Graduate,89,2019
+443225,PC AGE-Metropark,Undergraduate,150,2020
+443225,PC AGE-Metropark,Graduate,150,2020
+443225,PC AGE-Metropark,Undergraduate,132,2021
+443225,PC AGE-Metropark,Graduate,132,2021
+443225,PC AGE-Metropark,Undergraduate,105,2022
+443225,PC AGE-Metropark,Graduate,105,2022
+443225,PC AGE-Metropark,Undergraduate,92,2023
+443225,PC AGE-Metropark,Graduate,92,2023
+445300,University of Phoenix-New Jersey,Undergraduate,47,2018
+445300,University of Phoenix-New Jersey,Graduate,47,2018
+445300,University of Phoenix-New Jersey,Undergraduate,26,2019
+445300,University of Phoenix-New Jersey,Graduate,26,2019
+445300,University of Phoenix-New Jersey,Undergraduate,32,2020
+445300,University of Phoenix-New Jersey,Graduate,32,2020
+446224,Eastern School of Acupuncture and Traditional Medicine,Undergraduate,60,2018
+446224,Eastern School of Acupuncture and Traditional Medicine,Graduate,4,2018
+446224,Eastern School of Acupuncture and Traditional Medicine,Undergraduate,77,2019
+446224,Eastern School of Acupuncture and Traditional Medicine,Graduate,9,2019
+446224,Eastern School of Acupuncture and Traditional Medicine,Undergraduate,105,2020
+446224,Eastern School of Acupuncture and Traditional Medicine,Graduate,13,2020
+446224,Eastern School of Acupuncture and Traditional Medicine,Undergraduate,86,2021
+446224,Eastern School of Acupuncture and Traditional Medicine,Graduate,11,2021
+446224,Eastern School of Acupuncture and Traditional Medicine,Undergraduate,103,2022
+446224,Eastern School of Acupuncture and Traditional Medicine,Graduate,22,2022
+446224,Eastern School of Acupuncture and Traditional Medicine,Undergraduate,62,2023
+446224,Eastern School of Acupuncture and Traditional Medicine,Graduate,13,2023
+446303,Healthcare Training Institute,Undergraduate,45,2018
+446303,Healthcare Training Institute,Graduate,45,2018
+446303,Healthcare Training Institute,Undergraduate,40,2019
+446303,Healthcare Training Institute,Graduate,40,2019
+446303,Healthcare Training Institute,Undergraduate,78,2020
+446303,Healthcare Training Institute,Graduate,78,2020
+446303,Healthcare Training Institute,Undergraduate,120,2021
+446303,Healthcare Training Institute,Graduate,120,2021
+446303,Healthcare Training Institute,Undergraduate,103,2022
+446303,Healthcare Training Institute,Graduate,103,2022
+446303,Healthcare Training Institute,Undergraduate,126,2023
+446303,Healthcare Training Institute,Graduate,126,2023
+448354,Eastern International College-Belleville,Undergraduate,257,2018
+448354,Eastern International College-Belleville,Graduate,257,2018
+448354,Eastern International College-Belleville,Undergraduate,264,2019
+448354,Eastern International College-Belleville,Graduate,264,2019
+448354,Eastern International College-Belleville,Undergraduate,356,2020
+448354,Eastern International College-Belleville,Graduate,356,2020
+448354,Eastern International College-Belleville,Undergraduate,356,2021
+448354,Eastern International College-Belleville,Graduate,356,2021
+448983,Harris School of Business-Linwood Campus,Undergraduate,108,2018
+448983,Harris School of Business-Linwood Campus,Graduate,108,2018
+448983,Harris School of Business-Linwood Campus,Undergraduate,36,2019
+448983,Harris School of Business-Linwood Campus,Graduate,36,2019
+449658,Bais Medrash Toras Chesed,Undergraduate,106,2018
+449658,Bais Medrash Toras Chesed,Graduate,106,2018
+449658,Bais Medrash Toras Chesed,Undergraduate,112,2019
+449658,Bais Medrash Toras Chesed,Graduate,112,2019
+449658,Bais Medrash Toras Chesed,Undergraduate,127,2020
+449658,Bais Medrash Toras Chesed,Graduate,127,2020
+449658,Bais Medrash Toras Chesed,Undergraduate,145,2021
+449658,Bais Medrash Toras Chesed,Graduate,145,2021
+449658,Bais Medrash Toras Chesed,Undergraduate,127,2022
+449658,Bais Medrash Toras Chesed,Graduate,127,2022
+449658,Bais Medrash Toras Chesed,Undergraduate,120,2023
+449658,Bais Medrash Toras Chesed,Graduate,120,2023
+451370,Yeshivas Be'er Yitzchok,Undergraduate,61,2018
+451370,Yeshivas Be'er Yitzchok,Graduate,61,2018
+451370,Yeshivas Be'er Yitzchok,Undergraduate,62,2019
+451370,Yeshivas Be'er Yitzchok,Graduate,62,2019
+451370,Yeshivas Be'er Yitzchok,Undergraduate,80,2020
+451370,Yeshivas Be'er Yitzchok,Graduate,80,2020
+451370,Yeshivas Be'er Yitzchok,Undergraduate,104,2021
+451370,Yeshivas Be'er Yitzchok,Graduate,104,2021
+451370,Yeshivas Be'er Yitzchok,Undergraduate,116,2022
+451370,Yeshivas Be'er Yitzchok,Graduate,116,2022
+451370,Yeshivas Be'er Yitzchok,Undergraduate,85,2023
+451370,Yeshivas Be'er Yitzchok,Graduate,85,2023
+451398,Yeshiva Toras Chaim,Undergraduate,240,2018
+451398,Yeshiva Toras Chaim,Graduate,240,2018
+451398,Yeshiva Toras Chaim,Undergraduate,236,2019
+451398,Yeshiva Toras Chaim,Graduate,236,2019
+451398,Yeshiva Toras Chaim,Undergraduate,253,2020
+451398,Yeshiva Toras Chaim,Graduate,253,2020
+451398,Yeshiva Toras Chaim,Undergraduate,244,2021
+451398,Yeshiva Toras Chaim,Graduate,244,2021
+451398,Yeshiva Toras Chaim,Undergraduate,247,2022
+451398,Yeshiva Toras Chaim,Graduate,247,2022
+451398,Yeshiva Toras Chaim,Undergraduate,226,2023
+451398,Yeshiva Toras Chaim,Graduate,226,2023
+453215,Strayer University-New Jersey,Undergraduate,960,2018
+453215,Strayer University-New Jersey,Graduate,851,2018
+453215,Strayer University-New Jersey,Undergraduate,973,2019
+453215,Strayer University-New Jersey,Graduate,864,2019
+453215,Strayer University-New Jersey,Undergraduate,1507,2020
+453215,Strayer University-New Jersey,Graduate,1348,2020
+453215,Strayer University-New Jersey,Undergraduate,1378,2021
+453215,Strayer University-New Jersey,Graduate,1247,2021
+453215,Strayer University-New Jersey,Undergraduate,879,2022
+453215,Strayer University-New Jersey,Graduate,793,2022
+453215,Strayer University-New Jersey,Undergraduate,877,2023
+453215,Strayer University-New Jersey,Graduate,789,2023
+455187,Total Image Beauty Academy,Undergraduate,199,2018
+455187,Total Image Beauty Academy,Graduate,199,2018
+455187,Total Image Beauty Academy,Undergraduate,36,2019
+455187,Total Image Beauty Academy,Graduate,36,2019
+455187,Total Image Beauty Academy,Undergraduate,212,2020
+455187,Total Image Beauty Academy,Graduate,212,2020
+455187,Total Image Beauty Academy,Undergraduate,502,2021
+455187,Total Image Beauty Academy,Graduate,502,2021
+455187,Total Image Beauty Academy,Undergraduate,701,2022
+455187,Total Image Beauty Academy,Graduate,701,2022
+455187,Total Image Beauty Academy,Undergraduate,402,2023
+455187,Total Image Beauty Academy,Graduate,402,2023
+455196,Jersey College,Undergraduate,3179,2018
+455196,Jersey College,Graduate,3179,2018
+455196,Jersey College,Undergraduate,3444,2019
+455196,Jersey College,Graduate,3444,2019
+455196,Jersey College,Undergraduate,4999,2020
+455196,Jersey College,Graduate,4999,2020
+455196,Jersey College,Undergraduate,5023,2021
+455196,Jersey College,Graduate,5023,2021
+455196,Jersey College,Undergraduate,4751,2022
+455196,Jersey College,Graduate,4751,2022
+455196,Jersey College,Undergraduate,5260,2023
+455196,Jersey College,Graduate,5260,2023
+455202,American Institute of Medical Sciences & Education,Undergraduate,425,2018
+455202,American Institute of Medical Sciences & Education,Graduate,425,2018
+455202,American Institute of Medical Sciences & Education,Undergraduate,406,2019
+455202,American Institute of Medical Sciences & Education,Graduate,406,2019
+455202,American Institute of Medical Sciences & Education,Undergraduate,623,2020
+455202,American Institute of Medical Sciences & Education,Graduate,623,2020
+455202,American Institute of Medical Sciences & Education,Undergraduate,715,2021
+455202,American Institute of Medical Sciences & Education,Graduate,715,2021
+455202,American Institute of Medical Sciences & Education,Undergraduate,655,2022
+455202,American Institute of Medical Sciences & Education,Graduate,655,2022
+455202,American Institute of Medical Sciences & Education,Undergraduate,614,2023
+455202,American Institute of Medical Sciences & Education,Graduate,614,2023
+457767,National Career Institute,Undergraduate,231,2018
+457767,National Career Institute,Graduate,231,2018
+457767,National Career Institute,Undergraduate,210,2019
+457767,National Career Institute,Graduate,210,2019
+457767,National Career Institute,Undergraduate,300,2020
+457767,National Career Institute,Graduate,300,2020
+457767,National Career Institute,Undergraduate,307,2021
+457767,National Career Institute,Graduate,307,2021
+457767,National Career Institute,Undergraduate,260,2022
+457767,National Career Institute,Graduate,260,2022
+457767,National Career Institute,Undergraduate,264,2023
+457767,National Career Institute,Graduate,264,2023
+458849,Empire Beauty School-Paramus,Undergraduate,74,2018
+458849,Empire Beauty School-Paramus,Graduate,74,2018
+458849,Empire Beauty School-Paramus,Undergraduate,56,2019
+458849,Empire Beauty School-Paramus,Graduate,56,2019
+458849,Empire Beauty School-Paramus,Undergraduate,91,2020
+458849,Empire Beauty School-Paramus,Graduate,91,2020
+461847,Keser Torah-Mayan Hatalmud,Undergraduate,89,2019
+461847,Keser Torah-Mayan Hatalmud,Graduate,89,2019
+461847,Keser Torah-Mayan Hatalmud,Undergraduate,125,2020
+461847,Keser Torah-Mayan Hatalmud,Graduate,125,2020
+461847,Keser Torah-Mayan Hatalmud,Undergraduate,114,2021
+461847,Keser Torah-Mayan Hatalmud,Graduate,114,2021
+461847,Keser Torah-Mayan Hatalmud,Undergraduate,98,2022
+461847,Keser Torah-Mayan Hatalmud,Graduate,98,2022
+461847,Keser Torah-Mayan Hatalmud,Undergraduate,105,2023
+461847,Keser Torah-Mayan Hatalmud,Graduate,105,2023
+461865,Best Care College,Undergraduate,33,2018
+461865,Best Care College,Graduate,33,2018
+461865,Best Care College,Undergraduate,41,2019
+461865,Best Care College,Graduate,41,2019
+461865,Best Care College,Undergraduate,150,2020
+461865,Best Care College,Graduate,150,2020
+461865,Best Care College,Undergraduate,152,2021
+461865,Best Care College,Graduate,152,2021
+461865,Best Care College,Undergraduate,141,2022
+461865,Best Care College,Graduate,141,2022
+461865,Best Care College,Undergraduate,155,2023
+461865,Best Care College,Graduate,155,2023
+475024,Fortis Institute-Lawrenceville,Undergraduate,256,2018
+475024,Fortis Institute-Lawrenceville,Graduate,256,2018
+475024,Fortis Institute-Lawrenceville,Undergraduate,297,2019
+475024,Fortis Institute-Lawrenceville,Graduate,297,2019
+475024,Fortis Institute-Lawrenceville,Undergraduate,446,2020
+475024,Fortis Institute-Lawrenceville,Graduate,446,2020
+475024,Fortis Institute-Lawrenceville,Undergraduate,523,2021
+475024,Fortis Institute-Lawrenceville,Graduate,523,2021
+475024,Fortis Institute-Lawrenceville,Undergraduate,430,2022
+475024,Fortis Institute-Lawrenceville,Graduate,430,2022
+475024,Fortis Institute-Lawrenceville,Undergraduate,421,2023
+475024,Fortis Institute-Lawrenceville,Graduate,421,2023
+475431,ASI Career Institute,Undergraduate,57,2018
+475431,ASI Career Institute,Graduate,57,2018
+475431,ASI Career Institute,Undergraduate,35,2019
+475431,ASI Career Institute,Graduate,35,2019
+475431,ASI Career Institute,Undergraduate,152,2020
+475431,ASI Career Institute,Graduate,152,2020
+475431,ASI Career Institute,Undergraduate,173,2021
+475431,ASI Career Institute,Graduate,173,2021
+475431,ASI Career Institute,Undergraduate,171,2022
+475431,ASI Career Institute,Graduate,171,2022
+475431,ASI Career Institute,Undergraduate,152,2023
+475431,ASI Career Institute,Graduate,152,2023
+475468,Christine Valmy International School of Esthetics & Cosmetology,Undergraduate,116,2018
+475468,Christine Valmy International School of Esthetics & Cosmetology,Graduate,116,2018
+475468,Christine Valmy International School of Esthetics & Cosmetology,Undergraduate,121,2019
+475468,Christine Valmy International School of Esthetics & Cosmetology,Graduate,121,2019
+475468,Christine Valmy International School of Esthetics & Cosmetology,Undergraduate,231,2020
+475468,Christine Valmy International School of Esthetics & Cosmetology,Graduate,231,2020
+475468,Christine Valmy International School of Esthetics & Cosmetology,Undergraduate,410,2021
+475468,Christine Valmy International School of Esthetics & Cosmetology,Graduate,410,2021
+475468,Christine Valmy International School of Esthetics & Cosmetology,Undergraduate,511,2022
+475468,Christine Valmy International School of Esthetics & Cosmetology,Graduate,511,2022
+475468,Christine Valmy International School of Esthetics & Cosmetology,Undergraduate,478,2023
+475468,Christine Valmy International School of Esthetics & Cosmetology,Graduate,478,2023
+476692,Yeshiva Gedolah Zichron Leyma,Undergraduate,23,2018
+476692,Yeshiva Gedolah Zichron Leyma,Graduate,23,2018
+476692,Yeshiva Gedolah Zichron Leyma,Undergraduate,22,2019
+476692,Yeshiva Gedolah Zichron Leyma,Graduate,22,2019
+476692,Yeshiva Gedolah Zichron Leyma,Undergraduate,27,2020
+476692,Yeshiva Gedolah Zichron Leyma,Graduate,27,2020
+476692,Yeshiva Gedolah Zichron Leyma,Undergraduate,40,2021
+476692,Yeshiva Gedolah Zichron Leyma,Graduate,40,2021
+476692,Yeshiva Gedolah Zichron Leyma,Undergraduate,41,2022
+476692,Yeshiva Gedolah Zichron Leyma,Graduate,41,2022
+476692,Yeshiva Gedolah Zichron Leyma,Undergraduate,47,2023
+476692,Yeshiva Gedolah Zichron Leyma,Graduate,47,2023
+478661,Jolie Hair and Beauty Academy-Northfield,Undergraduate,129,2018
+478661,Jolie Hair and Beauty Academy-Northfield,Graduate,129,2018
+478661,Jolie Hair and Beauty Academy-Northfield,Undergraduate,129,2019
+478661,Jolie Hair and Beauty Academy-Northfield,Graduate,129,2019
+478661,Jolie Hair and Beauty Academy-Northfield,Undergraduate,180,2020
+478661,Jolie Hair and Beauty Academy-Northfield,Graduate,180,2020
+479965,Medical Career Institute,Undergraduate,122,2018
+479965,Medical Career Institute,Graduate,122,2018
+479965,Medical Career Institute,Undergraduate,171,2019
+479965,Medical Career Institute,Graduate,171,2019
+479965,Medical Career Institute,Undergraduate,228,2020
+479965,Medical Career Institute,Graduate,228,2020
+479965,Medical Career Institute,Undergraduate,231,2021
+479965,Medical Career Institute,Graduate,231,2021
+479965,Medical Career Institute,Undergraduate,220,2022
+479965,Medical Career Institute,Graduate,220,2022
+479965,Medical Career Institute,Undergraduate,236,2023
+479965,Medical Career Institute,Graduate,236,2023
+481429,Universal Training Institute,Undergraduate,201,2018
+481429,Universal Training Institute,Graduate,201,2018
+481429,Universal Training Institute,Undergraduate,172,2019
+481429,Universal Training Institute,Graduate,172,2019
+481429,Universal Training Institute,Undergraduate,257,2020
+481429,Universal Training Institute,Graduate,257,2020
+481429,Universal Training Institute,Undergraduate,235,2021
+481429,Universal Training Institute,Graduate,235,2021
+481429,Universal Training Institute,Undergraduate,194,2022
+481429,Universal Training Institute,Graduate,194,2022
+481429,Universal Training Institute,Undergraduate,170,2023
+481429,Universal Training Institute,Graduate,170,2023
+481438,Yeshiva Yesodei Hatorah,Undergraduate,46,2018
+481438,Yeshiva Yesodei Hatorah,Graduate,46,2018
+481438,Yeshiva Yesodei Hatorah,Undergraduate,62,2019
+481438,Yeshiva Yesodei Hatorah,Graduate,62,2019
+481438,Yeshiva Yesodei Hatorah,Undergraduate,76,2020
+481438,Yeshiva Yesodei Hatorah,Graduate,76,2020
+481438,Yeshiva Yesodei Hatorah,Undergraduate,80,2021
+481438,Yeshiva Yesodei Hatorah,Graduate,80,2021
+481438,Yeshiva Yesodei Hatorah,Undergraduate,78,2022
+481438,Yeshiva Yesodei Hatorah,Graduate,78,2022
+481438,Yeshiva Yesodei Hatorah,Undergraduate,85,2023
+481438,Yeshiva Yesodei Hatorah,Graduate,85,2023
+481447,Center for the Healing Arts,Undergraduate,43,2018
+481447,Center for the Healing Arts,Graduate,43,2018
+481447,Center for the Healing Arts,Undergraduate,36,2019
+481447,Center for the Healing Arts,Graduate,36,2019
+481447,Center for the Healing Arts,Undergraduate,47,2020
+481447,Center for the Healing Arts,Graduate,47,2020
+481447,Center for the Healing Arts,Undergraduate,36,2021
+481447,Center for the Healing Arts,Graduate,36,2021
+481447,Center for the Healing Arts,Undergraduate,49,2022
+481447,Center for the Healing Arts,Graduate,49,2022
+481447,Center for the Healing Arts,Undergraduate,55,2023
+481447,Center for the Healing Arts,Graduate,55,2023
+481508,Paul Mitchell the School-Jersey Shore,Undergraduate,172,2018
+481508,Paul Mitchell the School-Jersey Shore,Graduate,172,2018
+481508,Paul Mitchell the School-Jersey Shore,Undergraduate,70,2019
+481508,Paul Mitchell the School-Jersey Shore,Graduate,70,2019
+481508,Paul Mitchell the School-Jersey Shore,Undergraduate,107,2020
+481508,Paul Mitchell the School-Jersey Shore,Graduate,107,2020
+481508,Paul Mitchell the School-Jersey Shore,Undergraduate,74,2021
+481508,Paul Mitchell the School-Jersey Shore,Graduate,74,2021
+482556,DeVry University-New Jersey,Undergraduate,387,2018
+482556,DeVry University-New Jersey,Graduate,335,2018
+482556,DeVry University-New Jersey,Undergraduate,244,2019
+482556,DeVry University-New Jersey,Graduate,219,2019
+482556,DeVry University-New Jersey,Undergraduate,372,2020
+482556,DeVry University-New Jersey,Graduate,331,2020
+482556,DeVry University-New Jersey,Undergraduate,262,2021
+482556,DeVry University-New Jersey,Graduate,232,2021
+482556,DeVry University-New Jersey,Undergraduate,189,2022
+482556,DeVry University-New Jersey,Graduate,171,2022
+482556,DeVry University-New Jersey,Undergraduate,121,2023
+482556,DeVry University-New Jersey,Graduate,112,2023
+482963,American Institute-Toms River,Undergraduate,346,2018
+482963,American Institute-Toms River,Graduate,346,2018
+482963,American Institute-Toms River,Undergraduate,335,2019
+482963,American Institute-Toms River,Graduate,335,2019
+482963,American Institute-Toms River,Undergraduate,480,2020
+482963,American Institute-Toms River,Graduate,480,2020
+482963,American Institute-Toms River,Undergraduate,520,2021
+482963,American Institute-Toms River,Graduate,520,2021
+482963,American Institute-Toms River,Undergraduate,513,2022
+482963,American Institute-Toms River,Graduate,513,2022
+482963,American Institute-Toms River,Undergraduate,620,2023
+482963,American Institute-Toms River,Graduate,620,2023
+483106,Innovate Salon Academy,Undergraduate,135,2018
+483106,Innovate Salon Academy,Graduate,135,2018
+483106,Innovate Salon Academy,Undergraduate,173,2019
+483106,Innovate Salon Academy,Graduate,173,2019
+483106,Innovate Salon Academy,Undergraduate,286,2020
+483106,Innovate Salon Academy,Graduate,286,2020
+483106,Innovate Salon Academy,Undergraduate,320,2021
+483106,Innovate Salon Academy,Graduate,320,2021
+483106,Innovate Salon Academy,Undergraduate,324,2022
+483106,Innovate Salon Academy,Graduate,324,2022
+483106,Innovate Salon Academy,Undergraduate,373,2023
+483106,Innovate Salon Academy,Graduate,373,2023
+484321,Jolie Health and Beauty Academy-Turnersville,Undergraduate,73,2018
+484321,Jolie Health and Beauty Academy-Turnersville,Graduate,73,2018
+484321,Jolie Health and Beauty Academy-Turnersville,Undergraduate,56,2019
+484321,Jolie Health and Beauty Academy-Turnersville,Graduate,56,2019
+484321,Jolie Health and Beauty Academy-Turnersville,Undergraduate,97,2020
+484321,Jolie Health and Beauty Academy-Turnersville,Graduate,97,2020
+486734,Jolie Health & Beauty Academy-Cherry Hill,Undergraduate,145,2018
+486734,Jolie Health & Beauty Academy-Cherry Hill,Graduate,145,2018
+486734,Jolie Health & Beauty Academy-Cherry Hill,Undergraduate,118,2019
+486734,Jolie Health & Beauty Academy-Cherry Hill,Graduate,118,2019
+486734,Jolie Health & Beauty Academy-Cherry Hill,Undergraduate,172,2020
+486734,Jolie Health & Beauty Academy-Cherry Hill,Graduate,172,2020
+486956,Chamberlain University-New Jersey,Undergraduate,677,2018
+486956,Chamberlain University-New Jersey,Graduate,677,2018
+486956,Chamberlain University-New Jersey,Undergraduate,789,2019
+486956,Chamberlain University-New Jersey,Graduate,789,2019
+486956,Chamberlain University-New Jersey,Undergraduate,1094,2020
+486956,Chamberlain University-New Jersey,Graduate,1094,2020
+486956,Chamberlain University-New Jersey,Undergraduate,1493,2021
+486956,Chamberlain University-New Jersey,Graduate,1493,2021
+486956,Chamberlain University-New Jersey,Undergraduate,1712,2022
+486956,Chamberlain University-New Jersey,Graduate,1712,2022
+486956,Chamberlain University-New Jersey,Undergraduate,1825,2023
+486956,Chamberlain University-New Jersey,Graduate,1825,2023
+487852,American Institute of Alternative Medicine,Undergraduate,35,2018
+487852,American Institute of Alternative Medicine,Graduate,35,2018
+487852,American Institute of Alternative Medicine,Undergraduate,25,2019
+487852,American Institute of Alternative Medicine,Graduate,25,2019
+487852,American Institute of Alternative Medicine,Undergraduate,19,2020
+487852,American Institute of Alternative Medicine,Graduate,19,2020
+487852,American Institute of Alternative Medicine,Undergraduate,38,2021
+487852,American Institute of Alternative Medicine,Graduate,38,2021
+487852,American Institute of Alternative Medicine,Undergraduate,46,2022
+487852,American Institute of Alternative Medicine,Graduate,46,2022
+487852,American Institute of Alternative Medicine,Undergraduate,46,2023
+487852,American Institute of Alternative Medicine,Graduate,46,2023
+488013,Garden State Science and Technology Institute,Undergraduate,61,2018
+488013,Garden State Science and Technology Institute,Graduate,61,2018
+488013,Garden State Science and Technology Institute,Undergraduate,75,2019
+488013,Garden State Science and Technology Institute,Graduate,75,2019
+488013,Garden State Science and Technology Institute,Undergraduate,108,2020
+488013,Garden State Science and Technology Institute,Graduate,108,2020
+488013,Garden State Science and Technology Institute,Undergraduate,129,2021
+488013,Garden State Science and Technology Institute,Graduate,129,2021
+488013,Garden State Science and Technology Institute,Undergraduate,233,2022
+488013,Garden State Science and Technology Institute,Graduate,233,2022
+488013,Garden State Science and Technology Institute,Undergraduate,491,2023
+488013,Garden State Science and Technology Institute,Graduate,491,2023
+488314,Beth Medrash of Asbury Park,Undergraduate,58,2018
+488314,Beth Medrash of Asbury Park,Graduate,58,2018
+488314,Beth Medrash of Asbury Park,Undergraduate,66,2019
+488314,Beth Medrash of Asbury Park,Graduate,66,2019
+488314,Beth Medrash of Asbury Park,Undergraduate,90,2020
+488314,Beth Medrash of Asbury Park,Graduate,90,2020
+488314,Beth Medrash of Asbury Park,Undergraduate,75,2021
+488314,Beth Medrash of Asbury Park,Graduate,75,2021
+488314,Beth Medrash of Asbury Park,Undergraduate,85,2022
+488314,Beth Medrash of Asbury Park,Graduate,85,2022
+488314,Beth Medrash of Asbury Park,Undergraduate,132,2023
+488314,Beth Medrash of Asbury Park,Graduate,132,2023
+488350,Yeshiva Gedolah Shaarei Shmuel,Undergraduate,77,2018
+488350,Yeshiva Gedolah Shaarei Shmuel,Graduate,77,2018
+488350,Yeshiva Gedolah Shaarei Shmuel,Undergraduate,90,2019
+488350,Yeshiva Gedolah Shaarei Shmuel,Graduate,90,2019
+488350,Yeshiva Gedolah Shaarei Shmuel,Undergraduate,99,2020
+488350,Yeshiva Gedolah Shaarei Shmuel,Graduate,99,2020
+488350,Yeshiva Gedolah Shaarei Shmuel,Undergraduate,106,2021
+488350,Yeshiva Gedolah Shaarei Shmuel,Graduate,106,2021
+488350,Yeshiva Gedolah Shaarei Shmuel,Undergraduate,109,2022
+488350,Yeshiva Gedolah Shaarei Shmuel,Graduate,109,2022
+488350,Yeshiva Gedolah Shaarei Shmuel,Undergraduate,150,2023
+488350,Yeshiva Gedolah Shaarei Shmuel,Graduate,150,2023
+490249,Mobile Technical Training,Undergraduate,31,2018
+490249,Mobile Technical Training,Graduate,31,2018
+490249,Mobile Technical Training,Undergraduate,29,2019
+490249,Mobile Technical Training,Graduate,29,2019
+490249,Mobile Technical Training,Undergraduate,44,2020
+490249,Mobile Technical Training,Graduate,44,2020
+490249,Mobile Technical Training,Undergraduate,33,2021
+490249,Mobile Technical Training,Graduate,33,2021
+490249,Mobile Technical Training,Undergraduate,51,2022
+490249,Mobile Technical Training,Graduate,51,2022
+490249,Mobile Technical Training,Undergraduate,71,2023
+490249,Mobile Technical Training,Graduate,71,2023
+490300,Cutting Edge Academy,Undergraduate,77,2018
+490300,Cutting Edge Academy,Graduate,77,2018
+490300,Cutting Edge Academy,Undergraduate,79,2019
+490300,Cutting Edge Academy,Graduate,79,2019
+490300,Cutting Edge Academy,Undergraduate,109,2020
+490300,Cutting Edge Academy,Graduate,109,2020
+490300,Cutting Edge Academy,Undergraduate,130,2021
+490300,Cutting Edge Academy,Graduate,130,2021
+490300,Cutting Edge Academy,Undergraduate,123,2022
+490300,Cutting Edge Academy,Graduate,123,2022
+490300,Cutting Edge Academy,Undergraduate,147,2023
+490300,Cutting Edge Academy,Graduate,147,2023
+490319,Yeshiva Bais Aharon,Undergraduate,41,2018
+490319,Yeshiva Bais Aharon,Graduate,41,2018
+490319,Yeshiva Bais Aharon,Undergraduate,31,2019
+490319,Yeshiva Bais Aharon,Graduate,31,2019
+490319,Yeshiva Bais Aharon,Undergraduate,34,2020
+490319,Yeshiva Bais Aharon,Graduate,34,2020
+490319,Yeshiva Bais Aharon,Undergraduate,42,2021
+490319,Yeshiva Bais Aharon,Graduate,42,2021
+490319,Yeshiva Bais Aharon,Undergraduate,22,2022
+490319,Yeshiva Bais Aharon,Graduate,22,2022
+490319,Yeshiva Bais Aharon,Undergraduate,16,2023
+490319,Yeshiva Bais Aharon,Graduate,16,2023
+490513,Bais Medrash Mayan Hatorah,Undergraduate,69,2018
+490513,Bais Medrash Mayan Hatorah,Graduate,69,2018
+490513,Bais Medrash Mayan Hatorah,Undergraduate,46,2019
+490513,Bais Medrash Mayan Hatorah,Graduate,46,2019
+490513,Bais Medrash Mayan Hatorah,Undergraduate,58,2020
+490513,Bais Medrash Mayan Hatorah,Graduate,58,2020
+490513,Bais Medrash Mayan Hatorah,Undergraduate,63,2021
+490513,Bais Medrash Mayan Hatorah,Graduate,63,2021
+490513,Bais Medrash Mayan Hatorah,Undergraduate,69,2022
+490513,Bais Medrash Mayan Hatorah,Graduate,69,2022
+490513,Bais Medrash Mayan Hatorah,Undergraduate,47,2023
+490513,Bais Medrash Mayan Hatorah,Graduate,47,2023
+490869,American Institute-Somerset,Undergraduate,200,2018
+490869,American Institute-Somerset,Graduate,200,2018
+490869,American Institute-Somerset,Undergraduate,266,2019
+490869,American Institute-Somerset,Graduate,266,2019
+490869,American Institute-Somerset,Undergraduate,473,2020
+490869,American Institute-Somerset,Graduate,473,2020
+490869,American Institute-Somerset,Undergraduate,620,2021
+490869,American Institute-Somerset,Graduate,620,2021
+490869,American Institute-Somerset,Undergraduate,574,2022
+490869,American Institute-Somerset,Graduate,574,2022
+490869,American Institute-Somerset,Undergraduate,484,2023
+490869,American Institute-Somerset,Graduate,484,2023
+490896,Advantage Career Institute,Undergraduate,104,2018
+490896,Advantage Career Institute,Graduate,104,2018
+490896,Advantage Career Institute,Undergraduate,74,2019
+490896,Advantage Career Institute,Graduate,74,2019
+490896,Advantage Career Institute,Undergraduate,223,2020
+490896,Advantage Career Institute,Graduate,223,2020
+490896,Advantage Career Institute,Undergraduate,376,2021
+490896,Advantage Career Institute,Graduate,376,2021
+490896,Advantage Career Institute,Undergraduate,332,2022
+490896,Advantage Career Institute,Graduate,332,2022
+490896,Advantage Career Institute,Undergraduate,255,2023
+490896,Advantage Career Institute,Graduate,255,2023
+491613,Yeshiva Gedolah Tiferes Boruch,Undergraduate,63,2018
+491613,Yeshiva Gedolah Tiferes Boruch,Graduate,63,2018
+491613,Yeshiva Gedolah Tiferes Boruch,Undergraduate,65,2019
+491613,Yeshiva Gedolah Tiferes Boruch,Graduate,65,2019
+491613,Yeshiva Gedolah Tiferes Boruch,Undergraduate,66,2020
+491613,Yeshiva Gedolah Tiferes Boruch,Graduate,66,2020
+491613,Yeshiva Gedolah Tiferes Boruch,Undergraduate,90,2021
+491613,Yeshiva Gedolah Tiferes Boruch,Graduate,90,2021
+491613,Yeshiva Gedolah Tiferes Boruch,Undergraduate,92,2022
+491613,Yeshiva Gedolah Tiferes Boruch,Graduate,92,2022
+491613,Yeshiva Gedolah Tiferes Boruch,Undergraduate,77,2023
+491613,Yeshiva Gedolah Tiferes Boruch,Graduate,77,2023
+491622,Yeshiva Chemdas Hatorah,Undergraduate,63,2018
+491622,Yeshiva Chemdas Hatorah,Graduate,63,2018
+491622,Yeshiva Chemdas Hatorah,Undergraduate,71,2019
+491622,Yeshiva Chemdas Hatorah,Graduate,71,2019
+491622,Yeshiva Chemdas Hatorah,Undergraduate,76,2020
+491622,Yeshiva Chemdas Hatorah,Graduate,76,2020
+491622,Yeshiva Chemdas Hatorah,Undergraduate,92,2021
+491622,Yeshiva Chemdas Hatorah,Graduate,92,2021
+491622,Yeshiva Chemdas Hatorah,Undergraduate,93,2022
+491622,Yeshiva Chemdas Hatorah,Graduate,93,2022
+491622,Yeshiva Chemdas Hatorah,Undergraduate,88,2023
+491622,Yeshiva Chemdas Hatorah,Graduate,88,2023
+491640,Yeshiva Gedolah Keren Hatorah,Undergraduate,147,2018
+491640,Yeshiva Gedolah Keren Hatorah,Graduate,147,2018
+491640,Yeshiva Gedolah Keren Hatorah,Undergraduate,155,2019
+491640,Yeshiva Gedolah Keren Hatorah,Graduate,155,2019
+491640,Yeshiva Gedolah Keren Hatorah,Undergraduate,159,2020
+491640,Yeshiva Gedolah Keren Hatorah,Graduate,159,2020
+491640,Yeshiva Gedolah Keren Hatorah,Undergraduate,171,2021
+491640,Yeshiva Gedolah Keren Hatorah,Graduate,171,2021
+491640,Yeshiva Gedolah Keren Hatorah,Undergraduate,178,2022
+491640,Yeshiva Gedolah Keren Hatorah,Graduate,178,2022
+491640,Yeshiva Gedolah Keren Hatorah,Undergraduate,191,2023
+491640,Yeshiva Gedolah Keren Hatorah,Graduate,191,2023
+491710,Yeshiva Gedolah of Cliffwood,Undergraduate,84,2018
+491710,Yeshiva Gedolah of Cliffwood,Graduate,84,2018
+491710,Yeshiva Gedolah of Cliffwood,Undergraduate,93,2019
+491710,Yeshiva Gedolah of Cliffwood,Graduate,93,2019
+491710,Yeshiva Gedolah of Cliffwood,Undergraduate,116,2020
+491710,Yeshiva Gedolah of Cliffwood,Graduate,116,2020
+491710,Yeshiva Gedolah of Cliffwood,Undergraduate,143,2021
+491710,Yeshiva Gedolah of Cliffwood,Graduate,143,2021
+491710,Yeshiva Gedolah of Cliffwood,Undergraduate,118,2022
+491710,Yeshiva Gedolah of Cliffwood,Graduate,118,2022
+491710,Yeshiva Gedolah of Cliffwood,Undergraduate,74,2023
+491710,Yeshiva Gedolah of Cliffwood,Graduate,74,2023
+491765,Yeshivas Emek Hatorah,Undergraduate,46,2018
+491765,Yeshivas Emek Hatorah,Graduate,46,2018
+491765,Yeshivas Emek Hatorah,Undergraduate,87,2019
+491765,Yeshivas Emek Hatorah,Graduate,87,2019
+491765,Yeshivas Emek Hatorah,Undergraduate,92,2020
+491765,Yeshivas Emek Hatorah,Graduate,92,2020
+491765,Yeshivas Emek Hatorah,Undergraduate,103,2021
+491765,Yeshivas Emek Hatorah,Graduate,103,2021
+491765,Yeshivas Emek Hatorah,Undergraduate,102,2022
+491765,Yeshivas Emek Hatorah,Graduate,102,2022
+491765,Yeshivas Emek Hatorah,Undergraduate,101,2023
+491765,Yeshivas Emek Hatorah,Graduate,101,2023
+491817,Seminary Bnos Chaim,Undergraduate,159,2018
+491817,Seminary Bnos Chaim,Graduate,159,2018
+491817,Seminary Bnos Chaim,Undergraduate,200,2019
+491817,Seminary Bnos Chaim,Graduate,200,2019
+491817,Seminary Bnos Chaim,Undergraduate,204,2020
+491817,Seminary Bnos Chaim,Graduate,204,2020
+491817,Seminary Bnos Chaim,Undergraduate,271,2021
+491817,Seminary Bnos Chaim,Graduate,271,2021
+491817,Seminary Bnos Chaim,Undergraduate,229,2022
+491817,Seminary Bnos Chaim,Graduate,229,2022
+491817,Seminary Bnos Chaim,Undergraduate,207,2023
+491817,Seminary Bnos Chaim,Graduate,207,2023
+491914,Yeshiva Gedola Tiferes Yerachmiel,Undergraduate,128,2018
+491914,Yeshiva Gedola Tiferes Yerachmiel,Graduate,128,2018
+491914,Yeshiva Gedola Tiferes Yerachmiel,Undergraduate,135,2019
+491914,Yeshiva Gedola Tiferes Yerachmiel,Graduate,135,2019
+491914,Yeshiva Gedola Tiferes Yerachmiel,Undergraduate,147,2020
+491914,Yeshiva Gedola Tiferes Yerachmiel,Graduate,147,2020
+491914,Yeshiva Gedola Tiferes Yerachmiel,Undergraduate,180,2021
+491914,Yeshiva Gedola Tiferes Yerachmiel,Graduate,180,2021
+491914,Yeshiva Gedola Tiferes Yerachmiel,Undergraduate,184,2022
+491914,Yeshiva Gedola Tiferes Yerachmiel,Graduate,184,2022
+491914,Yeshiva Gedola Tiferes Yerachmiel,Undergraduate,193,2023
+491914,Yeshiva Gedola Tiferes Yerachmiel,Graduate,193,2023
+492731,Innovate Salon Academy,Undergraduate,62,2018
+492731,Innovate Salon Academy,Graduate,62,2018
+492731,Innovate Salon Academy,Undergraduate,68,2019
+492731,Innovate Salon Academy,Graduate,68,2019
+492731,Innovate Salon Academy,Undergraduate,140,2020
+492731,Innovate Salon Academy,Graduate,140,2020
+492731,Innovate Salon Academy,Undergraduate,192,2021
+492731,Innovate Salon Academy,Graduate,192,2021
+492731,Innovate Salon Academy,Undergraduate,307,2022
+492731,Innovate Salon Academy,Graduate,307,2022
+492731,Innovate Salon Academy,Undergraduate,258,2023
+492731,Innovate Salon Academy,Graduate,258,2023
+493132,Universal Technical Institute-Bloomfield,Undergraduate,228,2018
+493132,Universal Technical Institute-Bloomfield,Graduate,228,2018
+493132,Universal Technical Institute-Bloomfield,Undergraduate,733,2019
+493132,Universal Technical Institute-Bloomfield,Graduate,733,2019
+493132,Universal Technical Institute-Bloomfield,Undergraduate,1005,2020
+493132,Universal Technical Institute-Bloomfield,Graduate,1005,2020
+493132,Universal Technical Institute-Bloomfield,Undergraduate,1310,2021
+493132,Universal Technical Institute-Bloomfield,Graduate,1310,2021
+493132,Universal Technical Institute-Bloomfield,Undergraduate,1413,2022
+493132,Universal Technical Institute-Bloomfield,Graduate,1413,2022
+493132,Universal Technical Institute-Bloomfield,Undergraduate,1431,2023
+493132,Universal Technical Institute-Bloomfield,Graduate,1431,2023
+493628,Pro Beauty Academy,Undergraduate,62,2019
+493628,Pro Beauty Academy,Graduate,62,2019
+493628,Pro Beauty Academy,Undergraduate,100,2020
+493628,Pro Beauty Academy,Graduate,100,2020
+493628,Pro Beauty Academy,Undergraduate,190,2021
+493628,Pro Beauty Academy,Graduate,190,2021
+493628,Pro Beauty Academy,Undergraduate,283,2022
+493628,Pro Beauty Academy,Graduate,283,2022
+493628,Pro Beauty Academy,Undergraduate,310,2023
+493628,Pro Beauty Academy,Graduate,310,2023
+493707,Yeshiva Gedolah of Woodlake Village,Undergraduate,65,2019
+493707,Yeshiva Gedolah of Woodlake Village,Graduate,65,2019
+493707,Yeshiva Gedolah of Woodlake Village,Undergraduate,80,2020
+493707,Yeshiva Gedolah of Woodlake Village,Graduate,80,2020
+493707,Yeshiva Gedolah of Woodlake Village,Undergraduate,89,2021
+493707,Yeshiva Gedolah of Woodlake Village,Graduate,89,2021
+493707,Yeshiva Gedolah of Woodlake Village,Undergraduate,101,2022
+493707,Yeshiva Gedolah of Woodlake Village,Graduate,101,2022
+493707,Yeshiva Gedolah of Woodlake Village,Undergraduate,102,2023
+493707,Yeshiva Gedolah of Woodlake Village,Graduate,102,2023
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Undergraduate,70,2019
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Graduate,70,2019
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Undergraduate,75,2020
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Graduate,75,2020
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Undergraduate,98,2021
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Graduate,98,2021
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Undergraduate,84,2022
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Graduate,84,2022
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Undergraduate,72,2023
+493716,Yeshiva Gedola Tiferes Yaakov Yitzchok,Graduate,72,2023
+495314,Hackensack Meridian School of Medicine,Undergraduate,151,2020
+495314,Hackensack Meridian School of Medicine,Undergraduate,273,2021
+495314,Hackensack Meridian School of Medicine,Undergraduate,407,2022
+495314,Hackensack Meridian School of Medicine,Undergraduate,494,2023
