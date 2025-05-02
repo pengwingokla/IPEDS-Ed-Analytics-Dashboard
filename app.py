@@ -183,7 +183,6 @@ elif st.session_state.active_page == "Graduation":
             with col1:
                 fig = graduation_funnel_chart(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
                 st.plotly_chart(fig, use_container_width=True)
-                st.button("𝒾", help="Graduation funnel for Bachelor's cohort.")
 
             with col2:
                 fig = plot_graduation_rate_trend(grad_data, selected_unitid=selected_unitid)
