@@ -1,0 +1,15 @@
+# Ignore Python virtual environment
+.venv/
+
+# Ignore data or processed directories
+adm/
+effy/
+grad/
+
+# Bytecode files
+__pycache__/
+*.py[cod]
+
+# OS or editor-specific files
+.DS_Store
+*.swp
