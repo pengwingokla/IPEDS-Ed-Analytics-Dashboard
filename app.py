@@ -22,6 +22,12 @@ from charts_graduation import (
     plot_school_graduation_share_pie_by_unitid
 )
 
+from charts_finaid import (
+    plot_net_price_by_income,
+    plot_top20_institutions_by_total_aid,
+    plot_aid_type_breakdown_percent
+)
+
 # ---- Set Page Config ----
 st.set_page_config(
     page_title="University Insights",
@@ -60,6 +66,8 @@ with st.sidebar:
         st.session_state.active_page = "Enrollment"
     if st.button("Graduation"):
         st.session_state.active_page = "Graduation"
+    if st.button("Financial Aid"):
+        st.session_state.active_page = "Financial Aid"
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ---- Sub-Section Buttons for Enrollment ----
@@ -100,8 +108,10 @@ if (
 # 🔹 Load datasets
 adms_fpath = "data/NJ_admission_data.csv"
 effy_fpath = "data/NJ_enrollment_data.csv"
+sfa_fpath = "data/NJ_sfa_data.csv"
 adms_data = load_data(adms_fpath)
 effy_data = load_data(effy_fpath)
+sfa_data = load_data(sfa_fpath)
 
 # 🔸🔸 Enrollment Page 🔸🔸
 if st.session_state.active_page == "Enrollment":
@@ -245,3 +255,37 @@ elif st.session_state.active_page == "Graduation":
 # You can uncomment this if needed
 # fig = plot_graduation_by_gender_bar(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
 # st.plotly_chart(fig, use_container_width=True)
+
+# 🔸🔸 Financial Aid Page 🔸🔸
+elif st.session_state.active_page == "Financial Aid":
+    st.markdown("""### :orange[Financial Aid]""")
+    sfa_data = load_data(sfa_fpath)
+    
+    # Get sorted list of all institution names
+    all_schools = sorted(sfa_data["university_name"].dropna().unique())
+    default_school = "New Jersey Institute of Technology"
+
+    # Create and display the top 20 institutions by total aid chart
+    fig = plot_top20_institutions_by_total_aid(sfa_data)
+    st.plotly_chart(fig, use_container_width=True)
+    st.button("𝒾", help="This chart displays the top 20 institutions by total aid disbursed (grants + Pell + loans) in New Jersey. It helps identify the institutions that provide the highest financial assistance to students.")
+
+    # School selection dropdown
+    selected_school = st.selectbox(
+        "Select an Institution",
+        all_schools,
+        index=all_schools.index(default_school) if default_school in all_schools else 0
+    )
+
+    # Get UNITID for selected school
+    selected_unitid = sfa_data[sfa_data["university_name"] == selected_school]["unitid"].iloc[0]
+
+    # Create and display the net price chart
+    fig = plot_net_price_by_income(sfa_data, selected_school)
+    st.plotly_chart(fig, use_container_width=True)
+    st.button("𝒾", help="This chart shows the average net price paid by students in different family income brackets after accounting for all forms of financial aid. Net price represents the actual out-of-pocket cost for students and families.")
+
+    # Create and display the aid type breakdown chart
+    fig = plot_aid_type_breakdown_percent(sfa_data, selected_school)
+    st.plotly_chart(fig, use_container_width=True)
+    st.button("𝒾", help="This chart shows the percentage breakdown of total aid (grants, Pell, loans) per institution.")
