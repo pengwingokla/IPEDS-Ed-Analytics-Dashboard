@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_grtype
+    description: "Lookup for GRTYPE (graduation cohort status)."
+    columns:
+      - name: grtype_code
+        tests: [not_null, unique]
+      - name: grtype_label
+
+  - name: dim_chrtstat
+    description: "Lookup for CHRTSTAT (graduation rate status)."
+    columns:
+      - name: chrtstat_code
+        tests: [not_null, unique]
+
+  - name: dim_section
+    description: "Lookup for SECTION (survey section)."
+    columns:
+      - name: section_code
+        tests: [not_null, unique]
+
+  - name: dim_cohort
+    description: "Lookup for COHORT."
+    columns:
+      - name: cohort_code
+        tests: [not_null, unique]
+
+  - name: dim_line
+    description: "Lookup for LINE (original line number)."
+    columns:
+      - name: line_code
+        tests: [not_null, unique]
