@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: raw_ipeds
+    database: IPEDS
+    schema: RAW
+    tables:
+      - name: GRAD2023
+      - name: GRAD2022
+      - name: GRAD2021
+      - name: GRAD2020
