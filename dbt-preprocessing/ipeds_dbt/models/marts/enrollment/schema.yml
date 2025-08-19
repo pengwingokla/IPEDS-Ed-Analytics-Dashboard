@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: enrollment
+    description: "Comprehensive enrollment data table with demographic breakdowns (2023+)"
+    columns:
+      - name: institution_id
+        description: "Unique identification number of the institution"
+        tests: [not_null, unique]
+      - name: survey_year
+        description: "Survey year"
+        tests: [not_null, unique]
+      - name: student_level_and_degree_status
+        description: "Level and degree/certificate-seeking status of student"
+      - name: undergraduate_graduate_level
+        description: "Undergraduate or graduate level of student"
+      - name: original_level_of_study
+        description: "Original level of study on survey form"
+      - name: grand_total
+        description: "Grand total enrollment"
+      - name: grand_total_men
+        description: "Grand total men enrollment"
+      - name: grand_total_women
+        description: "Grand total women enrollment"
+      - name: american_indian_total
+        description: "American Indian or Alaska Native total enrollment"
+      - name: asian_total
+        description: "Asian total enrollment"
+      - name: black_african_american_total
+        description: "Black or African American total enrollment"
+      - name: hispanic_latino_total
+        description: "Hispanic or Latino total enrollment"
+      - name: native_hawaiian_pacific_islander_total
+        description: "Native Hawaiian or Other Pacific Islander total enrollment"
+      - name: white_total
+        description: "White total enrollment"
+      - name: two_or_more_races_total
+        description: "Two or more races total enrollment"
+      - name: race_ethnicity_unknown_total
+        description: "Race/ethnicity unknown total enrollment"
+      - name: us_nonresident_total
+        description: "U.S. Nonresident total enrollment"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - institution_id
+            - survey_year
+            - student_level_and_degree_status
+            - undergraduate_graduate_level
+            - original_level_of_study

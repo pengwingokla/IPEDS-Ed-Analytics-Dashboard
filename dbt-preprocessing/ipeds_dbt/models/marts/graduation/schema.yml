@@ -1,0 +1,12 @@
+version: 2
+models:
+  - name: graduation
+    description: "Descriptive graduation rate table (2023)."
+    columns:
+      - name: institution_id
+        tests: [not_null]
+    tests:
+      - relationships:
+          to: ref('dim_grtype')
+          field: grtype_code
+          column_name: grad_type

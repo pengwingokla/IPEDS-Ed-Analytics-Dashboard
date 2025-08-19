@@ -1,0 +1,79 @@
+name: 'ipeds_dbt'
+version: '1.0.0'
+config-version: 2
+
+# Which profile in profiles.yml to use
+profile: 'ipeds_dbt'
+
+# Paths
+model-paths: ['models']
+seed-paths: ['seeds']
+snapshot-paths: ['snapshots']
+test-paths: ['tests']
+analysis-paths: ['analyses']
+macro-paths: ['macros']
+
+vars:
+  grad_years: [2020, 2021, 2022, 2023]
+
+# Where dbt puts compiled SQL + artifacts
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  ipeds_dbt:
+    +materialized: table
+
+    staging:
+      +schema: STAGING
+    dimensions:
+      +schema: DIMENSIONS
+    marts:
+      +schema: MARTS
+
+# Configure seed files (lookup/code tables)
+seeds:
+  ipeds_dbt:
+    +quote_columns: false
+
+    # ----------
+    graduation:
+      +schema: SEEDS_GRADUATION
+
+      chrtstat_code:
+        column_types:
+          code: varchar
+          label: varchar
+      cohort_code:
+        column_types:
+          code: varchar
+          label: varchar
+      grtype_code:
+        column_types:
+          code: varchar
+          label: varchar
+      line_code:
+        column_types:
+          code: varchar
+          label: varchar
+      section_code:
+        column_types:
+          code: varchar
+          label: varchar
+      varlist_columns_grad:
+        column_types:
+          varname: varchar
+          vartitle: varchar
+    
+    # ----------
+    enrollment:
+      +schema: SEEDS_ENROLLMENT
+      effyalev_code:
+        column_types:
+          code: varchar
+          label: varchar
+      varlist_columns_effy:
+        column_types:
+          code: varchar
+          label: varchar
