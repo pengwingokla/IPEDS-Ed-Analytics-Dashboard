@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: stage__grad2023
+    description: "Graduation Survey 2023 staging model (renamed & typed)."
+    columns:
+      - name: institution_id
+        tests: [not_null]
+      - name: grtype_code
+      - name: chrtstat_code
+      - name: section_code
+      - name: cohort_code
+      - name: line_code
+  - name: stage__grad2022
+    description: "Graduation Survey 2022 staging model (renamed & typed)."
+    columns:
+      - name: institution_id
+        tests: [not_null]
+      - name: grtype_code
+      - name: chrtstat_code
+      - name: section_code
+      - name: cohort_code
+      - name: line_code

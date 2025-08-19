@@ -10,6 +10,10 @@ grad/
 __pycache__/
 *.py[cod]
 
+# Data files
+*.csv
+*.xlsx
+
 # OS or editor-specific files
 .DS_Store
 *.swp
