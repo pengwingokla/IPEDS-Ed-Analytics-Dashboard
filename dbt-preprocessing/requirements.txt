@@ -1,0 +1,14 @@
+# Data processing
+pandas==2.3.1
+numpy==2.3.2
+openpyxl==3.1.5
+
+# dbt dependencies
+dbt-core==1.10.9
+dbt-postgres==1.9.0
+
+# Jupyter notebook support
+ipykernel==6.30.1
+ipython==9.4.0
+jupyter_client==8.6.3
+jupyter_core==5.8.1

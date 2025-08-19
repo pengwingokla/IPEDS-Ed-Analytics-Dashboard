@@ -35,30 +35,45 @@ models:
 # Configure seed files (lookup/code tables)
 seeds:
   ipeds_dbt:
-    +schema: SEEDS
     +quote_columns: false
 
-    chrtstat_code:
-      column_types:
-        code: varchar
-        label: varchar
-    cohort_code:
-      column_types:
-        code: varchar
-        label: varchar
-    grtype_code:
-      column_types:
-        code: varchar
-        label: varchar
-    line_code:
-      column_types:
-        code: varchar
-        label: varchar
-    section_code:
-      column_types:
-        code: varchar
-        label: varchar
-    varlist_columns:
-      column_types:
-        varname: varchar
-        vartitle: varchar
+    # ----------
+    graduation:
+      +schema: SEEDS_GRADUATION
+
+      chrtstat_code:
+        column_types:
+          code: varchar
+          label: varchar
+      cohort_code:
+        column_types:
+          code: varchar
+          label: varchar
+      grtype_code:
+        column_types:
+          code: varchar
+          label: varchar
+      line_code:
+        column_types:
+          code: varchar
+          label: varchar
+      section_code:
+        column_types:
+          code: varchar
+          label: varchar
+      varlist_columns_grad:
+        column_types:
+          varname: varchar
+          vartitle: varchar
+    
+    # ----------
+    enrollment:
+      +schema: SEEDS_ENROLLMENT
+      effyalev_code:
+        column_types:
+          code: varchar
+          label: varchar
+      varlist_columns_effy:
+        column_types:
+          code: varchar
+          label: varchar

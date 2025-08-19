@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: stage__enrollment2023
+    description: "Staging model for IPEDS enrollment survey year 2023"
+    columns:
+      - name: institution_id
+        description: "UNITID - Unique identification number of the institution"
+        tests:
+          - not_null
+      - name: year
+        description: "Survey year (2023)"
+        tests:
+          - not_null
+      - name: student_level
+        description: "EFFYALEV - Level and degree/certificate-seeking status of student"
+        tests:
+          - not_null
+      - name: total_enrolled
+        description: "EFYDETOT - All students enrolled (total enrollment)"
+      - name: exclusively_distance_ed
+        description: "EFYDEEXC - Students enrolled exclusively in distance education courses"
+      - name: some_distance_ed
+        description: "EFYDESOM - Students enrolled in some distance education courses but not exclusively"
+      - name: no_distance_ed
+        description: "EFYDENON - Students not enrolled in any distance education courses"
+
+  - name: stage__enrollment2022
+    description: "Staging model for IPEDS enrollment survey year 2022"
+    columns:
+      - name: institution_id
+      - name: year
+      - name: student_level
+      - name: total_enrolled
+      - name: exclusively_distance_ed
+      - name: some_distance_ed
+      - name: no_distance_ed
+
+  - name: stage__enrollment2021
+    description: "Staging model for IPEDS enrollment survey year 2021"
+    columns:
+      - name: institution_id
+      - name: year
+      - name: student_level
+      - name: total_enrolled
+      - name: exclusively_distance_ed
+      - name: some_distance_ed
+      - name: no_distance_ed
+
+  - name: stage__enrollment2020
+    description: "Staging model for IPEDS enrollment survey year 2020"
+    columns:
+      - name: institution_id
+      - name: year
+      - name: student_level
+      - name: total_enrolled
+      - name: exclusively_distance_ed
+      - name: some_distance_ed
+      - name: no_distance_ed
+
+  - name: stage__enrollment2019
+    description: "Staging model for IPEDS enrollment survey year 2019"
+    columns:
+      - name: institution_id
+      - name: year
+      - name: student_level
+      - name: total_enrolled
+      - name: exclusively_distance_ed
+      - name: some_distance_ed
+      - name: no_distance_ed
