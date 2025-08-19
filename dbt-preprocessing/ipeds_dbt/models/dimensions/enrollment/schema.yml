@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_effyalev
+    description: "Dimension table for level and degree/certificate-seeking status codes (EFFYALEV)"
+    columns:
+      - name: effyalev_code
+        tests: [not_null, unique]
+      - name: effyalev_label
+
+  - name: dim_effylev
+    description: "Dimension table for undergraduate or graduate level codes (EFFYLEV)"
+    columns:
+      - name: effylev_code
+        tests: [not_null, unique]
+      - name: effylev_label
+
+  - name: dim_lstudy
+    description: "Dimension table for original level of study codes (LSTUDY)"
+    columns:
+      - name: lstudy_code
+        tests: [not_null, unique]
+      - name: lstudy_label
