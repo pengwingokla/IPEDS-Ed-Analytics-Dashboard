@@ -1,7 +1,7 @@
 {% macro stg_grad_select(year) %}
     select
       {{ year }} as survey_year,
-      cast(UNITID   as number)  as institution_id,
+      cast(UNITID   as integer)  as institution_id,
       cast(GRTYPE   as varchar) as grtype_code,
       cast(CHRTSTAT as varchar) as chrtstat_code,
       cast(SECTION  as varchar) as section_code,
