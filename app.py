@@ -1,6 +1,19 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from info_button_text import (
+    get_enrollment_donut_chart_help,
+    get_enrollment_trends_help,
+    get_full_vs_part_time_trend_help,
+    get_admission_funnel_help,
+    get_total_enrollment_help,
+    get_gender_enrollment_help,
+    get_admission_yield_rate_help,
+    get_graduation_funnel_help,
+    get_top20_institutions_aid_help,
+    get_net_price_by_income_help,
+    get_aid_type_breakdown_help,
+)
 
 from charts_enrollment import (
     create_total_enrollment_bar_chart,
@@ -14,10 +27,10 @@ from charts_enrollment import (
 )
 
 from charts_graduation import (
-    graduation_funnel_chart,
-    plot_graduation_rate_trend,
+    plot_graduation_funnel,
     plot_graduation_by_race_treemap,
     # plot_graduation_by_gender_bar,
+    plot_university_wide_graduation_rate,
     plot_school_graduation_share_pie,
     plot_school_graduation_share_pie_by_unitid
 )
@@ -121,7 +134,7 @@ if st.session_state.active_page == "Enrollment":
         with col1:
             # First, render the chart first with a placeholder year
             chart_placeholder = st.empty()
-            st.button("𝒾", help="This donut chart visualizes the proportion of **total undergraduate enrollment** of the selected institution compared to the rest of New Jersey's higher education institutions. It provides a quick snapshot of how the selected school contributes to the overall state enrollment for the chosen year.")
+            st.button("𝒾", help=get_enrollment_donut_chart_help())
 
             # Then render dropdown below the chart
             available_years = sorted(adms_data["year"].dropna().unique())
@@ -151,7 +164,7 @@ if st.session_state.active_page == "Enrollment":
         col3, col4 = st.columns(2)
         with col3:
             st.plotly_chart(create_full_vs_part_time_trend(adms_data, trend_school), use_container_width=True)
-            st.button("𝒾", help="This line chart visualizes the yearly trend of first-time, degree/certificate-seeking students enrollment categorized by full-time and part-time status to help identifying shifts in institutional attendance patterns.")
+            st.button("𝒾", help=get_full_vs_part_time_trend_help())
 
         with col4:
             st.plotly_chart(plot_admission_funnel(adms_data, trend_school, selected_year=selected_year), use_container_width=True)
@@ -180,7 +193,7 @@ if st.session_state.active_page == "Enrollment":
             col1, col2 = st.columns(2)
             with col1:
                 st.plotly_chart(create_total_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
-                st.button("𝒾", help="Total undergraduate enrollment by institution.")
+                st.button("𝒾", help=get_total_enrollment_help())
             with col2:
                 st.plotly_chart(create_gender_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
                 st.button("𝒾", help="Enrollment by gender for selected institutions.")
@@ -197,6 +210,8 @@ elif st.session_state.active_page == "Graduation":
     st.markdown("""### :orange[Graduation]""")
     grad_fpath = "data/NJ_graduation_data.csv"
     grad_data = load_data(grad_fpath)
+    grad_data_dbt_fpath = "dbt-processed/graduation.csv"
+    grad_data_dbt = load_data(grad_data_dbt_fpath)
 
     available_years = sorted(grad_data["year"].dropna().unique())
     selected_years = st.multiselect(
@@ -215,11 +230,13 @@ elif st.session_state.active_page == "Graduation":
 
             col1, col2 = st.columns(2)
             with col1:
-                fig = graduation_funnel_chart(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
+                fig = plot_graduation_funnel(grad_data_dbt, selected_institution_id=selected_unitid, selected_year=selected_years[-1])
+                # fig = graduation_funnel_chart(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
                 st.plotly_chart(fig, use_container_width=True)
-
+                st.button("𝒾", help=get_graduation_funnel_help())
             with col2:
-                fig = plot_graduation_rate_trend(grad_data, selected_unitid=selected_unitid)
+                # fig = plot_graduation_rate_trend(grad_data, selected_unitid=selected_unitid)
+                fig = plot_university_wide_graduation_rate(grad_data_dbt, selected_unitid=selected_unitid)
                 st.plotly_chart(fig, use_container_width=True)
 
             col3, col4 = st.columns(2)
@@ -268,7 +285,7 @@ elif st.session_state.active_page == "Financial Aid":
     # Create and display the top 20 institutions by total aid chart
     fig = plot_top20_institutions_by_total_aid(sfa_data)
     st.plotly_chart(fig, use_container_width=True)
-    st.button("𝒾", help="This chart displays the top 20 institutions by total aid disbursed (grants + Pell + loans) in New Jersey. It helps identify the institutions that provide the highest financial assistance to students.")
+    st.button("𝒾", help=get_top20_institutions_aid_help())
 
     # School selection dropdown
     selected_school = st.selectbox(
@@ -283,9 +300,9 @@ elif st.session_state.active_page == "Financial Aid":
     # Create and display the net price chart
     fig = plot_net_price_by_income(sfa_data, selected_school)
     st.plotly_chart(fig, use_container_width=True)
-    st.button("𝒾", help="This chart shows the average net price paid by students in different family income brackets after accounting for all forms of financial aid. Net price represents the actual out-of-pocket cost for students and families.")
+    st.button("𝒾", help=get_net_price_by_income_help())
 
     # Create and display the aid type breakdown chart
     fig = plot_aid_type_breakdown_percent(sfa_data, selected_school)
     st.plotly_chart(fig, use_container_width=True)
-    st.button("𝒾", help="This chart shows the percentage breakdown of total aid (grants, Pell, loans) per institution.")
+    st.button("𝒾", help=get_aid_type_breakdown_help())
