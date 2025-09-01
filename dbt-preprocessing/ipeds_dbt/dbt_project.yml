@@ -38,6 +38,15 @@ seeds:
     +quote_columns: false
 
     # ----------
+    institution_info:
+      +schema: SEEDS_INSTITUTION
+      +column_types:
+        unitid: integer
+        institution_name: varchar
+        city: varchar
+        state_abbr: varchar
+
+    # ----------
     graduation:
       +schema: SEEDS_GRADUATION
 
