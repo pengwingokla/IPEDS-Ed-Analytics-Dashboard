@@ -14,11 +14,17 @@ with base as (
 select
   b.institution_id,
   b.survey_year,
+  -- Institution information
+  i.institution_name,
+  i.city,
+  i.state_abbr,
+  -- Graduation information
   g.grtype_label   as grad_type,
   c.chrtstat_label as grad_status,
   s.section_label  as section,
   h.cohort_label   as cohort,
   l.line_label     as line,
+  -- Graduation counts
   b.gr_total_all,  b.gr_total_male,  b.gr_total_female,
   b.gr_ai_an_all,  b.gr_ai_an_male,  b.gr_ai_an_female,
   b.gr_asian_all,  b.gr_asian_male,  b.gr_asian_female,
@@ -30,6 +36,7 @@ select
   b.gr_unknown_all, b.gr_unknown_male, b.gr_unknown_female,
   b.gr_nonresident_all, b.gr_nonresident_male, b.gr_nonresident_female
 from base b
+left join {{ ref('dim_institution') }} i on b.institution_id = i.unitid
 left join {{ ref('dim_grtype') }}   g on b.grtype_code   = g.grtype_code
 left join {{ ref('dim_chrtstat') }} c on b.chrtstat_code = c.chrtstat_code
 left join {{ ref('dim_section') }}  s on b.section_code  = s.section_code

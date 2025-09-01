@@ -99,7 +99,15 @@ dbt test --select staging
 dbt docs generate
 dbt docs serve
 ```
+To download csv locally, use SnowSQL:
+```bash
+snowsql -q "SELECT * FROM IPEDS.TRANSFORM_MARTS.enrollment" -o output_format=csv -o header=true -o output_file=enrollment-id.csv
+```
 
+Check profile info using:
+```bash
+cat ~/.dbt/profiles.yml
+```
 ## Configuration
 
 The project is configured in `dbt_project.yml` with:

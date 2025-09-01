@@ -1,6 +1,6 @@
 {{ config(materialized='table', cluster_by=['institution_id','survey_year']) }}
 
-{% set years = [2023] %}  -- Add more years as enrollment staging models are created
+{% set years = [2019, 2020, 2021, 2022, 2023] %}  -- All available enrollment years
 
 {% set rels = [] %}
 {% for y in years %}
@@ -14,9 +14,15 @@ with base as (
 select
   b.institution_id,
   b.survey_year,
+  -- Institution information
+  i.institution_name,
+  i.city,
+  i.state_abbr,
+  -- Student level information
   ela.effyalev_label as student_level_and_degree_status,
   el.effylev_label as undergraduate_graduate_level,
   ls.lstudy_label as original_level_of_study,
+  -- Enrollment counts
   b.grand_total,
   b.grand_total_men,
   b.grand_total_women,
@@ -30,6 +36,7 @@ select
   b.race_ethnicity_unknown_total,
   b.us_nonresident_total
 from base b
+left join {{ ref('dim_institution') }} i on b.institution_id = i.unitid
 left join {{ ref('dim_effyalev') }} ela on b.student_level_and_degree_status = ela.effyalev_code
 left join {{ ref('dim_effylev') }}  el  on b.undergraduate_graduate_level = el.effylev_code
 left join {{ ref('dim_lstudy') }}   ls  on b.original_level_of_study = ls.lstudy_code
