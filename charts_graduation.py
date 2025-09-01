@@ -2,128 +2,6 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-def graduation_funnel_chart(df, selected_unitid=None, selected_year=None):
-    """
-    Creates and returns a Plotly funnel chart showing:
-    Adjusted Cohort -> Graduated in 100% -> Graduated in 150% -> Transferred Out
-    """
-
-    if selected_unitid:
-        df = df[df["unitid"] == selected_unitid]
-    if selected_year:
-        df = df[df["year"] == selected_year]
-
-    funnel_stages = {
-        12: "Initial Bachelor’s Cohort",
-        13: "Graduated in 4 Years or Less",
-        14: "Graduated in 5 Years",
-        15: "Graduated in 6 Years",
-        16: "Transferred Out",
-    }
-
-    stage_names = []
-    student_counts = []
-
-    for code, label in funnel_stages.items():
-        count = df[df["Graduation_rate_status_in_cohort"] == code]["Total"].sum()
-        stage_names.append(label)
-        student_counts.append(count)
-
-    funnel_df = pd.DataFrame({
-        "Stage": stage_names,
-        "Students": student_counts,
-        "Text": [f"{int(v):,}" for v in student_counts]  # format like 13,933
-    })
-
-    fig = px.bar(
-        funnel_df,
-        x="Students",
-        y="Stage",
-        orientation="h",
-        text="Text",  # 👈 use manually formatted text
-        title="Graduation Funnel",
-        labels={"Stage": "Cohort Status", "Students": "Number of Students"},
-        color_discrete_sequence=["#7ddaff"]
-    )
-
-    fig.update_layout(
-        yaxis=dict(categoryorder="total ascending"),
-        height=400,
-        uniformtext_minsize=8,
-        uniformtext_mode='show',
-    )
-
-    fig.update_traces(textposition="inside")
-
-    return fig
-
-def plot_graduation_rate_trend(data, selected_unitid=None):
-    """
-    Plots a line chart showing graduation rates (4, 5, 6 years) over time
-    for a specific institution or across all if selected_unitid is None.
-    """
-    df = data.copy()
-    df["Total"] = pd.to_numeric(df["Total"], errors="coerce")
-
-    # Filter to relevant CHRTSTAT codes
-    relevant_codes = {
-        12: "Adjusted Cohort",
-        13: "Grad ≤ 4 Years",
-        14: "Grad in 5 Years",
-        15: "Grad in 6 Years"
-    }
-    df = df[df["Graduation_rate_status_in_cohort"].isin(relevant_codes.keys())]
-
-    if selected_unitid:
-        df = df[df["unitid"] == selected_unitid]
-
-    # Pivot data: year x outcome
-    pivot = df.pivot_table(
-        index=["year"],
-        columns="Graduation_rate_status_in_cohort",
-        values="Total",
-        aggfunc="sum"
-    ).reset_index()
-    pivot.rename(columns=relevant_codes, inplace=True)
-
-    # Skip if Adjusted Cohort is missing
-    if "Adjusted Cohort" not in pivot.columns:
-        return None
-
-    # Calculate graduation rates only for available columns
-    for label in ["Grad ≤ 4 Years", "Grad in 5 Years", "Grad in 6 Years"]:
-        if label in pivot.columns:
-            pivot[label] = (pivot[label] / pivot["Adjusted Cohort"] * 100).round(2)
-
-    # Melt for plotting
-    available_labels = [col for col in ["Grad ≤ 4 Years", "Grad in 5 Years", "Grad in 6 Years"] if col in pivot.columns]
-
-    melted = pivot.melt(
-        id_vars="year",
-        value_vars=available_labels,
-        var_name="Completion Time",
-        value_name="Graduation Rate (%)"
-    )
-
-    fig = px.line(
-        melted,
-        x="year",
-        y="Graduation Rate (%)",
-        color="Completion Time",
-        markers=True,
-        title="Graduation Rate Trend Over Time",
-        labels={"year": "Year", "Graduation Rate (%)": "Graduation Rate (%)"},
-        color_discrete_sequence=px.colors.qualitative.Set1
-    )
-
-    fig.update_layout(
-        yaxis=dict(ticksuffix="%"),
-        xaxis=dict(dtick=1),
-        height=500
-    )
-
-    return fig
-
 def plot_graduation_by_race_treemap(data, selected_unitid=None, selected_year=None):
     df = data.copy()
     df["Total"] = pd.to_numeric(df["Total"], errors="coerce").fillna(0)
@@ -300,4 +178,242 @@ def plot_school_graduation_share_pie(df, selected_school="New Jersey Institute o
     fig.update_traces(textinfo='percent+label',
                       insidetextorientation='horizontal')
 
+    return fig
+
+def plot_graduation_funnel(df, selected_institution_id=None, selected_year=None, selected_grad_type=None):
+    """
+    Creates a graduation funnel chart using dbt-processed graduation data.
+    
+    Args:
+        df: DataFrame with dbt-processed graduation data
+        selected_institution_id: Filter by specific institution ID
+        selected_year: Filter by specific survey year
+        selected_grad_type: Filter by specific graduation type (e.g., "Bachelor's or equiv subcohort (4-yr institution)")
+    
+    Returns:
+        Plotly funnel chart figure
+    """
+    
+    # Create a copy to avoid modifying original data
+    df_filtered = df.copy()
+    
+    # Apply filters
+    if selected_institution_id:
+        df_filtered = df_filtered[df_filtered["INSTITUTION_ID"] == selected_institution_id]
+    if selected_year:
+        df_filtered = df_filtered[df_filtered["SURVEY_YEAR"] == selected_year]
+    if selected_grad_type:
+        df_filtered = df_filtered[df_filtered["GRAD_TYPE"] == selected_grad_type]
+    
+    # Define the funnel stages in logical order - using actual GRAD_TYPE values
+    funnel_stages = [
+        "Bachelor's or equiv subcohort (4-yr institution) noncompleters still enrolled",
+        "Bachelor's or equiv subcohort (4-yr institution) Transfer-out students",
+        "Bachelor's or equiv subcohort (4-yr institution), No longer enrolled",
+        "Bachelor's or equiv subcohort (4-yr institution) Completers of bachelor's or equiv degrees in 6 years",
+        "Bachelor's or equiv subcohort (4-yr institution) Completers of bachelor's or equiv degrees in 5 years", 
+        "Bachelor's or equiv subcohort (4-yr institution) Completers of bachelor's or equiv degrees in 4 years or less",
+    ]
+    
+    # Create shorter display names for the chart labels
+    display_names = [
+        "Still Enrolled (Noncompleters)",
+        "Transfer-out Students",
+        "No Longer Enrolled",
+        "Graduated in 6 Years",
+        "Graduated in 5 Years",
+        "Graduated in 4 Years or Less"
+    ]
+    
+    # First, find the adjusted cohort size (our baseline for percentages) - MUST be same year
+    if selected_year:
+        # If year is specified, ensure we only look at that year for baseline
+        baseline_df = df_filtered[
+            (df_filtered["GRAD_TYPE"] == "Bachelor's or equiv subcohort (4-yr institution) adjusted cohort (revised cohort minus exclusions)") &
+            (df_filtered["SURVEY_YEAR"] == selected_year)
+        ]
+        
+        if baseline_df.empty:
+            # Fallback to revised cohort if adjusted cohort not found for that year
+            baseline_df = df_filtered[
+                (df_filtered["GRAD_TYPE"] == "Bachelor's or equiv subcohort (4-yr institution)") &
+                (df_filtered["SURVEY_YEAR"] == selected_year)
+            ]
+    else:
+        # If no year specified, use the year from the first available data
+        available_years = df_filtered["SURVEY_YEAR"].unique()
+        if len(available_years) > 0:
+            # Use the first available year as our baseline year
+            baseline_year = available_years[0]
+            baseline_df = df_filtered[
+                (df_filtered["GRAD_TYPE"] == "Bachelor's or equiv subcohort (4-yr institution) adjusted cohort (revised cohort minus exclusions)") &
+                (df_filtered["SURVEY_YEAR"] == baseline_year)
+            ]
+            
+            if baseline_df.empty:
+                # Fallback to revised cohort
+                baseline_df = df_filtered[
+                    (df_filtered["GRAD_TYPE"] == "Bachelor's or equiv subcohort (4-yr institution)") &
+                    (df_filtered["SURVEY_YEAR"] == baseline_year)
+                ]
+        else:
+            baseline_df = pd.DataFrame()  # Empty DataFrame
+    
+    if baseline_df.empty:
+        # If still no baseline found, return empty chart
+        fig = go.Figure()
+        fig.add_annotation(
+            text="No cohort baseline data found for the selected filters",
+            xref="paper", yref="paper",
+            x=0.5, y=0.5, showarrow=False
+        )
+        fig.update_layout(title="Graduation Outcomes of Bachelor’s Cohort (4-Year Institutions) - No Baseline Data")
+        return fig
+    
+    baseline_cohort_size = baseline_df["GR_TOTAL_ALL"].sum()
+    baseline_year = baseline_df["SURVEY_YEAR"].iloc[0]
+    
+    # Now filter all outcome stages to use ONLY the same year as the baseline
+    df_filtered = df_filtered[df_filtered["SURVEY_YEAR"] == baseline_year]
+    
+    # Initialize data for funnel
+    stage_data = []
+    
+    for i, stage in enumerate(funnel_stages):
+        # Filter data for this stage - using GRAD_TYPE since these are the actual type values
+        stage_df = df_filtered[df_filtered["GRAD_TYPE"] == stage]
+        
+        if not stage_df.empty:
+            # Sum the total students for this stage
+            total_students = stage_df["GR_TOTAL_ALL"].sum()
+            
+            if total_students > 0:  # Only include stages with students
+                # Calculate percentage of baseline cohort
+                percentage = (total_students / baseline_cohort_size) * 100
+                stage_data.append({
+                    "Stage": display_names[i],  # Use shorter display name
+                    "Students": total_students,
+                    "Percentage": percentage,
+                    "Formatted_Count": f"{int(total_students):,} ({percentage:.1f}%)"
+                })
+    
+    if not stage_data:
+        # Return empty chart if no data
+        fig = go.Figure()
+        fig.add_annotation(
+            text="No data available for the selected filters",
+            xref="paper", yref="paper",
+            x=0.5, y=0.5, showarrow=False
+        )
+        fig.update_layout(title="Graduation Outcomes of Bachelor’s Cohort (4-Year Institutions) - No Data Available")
+        return fig
+    
+    # Create DataFrame for plotting
+    funnel_df = pd.DataFrame(stage_data)
+    
+    # Create a horizontal bar chart that looks like a funnel (decreasing widths)
+    fig = go.Figure(go.Bar(
+        y=funnel_df["Stage"],
+        x=funnel_df["Students"],
+        orientation='h',
+        text=funnel_df["Formatted_Count"],
+        textposition='inside',
+        marker=dict(
+            color=px.colors.sequential.Blues,
+            line=dict(width=1, color="white")
+        )
+    ))
+    
+    # Update layout
+    fig.update_layout(
+        title={
+            "text": f"Graduation Outcomes of Bachelor’s Cohort (4-Year Institutions)",
+            "x": 0.5,
+            "xanchor": "center"
+        },
+        height=600,
+        showlegend=False,
+        margin=dict(t=80, l=20, r=20, b=20),
+        font=dict(size=12)
+    )
+    
+    # Update axes
+    fig.update_xaxes(title_text="Number of Students")
+    fig.update_yaxes(title_text="Graduation Status", categoryorder='array', categoryarray=display_names)
+    
+    return fig
+
+def plot_university_wide_graduation_rate(data, selected_unitid=None):
+    df = data.copy()
+    
+    # Convert to numeric and handle missing values
+    df["GR_TOTAL_ALL"] = pd.to_numeric(df["GR_TOTAL_ALL"], errors="coerce").fillna(0)
+    
+    # Filter for specific institution if provided
+    if selected_unitid:
+        df = df[df["INSTITUTION_ID"] == selected_unitid]
+    
+    # Filter for 4-year institutions and bachelor's degree programs
+    df = df[df["GRAD_TYPE"].str.contains("Bachelor's or equiv subcohort", na=False)]
+    
+    # Get graduates (completers within 150% of normal time)
+    graduates_df = df[df["GRAD_STATUS"] == "Completers within 150% of normal time"].copy()
+    
+    # Get total cohort (adjusted cohort minus exclusions)
+    cohort_df = df[df["GRAD_STATUS"] == "Adjusted cohort (revised cohort minus exclusions)"].copy()
+    
+    # Group by year and sum the totals
+    graduates_by_year = graduates_df.groupby("SURVEY_YEAR")["GR_TOTAL_ALL"].sum().reset_index()
+    cohort_by_year = cohort_df.groupby("SURVEY_YEAR")["GR_TOTAL_ALL"].sum().reset_index()
+    
+    # Merge the dataframes
+    merged_df = pd.merge(graduates_by_year, cohort_by_year, 
+                        on="SURVEY_YEAR", 
+                        suffixes=("_graduates", "_cohort"))
+    
+    # Calculate graduation rate
+    merged_df["graduation_rate"] = (merged_df["GR_TOTAL_ALL_graduates"] / 
+                                   merged_df["GR_TOTAL_ALL_cohort"] * 100).round(2)
+    
+    # Sort by year
+    merged_df = merged_df.sort_values("SURVEY_YEAR")
+    
+    # Create the line chart
+    fig = px.line(
+        merged_df,
+        x="SURVEY_YEAR",
+        y="graduation_rate",
+        markers=True,
+        title="University Wide Graduation Rate",
+        labels={
+            "SURVEY_YEAR": "Year",
+            "graduation_rate": "Graduation Rate (%)"
+        },
+        color_discrete_sequence=["#1f77b4"]  # Blue color
+    )
+    
+    # Update layout
+    fig.update_layout(
+        yaxis=dict(
+            ticksuffix="%",
+            range=[0, 100],
+            gridcolor="lightgray",
+            zerolinecolor="lightgray"
+        ),
+        xaxis=dict(
+            dtick=1,
+            gridcolor="lightgray",
+            zerolinecolor="lightgray"
+        ),
+        height=500,
+        plot_bgcolor="white",
+        title_x=0.5
+    )
+    
+    # Update traces
+    fig.update_traces(
+        line=dict(width=3),
+        marker=dict(size=8)
+    )
+    
     return fig
