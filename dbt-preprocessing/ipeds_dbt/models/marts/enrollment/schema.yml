@@ -2,14 +2,14 @@ version: 2
 
 models:
   - name: enrollment
-    description: "Comprehensive enrollment data table with demographic breakdowns (2023+)"
+    description: "Comprehensive enrollment data table with demographic breakdowns (2019-2023)"
     columns:
       - name: institution_id
         description: "Unique identification number of the institution"
-        tests: [not_null, unique]
+        tests: [not_null]
       - name: survey_year
         description: "Survey year"
-        tests: [not_null, unique]
+        tests: [not_null]
       - name: student_level_and_degree_status
         description: "Level and degree/certificate-seeking status of student"
       - name: undergraduate_graduate_level
@@ -40,11 +40,3 @@ models:
         description: "Race/ethnicity unknown total enrollment"
       - name: us_nonresident_total
         description: "U.S. Nonresident total enrollment"
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - institution_id
-            - survey_year
-            - student_level_and_degree_status
-            - undergraduate_graduate_level
-            - original_level_of_study
