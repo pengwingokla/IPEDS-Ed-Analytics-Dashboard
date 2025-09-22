@@ -1,3 +1,4 @@
+import re
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -42,10 +43,21 @@ from plot_utils.charts_finaid import (
     plot_aid_type_breakdown_percent
 )
 
+# ---- Path Constants ----
+IMG_NJIT_LOGO_PATH = "img/njit_logo.jpg"
+ADMS_PATH = "data/NJ_admission_data.csv"
+EFFY_PATH = "data/NJ_enrollment_data.csv"
+SFA_PATH  = "data/NJ_sfa_data.csv"
+GRAD_PATH = "data/NJ_graduation_data.csv"
+DBT_ENROLL_PATH = "data/dbt-processed/enrollment.csv"
+DBT_GRAD_PATH = "data/dbt-processed/graduation.csv"
+
+DBT_GRAD_GDRIVE = "https://drive.google.com/file/d/1C7vLl1_lLHL0n-R1JCjlIiPFYE_F74a9/view?usp=sharing"
+
 # ---- Set Page Config ----
 st.set_page_config(
     page_title="University Insights",
-    page_icon="img/njit_logo.jpg",  # Make sure this path exists in the repo
+    page_icon=IMG_NJIT_LOGO_PATH,  # Make sure this path exists in the repo
     layout="wide"
 )
 
@@ -63,6 +75,21 @@ st.markdown("""
 @st.cache_data
 def load_data(file_path):
     return pd.read_csv(file_path)
+
+def normalize_url(link_or_id: str) -> str:
+    # Accepts a full share link or a bare FILE_ID
+    m = re.search(r"/d/([a-zA-Z0-9_-]+)", link_or_id)
+    if m:
+        file_id = m.group(1)
+    elif re.fullmatch(r"[a-zA-Z0-9_-]{20,}", link_or_id):
+        file_id = link_or_id
+    else:
+        # Already a direct URL
+        return link_or_id
+    return f"https://drive.google.com/uc?export=download&id={file_id}"
+
+def normalize_hf_url(repo_id, filename, revision="main"):
+    return f"https://huggingface.co/datasets/{repo_id}/resolve/{revision}/{filename}"
 
 # ---- Sidebar Navigation ----
 st.sidebar.markdown("## 📚 Navigation")
@@ -120,14 +147,11 @@ if (
     """)
 
 # 🔹 Load datasets
-adms_fpath = "data/NJ_admission_data.csv"
-effy_fpath = "data/NJ_enrollment_data.csv"
-sfa_fpath = "data/NJ_sfa_data.csv"
-enrollment_dbt_path = "dbt-processed/enrollment.csv"
-adms_data = load_data(adms_fpath)
-effy_data = load_data(effy_fpath)
-sfa_data = load_data(sfa_fpath)
-enrollment_data_dbt = load_data(enrollment_dbt_path)
+adms_data = load_data(ADMS_PATH)
+effy_data = load_data(EFFY_PATH)
+sfa_data = load_data(SFA_PATH)
+dbt_enroll = load_data(normalize_hf_url("chloecodes/IPEDS_ENROLLMENT", "enrollment.csv"))
+# dbt_enroll = load_data(DBT_ENROLL_PATH)
 
 # 🔸🔸 Enrollment Page 🔸🔸
 if st.session_state.active_page == "Enrollment":
@@ -150,7 +174,7 @@ if st.session_state.active_page == "Enrollment":
             st.plotly_chart(plot_njit_share_change(adms_data), use_container_width=True)
             st.button("𝒾", help="This bar chart illustrates undergraduate enrollment trends over time, comparing the selected institution's enrollment to that of all other NJ schools. It also shows the annual change in the selected institution’s share of total enrollment compared to the year before it to evaluate relative growth or decline over multiple years.")
         with col3:
-            st.plotly_chart(plot_enrollment_over_years(enrollment_data_dbt), use_container_width=True)
+            st.plotly_chart(plot_enrollment_over_years(dbt_enroll), use_container_width=True)
             st.button("𝒾", help="This line chart shows the total enrollment trend over time for the selected institution. It provides a historical view of how enrollment has changed across all available years in the dataset.")
 
     elif st.session_state.enrollment_section == "section2":
@@ -215,10 +239,8 @@ if st.session_state.active_page == "Enrollment":
 elif st.session_state.active_page == "Graduation":
 
     st.markdown("""### :orange[Graduation]""")
-    grad_fpath = "data/NJ_graduation_data.csv"
-    grad_data = load_data(grad_fpath)
-    grad_data_dbt_fpath = "dbt-processed/graduation.csv"
-    grad_data_dbt = load_data(grad_data_dbt_fpath)
+    grad_data = load_data(GRAD_PATH)
+    dbt_grad = load_data(normalize_url(DBT_GRAD_GDRIVE))
 
     # Get all schools first
     all_schools = sorted(grad_data["university_name"].dropna().unique())
@@ -243,13 +265,13 @@ elif st.session_state.active_page == "Graduation":
             col1, col2 = st.columns(2)
             with col1:
                 # Graduation Outcomes of Bachelor’s Cohort (4-Year Institutions)
-                fig = plot_graduation_funnel(grad_data_dbt, selected_institution_id=selected_unitid, selected_year=selected_years[-1])
+                fig = plot_graduation_funnel(dbt_grad, selected_institution_id=selected_unitid, selected_year=selected_years[-1])
                 # fig = graduation_funnel_chart(grad_data, selected_unitid=selected_unitid, selected_year=selected_years[-1])
                 st.plotly_chart(fig, use_container_width=True)
                 st.button("𝒾", help=get_graduation_funnel_help())
             with col2:
                 # fig = plot_graduation_rate_trend(grad_data, selected_unitid=selected_unitid)
-                fig = plot_university_wide_graduation_rate(grad_data_dbt, selected_unitid=selected_unitid)
+                fig = plot_university_wide_graduation_rate(dbt_grad, selected_unitid=selected_unitid)
                 st.plotly_chart(fig, use_container_width=True)
 
             col3, col4 = st.columns(2)
@@ -288,7 +310,7 @@ elif st.session_state.active_page == "Graduation":
 # 🔸🔸 Financial Aid Page 🔸🔸
 elif st.session_state.active_page == "Financial Aid":
     st.markdown("""### :orange[Financial Aid]""")
-    sfa_data = load_data(sfa_fpath)
+    sfa_data = load_data(SFA_PATH)
     
     # Get sorted list of all institution names
     all_schools = sorted(sfa_data["university_name"].dropna().unique())
