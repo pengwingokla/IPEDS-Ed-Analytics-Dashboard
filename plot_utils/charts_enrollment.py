@@ -435,3 +435,170 @@ def plot_njit_share_change(df, njit_name="New Jersey Institute of Technology"):
     ))
 
     return fig
+
+# 🔹 Total Enrollment Bar Chart using DBT-processed data
+def plot_total_enrollment_bar_chart(enrollment_data, institution_mapping, selected_schools, selected_years):
+    if not selected_schools or not selected_years:
+        st.warning("Please select at least one school and one year.")
+        return None
+
+    # Filter for total enrollment data (All students total)
+    total_data = enrollment_data[
+        enrollment_data["STUDENT_LEVEL_AND_DEGREE_STATUS"] == "All students total"
+    ].copy()
+    
+    if total_data.empty:
+        st.warning("No total enrollment data found in the dataset.")
+        return None
+
+    # Convert year to integer for filtering
+    total_data["SURVEY_YEAR"] = pd.to_numeric(total_data["SURVEY_YEAR"], errors='coerce')
+    
+    # Filter by selected years
+    total_data = total_data[total_data["SURVEY_YEAR"].isin(selected_years)]
+    
+    if total_data.empty:
+        st.warning("No data available for the selected years.")
+        return None
+
+    # Merge with institution mapping to get institution names
+    merged_data = total_data.merge(
+        institution_mapping, 
+        left_on="INSTITUTION_ID", 
+        right_on="unitid", 
+        how="left"
+    )
+    
+    # Filter by selected schools
+    merged_data = merged_data[merged_data["inst_name"].isin(selected_schools)]
+    
+    if merged_data.empty:
+        st.warning("No data available for the selected schools and years.")
+        return None
+
+    # Prepare chart data
+    chart_data = merged_data[[
+        "inst_name", "SURVEY_YEAR", "GRAND_TOTAL"
+    ]].copy()
+    
+    # Rename columns for consistency with original function
+    chart_data = chart_data.rename(columns={
+        "inst_name": "university_name",
+        "SURVEY_YEAR": "year",
+        "GRAND_TOTAL": "Enrolled_total"
+    })
+    
+    # Convert enrollment to numeric
+    chart_data["Enrolled_total"] = pd.to_numeric(
+        chart_data["Enrolled_total"], errors='coerce').fillna(0)
+    chart_data["year"] = chart_data["year"].astype(str)  # Make year categorical
+
+    fig = px.bar(
+        chart_data,
+        x="university_name",
+        y="Enrolled_total",
+        color="university_name",
+        title=f"Total Fall Enrollment (DBT-processed) ({', '.join(chart_data['year'].unique())})",
+        labels={"university_name": "Institution",
+                "Enrolled_total": "Total Enrollment"},
+        barmode='group',
+        text="Enrolled_total",
+        color_discrete_sequence=px.colors.qualitative.G10,
+    )
+
+    fig.update_layout(
+        width=800 + (len(selected_years) * 250),
+        height=600,
+        xaxis_tickangle=0,
+        showlegend=False,
+        coloraxis_showscale=False
+    )
+
+    return fig
+
+# 🔹 Enrollment Over Years for Selected School
+def plot_enrollment_over_years(enrollment_data, institution_id=185828):
+    
+    if not institution_id:
+        st.warning("Please provide an institution ID.")
+        return None
+    
+    for level in enrollment_data['STUDENT_LEVEL_AND_DEGREE_STATUS'].unique():
+        print(f"  - '{level}'")
+    
+    # Filter data for the selected institution and specific student level
+    school_data = enrollment_data[
+        (enrollment_data['INSTITUTION_ID'] == institution_id) &
+        (enrollment_data['STUDENT_LEVEL_AND_DEGREE_STATUS'] == 'All students, Undergraduate total')
+    ].copy()
+    
+    if school_data.empty:
+        st.error(f"No enrollment data found for institution ID: {institution_id}")
+        return None
+    
+    # Convert survey_year to numeric and sort
+    school_data['SURVEY_YEAR'] = pd.to_numeric(school_data['SURVEY_YEAR'])
+    school_data = school_data.sort_values('SURVEY_YEAR')
+    
+    # Use the data directly (no aggregation needed since we're filtering to specific level)
+    yearly_totals = school_data[['SURVEY_YEAR', 'GRAND_TOTAL']].copy()
+    
+    if yearly_totals.empty:
+        st.error(f"No undergraduate enrollment data available for institution ID: {institution_id}")
+        return None
+    
+    # Create the line plot
+    fig = go.Figure()
+    
+    fig.add_trace(
+        go.Scatter(
+            x=yearly_totals['SURVEY_YEAR'],
+            y=yearly_totals['GRAND_TOTAL'],
+            mode='lines+markers',
+            name='Total Enrollment',
+            line=dict(color='#1f77b4', width=3),
+            marker=dict(size=8),
+            hovertemplate='<b>Total Enrollment</b><br>' +
+                        'Year: %{x}<br>' +
+                        'Enrollment: %{y:,.0f}<br>' +
+                        '<extra></extra>'
+        )
+    )
+    
+    fig.update_layout(
+        height=600,
+        showlegend=False
+    )
+    
+    # Update layout
+    fig.update_layout(
+        title=dict(
+            text=f'Undergraduate Enrollment by Year',
+            font=dict(size=16)
+        ),
+        xaxis_title="Year",
+        yaxis_title="Enrollment Count",
+        hovermode='x unified',
+        template='plotly_white',
+        margin=dict(l=50, r=50, t=80, b=50)
+    )
+    
+    # Update x-axis
+    fig.update_xaxes(
+        tickmode='linear',
+        tick0=yearly_totals['SURVEY_YEAR'].min(),
+        dtick=1,
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='lightgray'
+    )
+    
+    # Update y-axis
+    fig.update_yaxes(
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='lightgray',
+        tickformat=','
+    )
+    
+    return fig

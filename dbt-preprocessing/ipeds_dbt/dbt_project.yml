@@ -38,7 +38,7 @@ seeds:
     +quote_columns: false
 
     # ----------
-    institution_info:
+    institution_info_all:
       +schema: SEEDS_INSTITUTION
       +column_types:
         unitid: integer
