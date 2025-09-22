@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from info_button_text import (
+from docs.info_button_text import (
     get_enrollment_donut_chart_help,
     get_enrollment_trends_help,
     get_full_vs_part_time_trend_help,
