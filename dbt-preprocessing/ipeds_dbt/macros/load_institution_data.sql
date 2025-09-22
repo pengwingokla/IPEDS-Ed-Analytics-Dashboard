@@ -8,7 +8,7 @@
             COUNT(DISTINCT unitid) as unique_unitids,
             COUNT(DISTINCT state_abbr) as unique_states,
             COUNT(DISTINCT city) as unique_cities
-        FROM {{ ref('institution_info') }}
+        FROM {{ ref('institution_info_all') }}
     {% endset %}
     
     {% set results = run_query(query) %}
