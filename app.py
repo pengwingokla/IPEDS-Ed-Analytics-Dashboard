@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from docs.info_button_text import (
+from docs.info_text import (
     get_enrollment_donut_chart_help,
     get_enrollment_trends_help,
     get_full_vs_part_time_trend_help,
@@ -15,7 +15,7 @@ from docs.info_button_text import (
     get_aid_type_breakdown_help,
 )
 
-from plot_functions.charts_enrollment import (
+from plot_utils.charts_enrollment import (
     plot_enrollment_over_years,
     create_total_enrollment_bar_chart,
     create_gender_enrollment_bar_chart,
@@ -27,7 +27,7 @@ from plot_functions.charts_enrollment import (
     plot_njit_share_change,
 )
 
-from plot_functions.charts_graduation import (
+from plot_utils.charts_graduation import (
     plot_graduation_funnel,
     plot_graduation_by_race_treemap,
     # plot_graduation_by_gender_bar,
@@ -36,7 +36,7 @@ from plot_functions.charts_graduation import (
     plot_school_graduation_share_pie_by_unitid
 )
 
-from plot_functions.charts_finaid import (
+from plot_utils.charts_finaid import (
     plot_net_price_by_income,
     plot_top20_institutions_by_total_aid,
     plot_aid_type_breakdown_percent
