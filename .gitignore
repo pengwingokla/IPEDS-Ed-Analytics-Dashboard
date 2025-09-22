@@ -17,3 +17,6 @@ __pycache__/
 # OS or editor-specific files
 .DS_Store
 *.swp
+
+# Ignore large processed CSVs
+data/dbt-processed/*.csv
