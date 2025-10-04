@@ -5,6 +5,7 @@ from streamlit_option_menu import option_menu
 
 
 from pages.enrollment import show_enrollment_page
+from pages.graduation import show_graduation_page
 
 # ---- Path Constants ----
 IMG_NJIT_LOGO_PATH = "img/njit_logo.jpg"
@@ -72,9 +73,7 @@ if st.session_state.active_page == "Welcome":
     """)
 
 # ---- Load datasets ----
-adms_data = load_data(ADMS_PATH)
-sfa_data = load_data(SFA_PATH)
-dbt_enroll = load_data(normalize_url("chloecodes/IPEDS_ENROLLMENT", "enrollment.csv"))
+
 
 # 🔸🔸 Enrollment Page 🔸🔸
 if st.session_state.active_page == "Enrollment":
@@ -82,14 +81,8 @@ if st.session_state.active_page == "Enrollment":
 
 # 🔸🔸 Graduation Page 🔸🔸
 elif st.session_state.active_page == "Graduation":
-    st.markdown("""### :orange[Graduation]""")
-    grad_data = load_data(GRAD_PATH)
-    dbt_grad = load_data(normalize_url("chloecodes/IPEDS_GRADUATION", "graduation.csv"))
-    custom_df = load_data(CUSTOM_PATH)
     
-    col1, col2 = st.columns(2)
-    col3, col4 = st.columns(2)
-    col5, col6 = st.columns(2)
+    show_graduation_page()
 
 # 🔸🔸 Financial Aid Page 🔸🔸
 elif st.session_state.active_page == "Financial Aid":
