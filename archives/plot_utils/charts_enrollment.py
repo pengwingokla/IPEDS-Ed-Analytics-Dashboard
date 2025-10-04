@@ -54,58 +54,58 @@ def create_total_enrollment_bar_chart(adms_data, selected_schools, selected_year
     return fig
 
 # 🔹 Gender Enrollment Bar Chart
-def create_gender_enrollment_bar_chart(adms_data, selected_schools, selected_years):
-    if not selected_schools or not selected_years:
-        st.warning("Please select at least one school and one year.")
-        return None
+# def create_gender_enrollment_bar_chart(adms_data, selected_schools, selected_years):
+#     if not selected_schools or not selected_years:
+#         st.warning("Please select at least one school and one year.")
+#         return None
 
-    filtered_data = adms_data[
-        adms_data["university_name"].isin(selected_schools) &
-        adms_data["year"].isin(selected_years)
-    ]
+#     filtered_data = adms_data[
+#         adms_data["university_name"].isin(selected_schools) &
+#         adms_data["year"].isin(selected_years)
+#     ]
 
-    if filtered_data.empty:
-        st.warning("No data available for the selected schools and years.")
-        return None
+#     if filtered_data.empty:
+#         st.warning("No data available for the selected schools and years.")
+#         return None
 
-    rows = []
-    for _, row in filtered_data.iterrows():
-        try:
-            men = float(row["Enrolled__men"])
-        except:
-            men = 0
-        try:
-            women = float(row["Enrolled__women"])
-        except:
-            women = 0
+#     rows = []
+#     for _, row in filtered_data.iterrows():
+#         try:
+#             men = float(row["Enrolled__men"])
+#         except:
+#             men = 0
+#         try:
+#             women = float(row["Enrolled__women"])
+#         except:
+#             women = 0
 
-        rows.append({"university_name": row["university_name"],
-                    "year": row["year"], "Gender": "Men", "Headcount": men})
-        rows.append({"university_name": row["university_name"],
-                    "year": row["year"], "Gender": "Women", "Headcount": women})
+#         rows.append({"university_name": row["university_name"],
+#                     "year": row["year"], "Gender": "Men", "Headcount": men})
+#         rows.append({"university_name": row["university_name"],
+#                     "year": row["year"], "Gender": "Women", "Headcount": women})
 
-    chart_data = pd.DataFrame(rows)
+#     chart_data = pd.DataFrame(rows)
 
-    fig = px.bar(
-        chart_data,
-        x="university_name",
-        y="Headcount",
-        color="Gender",
-        color_discrete_sequence=px.colors.qualitative.Dark24,
-        facet_col="year",
-        title=f"Enrollment by Gender ({', '.join(map(str, selected_years))})",
-        labels={"university_name": "Institution", "Headcount": "Headcount"},
-        barmode='group',
-        text_auto=True
-    )
+#     fig = px.bar(
+#         chart_data,
+#         x="university_name",
+#         y="Headcount",
+#         color="Gender",
+#         color_discrete_sequence=px.colors.qualitative.Dark24,
+#         facet_col="year",
+#         title=f"Enrollment by Gender ({', '.join(map(str, selected_years))})",
+#         labels={"university_name": "Institution", "Headcount": "Headcount"},
+#         barmode='group',
+#         text_auto=True
+#     )
 
-    fig.update_layout(
-        width=800 + (len(selected_years) * 250),
-        height=600,
-        xaxis_tickangle=0
-    )
+#     fig.update_layout(
+#         width=800 + (len(selected_years) * 250),
+#         height=600,
+#         xaxis_tickangle=0
+#     )
 
-    return fig
+#     return fig
 
 # 🔹 Full-Time vs Part-Time Enrollment Trend Over Time
 def create_full_vs_part_time_trend(adms_data, selected_school):
@@ -267,8 +267,9 @@ def create_admission_yield_rate_chart(adms_data, selected_schools, selected_year
 
     return fig
 
+
 # 🔹 Admission Funnel
-def plot_admission_funnel(data, school_name, selected_year):
+def plot_admission_funnel(adms_data, school_name, selected_year):
     """Plots the admission funnel for a specific school and year."""
 
     # Filter by school and year
@@ -436,85 +437,8 @@ def plot_njit_share_change(df, njit_name="New Jersey Institute of Technology"):
 
     return fig
 
+# 🔹 12-Month Enrollment Trends (DBT) --------------------------------------------------
 # 🔹 Total Enrollment Bar Chart using DBT-processed data
-def plot_total_enrollment_bar_chart(enrollment_data, institution_mapping, selected_schools, selected_years):
-    if not selected_schools or not selected_years:
-        st.warning("Please select at least one school and one year.")
-        return None
-
-    # Filter for total enrollment data (All students total)
-    total_data = enrollment_data[
-        enrollment_data["STUDENT_LEVEL_AND_DEGREE_STATUS"] == "All students total"
-    ].copy()
-    
-    if total_data.empty:
-        st.warning("No total enrollment data found in the dataset.")
-        return None
-
-    # Convert year to integer for filtering
-    total_data["SURVEY_YEAR"] = pd.to_numeric(total_data["SURVEY_YEAR"], errors='coerce')
-    
-    # Filter by selected years
-    total_data = total_data[total_data["SURVEY_YEAR"].isin(selected_years)]
-    
-    if total_data.empty:
-        st.warning("No data available for the selected years.")
-        return None
-
-    # Merge with institution mapping to get institution names
-    merged_data = total_data.merge(
-        institution_mapping, 
-        left_on="INSTITUTION_ID", 
-        right_on="unitid", 
-        how="left"
-    )
-    
-    # Filter by selected schools
-    merged_data = merged_data[merged_data["inst_name"].isin(selected_schools)]
-    
-    if merged_data.empty:
-        st.warning("No data available for the selected schools and years.")
-        return None
-
-    # Prepare chart data
-    chart_data = merged_data[[
-        "inst_name", "SURVEY_YEAR", "GRAND_TOTAL"
-    ]].copy()
-    
-    # Rename columns for consistency with original function
-    chart_data = chart_data.rename(columns={
-        "inst_name": "university_name",
-        "SURVEY_YEAR": "year",
-        "GRAND_TOTAL": "Enrolled_total"
-    })
-    
-    # Convert enrollment to numeric
-    chart_data["Enrolled_total"] = pd.to_numeric(
-        chart_data["Enrolled_total"], errors='coerce').fillna(0)
-    chart_data["year"] = chart_data["year"].astype(str)  # Make year categorical
-
-    fig = px.bar(
-        chart_data,
-        x="university_name",
-        y="Enrolled_total",
-        color="university_name",
-        title=f"Total Fall Enrollment (DBT-processed) ({', '.join(chart_data['year'].unique())})",
-        labels={"university_name": "Institution",
-                "Enrolled_total": "Total Enrollment"},
-        barmode='group',
-        text="Enrolled_total",
-        color_discrete_sequence=px.colors.qualitative.G10,
-    )
-
-    fig.update_layout(
-        width=800 + (len(selected_years) * 250),
-        height=600,
-        xaxis_tickangle=0,
-        showlegend=False,
-        coloraxis_showscale=False
-    )
-
-    return fig
 
 # 🔹 Enrollment Over Years for Selected School
 def plot_enrollment_over_years(enrollment_data, institution_id=185828):
@@ -600,5 +524,128 @@ def plot_enrollment_over_years(enrollment_data, institution_id=185828):
         gridcolor='lightgray',
         tickformat=','
     )
+    
+    return fig
+
+def create_gender_enrollment_bar_chart(df, selected_school="New Jersey Institute of Technology", selected_year=2023):
+    # Filter data
+    filtered_df = df[
+        (df["SURVEY_YEAR"] == selected_year) & 
+        (df["INSTITUTION_NAME"] == selected_school) &
+        (df["UNDERGRADUATE_GRADUATE_LEVEL"] == "Undergraduate")
+    ].copy()
+    
+    # Create data for plotting
+    plot_data = pd.DataFrame({
+        'Category': ['Total'],
+        'Men': [filtered_df["GRAND_TOTAL_MEN"].iloc[0]],
+        'Women': [filtered_df["GRAND_TOTAL_WOMEN"].iloc[0]]
+    })
+    
+    # Create plotly figure with stacked bars
+    fig = go.Figure()
+    
+    # Add men bar
+    fig.add_trace(go.Bar(
+        name='Men',
+        x=plot_data['Category'],
+        y=plot_data['Men'],
+        text=plot_data['Men'].apply(lambda x: f"{int(x):,}"),
+        textposition='inside',
+        marker_color=px.colors.qualitative.Dark24[0]
+    ))
+    
+    # Add women bar stacked on top
+    fig.add_trace(go.Bar(
+        name='Women',
+        x=plot_data['Category'],
+        y=plot_data['Women'],
+        text=plot_data['Women'].apply(lambda x: f"{int(x):,}"),
+        textposition='inside',
+        marker_color=px.colors.qualitative.Dark24[1]
+    ))
+    
+    # Update layout
+    fig.update_layout(
+        barmode='stack',
+        height=600,
+        margin=dict(l=50, r=50, t=80, b=50),
+        yaxis_title="Number of Students",
+        template='plotly_white',
+        title=dict(
+            text=f"Undergraduate Gender Enrollment at {selected_school} ({selected_year})",
+            font=dict(size=16)
+        ),
+        yaxis=dict(
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='lightgray',
+            tickformat=','
+        ),
+        xaxis_title=""
+    )
+    
+    return fig
+
+def create_gender_enrollment_multi_school_bar_chart(df, selected_schools):
+    """
+    Create a bar chart comparing gender enrollment across multiple schools for the most recent year.
+    
+    Args:
+        df: DataFrame containing enrollment data
+        selected_schools: List of school names to include in comparison
+    """
+    # Get most recent year
+    max_year = df["SURVEY_YEAR"].max()
+    
+    # Filter data for selected schools and year
+    filtered_df = df[
+        (df["INSTITUTION_NAME"].isin(selected_schools)) &
+        (df["SURVEY_YEAR"].isin([2022, 2023])) &
+        (df["UNDERGRADUATE_GRADUATE_LEVEL"] == "Undergraduate")
+    ].copy()
+    
+    # Remove duplicates by keeping only the latest year for each institution
+    filtered_df = filtered_df.sort_values('SURVEY_YEAR', ascending=False).drop_duplicates('INSTITUTION_NAME')
+    
+    # Create separate rows for men and women
+    plot_data = pd.DataFrame({
+        'Institution': filtered_df["INSTITUTION_NAME"].tolist(),
+        'Men': filtered_df["GRAND_TOTAL_MEN"],
+        'Women': filtered_df["GRAND_TOTAL_WOMEN"]
+    })
+    
+    
+    # Create bar chart
+    fig = px.bar(plot_data, 
+                 x='Institution',
+                 y=['Men', 'Women'],
+                 title='Gender',
+                 barmode='group',
+                 color_discrete_sequence=[px.colors.qualitative.Dark24[0], px.colors.qualitative.Dark24[1]],
+                 text_auto=True,
+                 height=600)
+    
+    # Update layout
+    fig.update_layout(
+        title=dict(
+            text=f"Undergraduate Gender Enrollment by Institution ({max_year})",
+            font=dict(size=16)
+        ),
+        xaxis_title="",
+        yaxis_title="Number of Students",
+        yaxis=dict(
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='lightgray',
+            tickformat=','
+        ),
+        margin=dict(l=50, r=50, t=80, b=120),
+        template='plotly_white'
+    )
+    
+    # Update text position and x-axis labels
+    fig.update_traces(textposition='outside')
+    fig.update_xaxes(tickangle=45)
     
     return fig

@@ -20,6 +20,7 @@ from plot_utils.charts_enrollment import (
     plot_enrollment_over_years,
     create_total_enrollment_bar_chart,
     create_gender_enrollment_bar_chart,
+    create_gender_enrollment_multi_school_bar_chart,
     create_full_vs_part_time_trend,
     create_full_vs_part_time_trend_multiple,
     create_admission_yield_rate_chart,
@@ -43,16 +44,17 @@ from plot_utils.charts_finaid import (
     plot_aid_type_breakdown_percent
 )
 
+from plot_utils.charts_custom import (
+    plot_graduation_rates_over_time,
+)
+
 # ---- Path Constants ----
 IMG_NJIT_LOGO_PATH = "img/njit_logo.jpg"
-ADMS_PATH = "data/NJ_admission_data.csv"
-EFFY_PATH = "data/NJ_enrollment_data.csv"
-SFA_PATH  = "data/NJ_sfa_data.csv"
-GRAD_PATH = "data/NJ_graduation_data.csv"
-DBT_ENROLL_PATH = "data/dbt-processed/enrollment.csv"
-DBT_GRAD_PATH = "data/dbt-processed/graduation.csv"
-
-DBT_GRAD_GDRIVE = "https://drive.google.com/file/d/1C7vLl1_lLHL0n-R1JCjlIiPFYE_F74a9/view?usp=sharing"
+ADMS_PATH = "data/archives/NJ_admission_data.csv"
+EFFY_PATH = "data/archives/NJ_enrollment_data.csv"
+SFA_PATH  = "data/archives/NJ_sfa_data.csv"
+GRAD_PATH = "data/archives/NJ_graduation_data.csv"
+CUSTOM_PATH = "data/custom/processed/c20-23.csv"
 
 # ---- Set Page Config ----
 st.set_page_config(
@@ -76,19 +78,10 @@ st.markdown("""
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-def normalize_url(link_or_id: str) -> str:
-    # Accepts a full share link or a bare FILE_ID
-    m = re.search(r"/d/([a-zA-Z0-9_-]+)", link_or_id)
-    if m:
-        file_id = m.group(1)
-    elif re.fullmatch(r"[a-zA-Z0-9_-]{20,}", link_or_id):
-        file_id = link_or_id
-    else:
-        # Already a direct URL
-        return link_or_id
-    return f"https://drive.google.com/uc?export=download&id={file_id}"
-
-def normalize_hf_url(repo_id, filename, revision="main"):
+def normalize_url(repo_id, filename, revision="main"):
+    """
+    Normalize the URL for the HuggingFace dataset
+    """
     return f"https://huggingface.co/datasets/{repo_id}/resolve/{revision}/{filename}"
 
 # ---- Sidebar Navigation ----
@@ -116,7 +109,7 @@ if st.session_state.active_page == "Enrollment":
     st.sidebar.markdown("### Enrollment Sections")
     with st.sidebar:
         st.markdown('<div class="sidebar-button">', unsafe_allow_html=True)
-        if st.button("NJIT’s Position in Statewide Trends"):
+        if st.button("NJIT Statewide Trends"):
             st.session_state.enrollment_section = "section1"
         if st.button("Insights for Selected Institution"):
             st.session_state.enrollment_section = "section2"
@@ -148,21 +141,24 @@ if (
 
 # 🔹 Load datasets
 adms_data = load_data(ADMS_PATH)
-effy_data = load_data(EFFY_PATH)
 sfa_data = load_data(SFA_PATH)
-dbt_enroll = load_data(normalize_hf_url("chloecodes/IPEDS_ENROLLMENT", "enrollment.csv"))
-# dbt_enroll = load_data(DBT_ENROLL_PATH)
+dbt_enroll = load_data(normalize_url("chloecodes/IPEDS_ENROLLMENT", "enrollment.csv"))
 
 # 🔸🔸 Enrollment Page 🔸🔸
 if st.session_state.active_page == "Enrollment":
     if st.session_state.enrollment_section == "section1":
-        st.markdown("""### :orange[NJIT’s Position in Statewide Enrollment Trends]""")
+        st.markdown("""### :orange[NJIT’s Position in Statewide 12-Month Enrollment Trends]""")
         col1, col2 = st.columns(2)
         col3, col4 = st.columns(2)
         with col1:
+            st.plotly_chart(plot_enrollment_over_years(dbt_enroll), use_container_width=True)
+            st.button("𝒾", help="This line chart shows the total enrollment trend over time for the selected institution. It provides a historical view of how enrollment has changed across all available years in the dataset.")
+        with col2:
+            st.plotly_chart(plot_njit_share_change(adms_data), use_container_width=True)
+            st.button("𝒾", help="This bar chart illustrates undergraduate enrollment trends over time, comparing the selected institution's enrollment to that of all other NJ schools. It also shows the annual change in the selected institution’s share of total enrollment compared to the year before it to evaluate relative growth or decline over multiple years.")
+        with col3:       
             # First, render the chart first with a placeholder year
             chart_placeholder = st.empty()
-            st.button("𝒾", help=get_enrollment_donut_chart_help())
 
             # Then render dropdown below the chart
             available_years = sorted(adms_data["year"].dropna().unique())
@@ -170,13 +166,11 @@ if st.session_state.active_page == "Enrollment":
 
             # Now render chart based on actual user-selected year
             chart_placeholder.plotly_chart(create_njit_vs_others_pie(adms_data, [selected_year]), use_container_width=True)
-        with col2:
-            st.plotly_chart(plot_njit_share_change(adms_data), use_container_width=True)
-            st.button("𝒾", help="This bar chart illustrates undergraduate enrollment trends over time, comparing the selected institution's enrollment to that of all other NJ schools. It also shows the annual change in the selected institution’s share of total enrollment compared to the year before it to evaluate relative growth or decline over multiple years.")
-        with col3:
-            st.plotly_chart(plot_enrollment_over_years(dbt_enroll), use_container_width=True)
-            st.button("𝒾", help="This line chart shows the total enrollment trend over time for the selected institution. It provides a historical view of how enrollment has changed across all available years in the dataset.")
-
+            st.button("𝒾", help=get_enrollment_donut_chart_help())
+        with col4:
+            st.plotly_chart(create_gender_enrollment_bar_chart(dbt_enroll, "New Jersey Institute of Technology", selected_year), use_container_width=True)
+            st.button("𝒾", help=get_gender_enrollment_help())
+            
     elif st.session_state.enrollment_section == "section2":
         st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("""### :orange[Enrollment and Admissions Insights for Selected Institution]""")
@@ -197,9 +191,9 @@ if st.session_state.active_page == "Enrollment":
             st.plotly_chart(create_full_vs_part_time_trend(adms_data, trend_school), use_container_width=True)
             st.button("𝒾", help=get_full_vs_part_time_trend_help())
 
-        with col4:
-            st.plotly_chart(plot_admission_funnel(adms_data, trend_school, selected_year=selected_year), use_container_width=True)
-            st.button("𝒾", help="This funnel chart illustrates the admissions pipeline for a selected institution and year. It breaks down the total number of applicants, how many were admitted, and how many ultimately enrolled, providing a clear view of conversion at each stage of the enrollment process.")
+        # with col4:
+        #     st.plotly_chart(plot_admission_funnel(adms_data, trend_school, selected_year=selected_year), use_container_width=True)
+        #     st.button("𝒾", help="This funnel chart illustrates the admissions pipeline for a selected institution and year. It breaks down the total number of applicants, how many were admitted, and how many ultimately enrolled, providing a clear view of conversion at each stage of the enrollment process.")
 
     elif st.session_state.enrollment_section == "section3":
         st.markdown("<br>", unsafe_allow_html=True)
@@ -226,8 +220,8 @@ if st.session_state.active_page == "Enrollment":
                 st.plotly_chart(create_total_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
                 st.button("𝒾", help=get_total_enrollment_help())
             with col2:
-                st.plotly_chart(create_gender_enrollment_bar_chart(adms_data, selected_schools, selected_years), use_container_width=True)
-                st.button("𝒾", help="Enrollment by gender for selected institutions.")
+                st.plotly_chart(create_gender_enrollment_multi_school_bar_chart(dbt_enroll, selected_schools), use_container_width=True)
+                st.button("𝒾", help=get_gender_enrollment_help())
             st.plotly_chart(create_admission_yield_rate_chart(adms_data, selected_schools, selected_years), use_container_width=True)
             st.button("𝒾", help="This grouped bar chart compares the admission rate and yield rate across selected institutions for a specific year. Admission rate represents the percentage of applicants who were admitted, while yield rate indicates the percentage of admitted students who chose to enroll. This visualization helps assess the selectivity and enrollment effectiveness of different institutions.")
             st.plotly_chart(create_full_vs_part_time_trend_multiple(adms_data, selected_schools), use_container_width=True)
@@ -240,7 +234,8 @@ elif st.session_state.active_page == "Graduation":
 
     st.markdown("""### :orange[Graduation]""")
     grad_data = load_data(GRAD_PATH)
-    dbt_grad = load_data(normalize_url(DBT_GRAD_GDRIVE))
+    dbt_grad = load_data(normalize_url("chloecodes/IPEDS_GRADUATION", "graduation.csv"))
+    custom_df = load_data(CUSTOM_PATH)
 
     # Get all schools first
     all_schools = sorted(grad_data["university_name"].dropna().unique())
@@ -271,7 +266,8 @@ elif st.session_state.active_page == "Graduation":
                 st.button("𝒾", help=get_graduation_funnel_help())
             with col2:
                 # fig = plot_graduation_rate_trend(grad_data, selected_unitid=selected_unitid)
-                fig = plot_university_wide_graduation_rate(dbt_grad, selected_unitid=selected_unitid)
+                # fig = plot_university_wide_graduation_rate(dbt_grad, selected_unitid=selected_unitid)
+                fig = plot_graduation_rates_over_time(custom_df, selected_institution=selected_school)
                 st.plotly_chart(fig, use_container_width=True)
 
             col3, col4 = st.columns(2)
