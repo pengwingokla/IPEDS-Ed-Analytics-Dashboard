@@ -1,0 +1,19 @@
+ipeds_dbt:
+  outputs:
+    dev:
+      account: kbivnvv-od83210
+      database: IPEDS
+      password: GabryelSoh2811!
+      role: ACCOUNTADMIN
+      schema: TRANSFORM
+      threads: 1
+      type: snowflake
+      user: unguyennttu
+      warehouse: COMPUTE_WH
+  target: dev
+
+To download csv locally, use SnowSQL:
+snowsql -q "SELECT * FROM IPEDS.TRANSFORM_MARTS.graduation" -o output_format=csv -o header=true -o output_file=/Users/uyennguyen/Projects/DA/Data-Viz-IPEDS/dbt-preprocessing/graduation-id.csv
+
+View the profile info with:
+cat ~/.dbt/profiles.yml
