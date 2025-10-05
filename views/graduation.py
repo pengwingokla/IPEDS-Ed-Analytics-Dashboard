@@ -7,7 +7,8 @@ from components.viz.grad_trends import (
     plot_cohort_graduation_funnel,
     plot_cohort_graduation_line,
     plot_graduation_gender,
-    plot_graduation_ethnicity
+    plot_graduation_ethnicity,
+    plot_graduation_statewide_comparison
     )
 
 def show_graduation_page():
@@ -50,4 +51,49 @@ def show_graduation_page():
         st.plotly_chart(fig, use_container_width=True)
     with col4:
         fig = plot_graduation_ethnicity(hf_custom, selected_institution, selected_year)
+        st.plotly_chart(fig, use_container_width=True)
+    #########################################################
+    # Statewide Comparison
+    #########################################################
+    st.markdown("### :orange[Graduation Statewide Comparison]")
+    col5, col6, col7 = st.columns(3)
+
+    # Set default state and institution
+    DEFAULT_STATE = "New Jersey"
+    DEFAULT_INSTITUTION = "New Jersey Institute of Technology"
+
+    with col5:
+        # Create select box for state
+        selected_state = st.selectbox(
+            label="Select a State",
+            # Drop the 2-letters states indicating U.S. territories and freely associated states
+            options=sorted([state for state in hf_custom["STATE"].dropna().unique() if len(state) > 2]),
+            index=sorted([state for state in hf_custom["STATE"].dropna().unique() if len(state) > 2]).index(DEFAULT_STATE)
+        )
+
+    # Filter institutions for selected state
+    state_institutions = sorted(hf_custom[hf_custom["STATE"] == selected_state]["institution name"].unique())
+    
+    # Set default index for institution selectbox
+    default_index = 0
+    if selected_state == DEFAULT_STATE and DEFAULT_INSTITUTION in state_institutions:
+        default_index = state_institutions.index(DEFAULT_INSTITUTION)
+
+    with col6:
+        selected_institution = st.selectbox(
+            label="Select an Institution",
+            options=state_institutions,
+            index=default_index
+        )
+
+    with col7:
+        selected_year = st.selectbox(
+            label="Select a Year",
+            options=sorted(hf_custom["year"].unique(), reverse=True),
+            index=0
+        )
+
+    col8, col9 = st.columns(2)
+    with col8:
+        fig = plot_graduation_statewide_comparison(hf_custom, selected_institution, selected_state, selected_year)
         st.plotly_chart(fig, use_container_width=True)

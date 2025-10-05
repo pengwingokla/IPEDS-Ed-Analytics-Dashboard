@@ -1,5 +1,6 @@
 import plotly.express as px
 import pandas as pd
+from lib.colors import NJIT_COLORS
 
 def plot_cohort_graduation_line(df, selected_institution=None):
     """
@@ -55,7 +56,11 @@ def plot_cohort_graduation_line(df, selected_institution=None):
         hover_data={'Graduation Rate (%)': ':.1f'}
     )
 
-    fig.update_traces(text=plot_df['Graduation Rate (%)'].round(1), textposition="top center")
+    fig.update_traces(
+        text=plot_df['Graduation Rate (%)'].round(1), 
+        textposition="top center",
+        marker_line_width=0
+    )
     fig.update_layout(
         xaxis=dict(title='Cohort Year', tickmode='linear'),
         yaxis_title='Graduation Rate (%)',
@@ -137,7 +142,7 @@ def plot_cohort_graduation_funnel(df, selected_institution=None, selected_year=N
     fig.update_traces(
         textposition="inside",
         marker_line_color="white",
-        marker_line_width=1
+        marker_line_width=0
     )
 
     fig.update_layout(
@@ -191,7 +196,8 @@ def plot_graduation_gender(df, selected_institution):
     
     fig.update_traces(
         text=plot_df['Graduation Rate'].round(1),
-        textposition="top center"
+        textposition="top center",
+        marker_line_width=0
     )
     
     fig.update_layout(
@@ -264,10 +270,74 @@ def plot_graduation_ethnicity(df, selected_institution, selected_year):
     
     fig.update_traces(
         texttemplate='%{y:.1f}%',
-        textposition='outside'
+        textposition='outside',
+        marker_line_width=0
     )
     
     return fig
 
+def plot_graduation_statewide_comparison(df, selected_institution, selected_state, selected_year):
+    """
+    Plot bar chart comparing graduation rate of selected institution vs average of other institutions in the state.
 
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        The input dataframe containing graduation rate data
+    selected_institution : str
+        Name of the selected institution
+    selected_state : str
+        Name of the selected state
+    selected_year : int
+        Selected year to compare graduation rates
+
+    Notes
+    -----
+    Hugging Face source: `chloecodes/IPEDS_CUSTOM`
+    """
+    # Filter data for the selected state and year
+    state_df = df[(df['STATE'] == selected_state) & (df['year'] == selected_year)].copy()
+
+    # Calculate average graduation rates
+    selected_rate = state_df[state_df['institution name'] == selected_institution]['Graduation rate, total cohort'].iloc[0]
+    
+    other_institutions = state_df[state_df['institution name'] != selected_institution]
+    other_rate = other_institutions['Graduation rate, total cohort'].mean()
+
+    # Create plot dataframe
+    plot_df = pd.DataFrame({
+        'Institution': [selected_institution, f'Average of Other {selected_state} Institutions'],
+        'Graduation Rate': [selected_rate, other_rate]
+    })
+
+    # Create bar chart
+    fig = px.bar(
+        plot_df,
+        x='Institution',
+        y='Graduation Rate',
+        title=f"6-Year Graduation Rate ({selected_year}): {selected_institution} vs {selected_state} Average",
+        color='Institution',
+        color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"]],
+        text=plot_df['Graduation Rate'].round(1)
+    )
+
+    fig.update_traces(
+        textposition='auto',
+        texttemplate='%{text}%'
+    )
+
+    fig.update_layout(
+        template='plotly_white',
+        height=500,
+        showlegend=False,
+        xaxis_title="",
+        yaxis=dict(
+            title="Graduation Rate (%)",
+            tickformat='.1f',
+            ticksuffix='%',
+            range=[0, 100]
+        )
+    )
+
+    return fig
 
