@@ -4,16 +4,11 @@ from streamlit_option_menu import option_menu
 
 
 
-from pages.enrollment import show_enrollment_page
-from pages.graduation import show_graduation_page
+from views.enrollment import show_enrollment_page
+from views.graduation import show_graduation_page
 
 # ---- Path Constants ----
 IMG_NJIT_LOGO_PATH = "img/njit_logo.jpg"
-ADMS_PATH = "data/archives/NJ_admission_data.csv"
-EFFY_PATH = "data/archives/NJ_enrollment_data.csv" 
-SFA_PATH = "data/archives/NJ_sfa_data.csv"
-GRAD_PATH = "data/archives/NJ_graduation_data.csv"
-CUSTOM_PATH = "data/custom/processed/c20-23.csv"
 
 # ---- Set Page Config ----
 st.set_page_config(
@@ -21,21 +16,8 @@ st.set_page_config(
     page_icon=IMG_NJIT_LOGO_PATH,
     layout="wide"
 )
-
-# ---- Load Data with Caching ----
-@st.cache_data
-def load_data(file_path):
-    return pd.read_csv(file_path)
-
-def normalize_url(repo_id, filename, revision="main"):
-    """
-    Normalize the URL for the HuggingFace dataset
-    """
-    return f"https://huggingface.co/datasets/{repo_id}/resolve/{revision}/{filename}"
-
-# Initialize session states
-if "active_page" not in st.session_state:
-    st.session_state.active_page = "Welcome"
+# ---- Main Title ----
+st.markdown("<h1 style='text-align: center;'>Higher Education Insights Dashboard</h1>", unsafe_allow_html=True)
 
 # ---- Sidebar Navigation ----
 # with st.sidebar:
@@ -53,9 +35,6 @@ elif selected == "Graduation":
     st.session_state.active_page = "Graduation"
 elif selected == "Financial Aid":
     st.session_state.active_page = "Financial Aid"
-
-# ---- Main Title ----
-st.title("Institutional Analytics")
 
 # ---- Default Welcome Page ----
 if st.session_state.active_page == "Welcome":
