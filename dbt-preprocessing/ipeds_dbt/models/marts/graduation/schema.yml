@@ -1,7 +1,0 @@
-version: 2
-models:
-  - name: graduation
-    description: "Descriptive graduation rate table (2020-2023)."
-    columns:
-      - name: institution_id
-        tests: [not_null]
