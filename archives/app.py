@@ -49,12 +49,12 @@ from plot_utils.charts_custom import (
 )
 
 # ---- Path Constants ----
-IMG_NJIT_LOGO_PATH = "img/njit_logo.jpg"
-ADMS_PATH = "data/archives/NJ_admission_data.csv"
-EFFY_PATH = "data/archives/NJ_enrollment_data.csv"
-SFA_PATH  = "data/archives/NJ_sfa_data.csv"
-GRAD_PATH = "data/archives/NJ_graduation_data.csv"
-CUSTOM_PATH = "data/custom/processed/c20-23.csv"
+IMG_NJIT_LOGO_PATH = "archives/img/njit_logo.jpg"
+ADMS_PATH = "archives/data/archives/NJ_admission_data.csv"
+EFFY_PATH = "archives/data/archives/NJ_enrollment_data.csv"
+SFA_PATH  = "archives/data/archives/NJ_sfa_data.csv"
+GRAD_PATH = "archives/data/archives/NJ_graduation_data.csv"
+CUSTOM_PATH = "archives/data/custom/processed/c20-23.csv"
 
 # ---- Set Page Config ----
 st.set_page_config(
