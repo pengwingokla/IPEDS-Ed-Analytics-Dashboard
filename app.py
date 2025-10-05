@@ -16,9 +16,12 @@ IMG_NJIT_LOGO_PATH = "components/img/njit_logo.jpg"
 # ---- Set Page Config ----
 st.set_page_config(
     page_title="University Insights",
+    page_icon=IMG_NJIT_LOGO_PATH,
     page_icon=IMG_NJIT_LOGO_PATH, # Using an emoji instead of image path for tab icon
     layout="wide"
 )
+# ---- Main Title ----
+st.markdown("<h1 style='text-align: center;'>Higher Education Insights Dashboard</h1>", unsafe_allow_html=True)
 # ---- Main Title ----
 st.markdown("<h1 style='text-align: center;'>Higher Education Insights Dashboard</h1>", unsafe_allow_html=True)
 
