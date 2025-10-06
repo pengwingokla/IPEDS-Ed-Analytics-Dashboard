@@ -9,6 +9,7 @@ from views.enrollment.overview import show_enrollment_overview_page
 from views.enrollment.statewide import show_enrollment_state_wide_trends_page
 from views.enrollment.crossinst import show_enrollment_cross_institution_comparison_page
 from views.graduation import show_graduation_page
+from views.finaid import show_financial_aid_page
 
 # ---- Path Constants ----
 IMG_NJIT_LOGO_PATH = "components/img/njit_logo.jpg"
@@ -61,3 +62,4 @@ elif selected == "Graduation":
 # 🔸🔸 Financial Aid Page 🔸🔸
 elif selected == "Financial Aid":
     st.session_state.active_page = "Financial Aid"
+    show_financial_aid_page()
