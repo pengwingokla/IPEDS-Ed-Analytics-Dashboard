@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
-import time
-from streamlit_plotly_events import plotly_events
 
 from lib.utils import load_data, normalize_url
 from lib.info_text import Help
+
 from components.viz.finaid_plots import (
     plot_tuition_type_pie,
     plot_aid_type_stackedbar,
@@ -67,7 +66,7 @@ def show_financial_aid_page():
         options=sorted(hf_custom["year"].unique(), reverse=True),
         index=0)
     col10, col11 = st.columns(2)
-    
+
     with col10:
         fig = plot_tuition_type_pie(hf_custom, selected_institution, selected_year)
         st.plotly_chart(fig, use_container_width=True)
