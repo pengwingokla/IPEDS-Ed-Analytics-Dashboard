@@ -54,7 +54,7 @@ def plot_ugenrollment_headcount(df, selected_institution):
             tickformat='d'
         ),
         yaxis=dict(
-            tickformat=',d'  # Format y-axis ticks with commas for thousands
+            tickformat=',d'
         ),
         legend=dict(
             yanchor="top",
@@ -205,7 +205,6 @@ def plot_ugenrollment_gender(df, selected_institution):
     )
 
     return fig
-
 def plot_ugenrollment_ft_pt(df, selected_institution):
     """
     Create a grouped bar chart showing full-time and part-time undergraduate enrollment trends over time for the selected institution
@@ -242,24 +241,20 @@ def plot_ugenrollment_ft_pt(df, selected_institution):
         template='plotly_white',
         height=500,
         xaxis_title="Year",
-        yaxis_title="Enrollment Count",
+        yaxis_title="Number of Students",
         xaxis=dict(
             tickmode='linear',
             tick0=plot_df['Year'].min(),
             dtick=1,
             tickformat='d'
         ),
-        yaxis=dict(
-            tickformat=',d'  # Format y-axis ticks with commas for thousands
-        ),
         legend_title=None
     )
 
     # Add value labels on bars
     fig.update_traces(
-        text=plot_df['Full-time'].round(1),
-        textposition='outside',
-        marker_line_width=0
+        texttemplate='%{y:,.0f}',
+        textposition='outside'
     )
 
     return fig
