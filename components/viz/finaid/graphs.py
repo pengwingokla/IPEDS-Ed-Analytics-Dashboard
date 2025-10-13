@@ -42,7 +42,13 @@ def plot_aid_type_stackedbar(df, selected_institution):
         yaxis_title="Percentage",
         barmode='stack',
         showlegend=True,
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+        legend=dict(
+            orientation="v", 
+            yanchor="top", 
+            y=1, 
+            xanchor="left", 
+            x=1.02
+        )
     )
     
     # Add percentage labels on bars

@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from lib.utils import load_data, normalize_url
 
-from components.viz.enr_overview import (
+from components.viz.enrollment.enr_overview import (
     plot_ugenrollment_headcount,
     plot_ugenrollment_age_distribution,
     plot_ugenrollment_gender,
@@ -10,6 +10,8 @@ from components.viz.enr_overview import (
     plot_ugenrollment_race,
     plot_ugenrollment_residence
     )
+
+from lib.info_text import Help
 
 def show_enrollment_overview_page():
     # Load data
@@ -29,6 +31,7 @@ def show_enrollment_overview_page():
     with col1:
         fig = plot_ugenrollment_headcount(hf_custom, selected_institution)
         st.plotly_chart(fig, use_container_width=True)
+        st.button("𝒾", help=Help.UG_ENROLLMENT_HEADCOUNT)
     with col2:
         fig = plot_ugenrollment_age_distribution(hf_custom, selected_institution)
         st.plotly_chart(fig, use_container_width=True)

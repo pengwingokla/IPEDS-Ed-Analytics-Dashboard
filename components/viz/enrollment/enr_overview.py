@@ -99,7 +99,6 @@ def plot_ugenrollment_age_distribution(df, selected_institution=None):
         var_name='Age Group',
         value_name='Percentage'
     )
-
     # Create bar chart
     fig = px.bar(
         plot_df,
@@ -108,7 +107,7 @@ def plot_ugenrollment_age_distribution(df, selected_institution=None):
         color='Age Group',
         title=f"{selected_institution} Undergraduate Enrollment by Age Group",
         color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"], NJIT_COLORS["gray"], NJIT_COLORS["black"]],
-        text=plot_df['Percentage'].round(1)
+        text=plot_df['Percentage'].round(1).astype(str) + '%'
     )
 
     fig.update_traces(

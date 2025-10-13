@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from lib.utils import load_data, normalize_url
 
-from components.viz.enr_crossinst import (
+from components.viz.enrollment.enr_crossinst import (
     plot_enrollment_cross_institution
 )
 

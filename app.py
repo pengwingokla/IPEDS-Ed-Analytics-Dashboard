@@ -26,7 +26,7 @@ st.markdown("<h1 style='text-align: center;'>Higher Education Insights Dashboard
 # ---- Sidebar Navigation ----
 selected = option_menu(
     menu_title=None,
-    options=["Home", "Enrollment", "Graduation", "Financial Aid"],
+    options=["Home", "Fall Enrollment", "Graduation", "Financial Aid"],
     icons=["house", "person-workspace", "mortarboard", "currency-dollar"], #https://icons.getbootstrap.com/
     orientation="horizontal",
 )
@@ -37,7 +37,7 @@ if selected == "Home":
     show_home_page()
 
 # 🔸🔸 Enrollment Page 🔸🔸
-if selected == "Enrollment":
+if selected == "Fall Enrollment":
     selected_sub = option_menu(
         menu_title=None,
         options=["Overview", "State Wide Trends", "Cross-Institution Comparison"],
@@ -50,7 +50,6 @@ if selected == "Enrollment":
         show_enrollment_state_wide_trends_page()
     elif selected_sub == "Cross-Institution Comparison":
         show_enrollment_cross_institution_comparison_page()
-    # elif selected_sub == "Cross-Institution Comparison":
         
 
 

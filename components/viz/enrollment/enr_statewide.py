@@ -30,7 +30,7 @@ def plot_ug_enrollment_statewide(df, selected_institution, selected_state, selec
         plot_df,
         values='Undergraduate Enrollment',
         names='Institution',
-        title=f"Undergraduate Enrollment Shares ({selected_year}): {selected_institution} vs Other {selected_state} Institutions",
+        title=f"Undergraduate Enrollment Shares ({selected_year}): Selected School vs Other {selected_state} Institutions",
         color='Institution',
         color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"]]
     )

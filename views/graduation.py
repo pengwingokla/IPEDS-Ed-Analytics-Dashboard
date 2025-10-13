@@ -3,7 +3,7 @@ import pandas as pd
 
 from lib.utils import load_data, normalize_url
 
-from components.viz.grad_trends import (
+from components.viz.graduation.graphs import (
     plot_cohort_graduation_funnel,
     plot_cohort_graduation_line,
     plot_graduation_gender,

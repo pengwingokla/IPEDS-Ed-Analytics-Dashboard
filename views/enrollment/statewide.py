@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from lib.utils import load_data, normalize_url
 
-from components.viz.enr_statewide import (
+from components.viz.enrollment.enr_statewide import (
     plot_ug_enrollment_statewide,
     plot_gr_enrollment_statewide,
     plot_international_ug_statewide,

@@ -4,7 +4,7 @@ import pandas as pd
 from lib.utils import load_data, normalize_url
 from lib.info_text import Help
 
-from components.viz.finaid_plots import (
+from components.viz.finaid.graphs import (
     plot_tuition_type_pie,
     plot_aid_type_stackedbar,
     plot_aid_received_linechart,
@@ -23,23 +23,22 @@ def show_financial_aid_page():
         st.error(f"Failed to load data: {e}")
         return
 
+    st.markdown("""### :orange[Overview]""")
+
     # Selectbox for institution and year
     selected_institution = st.selectbox(
         label="Select an Institution", 
         options=hf_custom["institution name"].unique(), 
         index=hf_custom["institution name"].unique().tolist().index("New Jersey Institute of Technology"))
     
-
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.button("𝒾", help=Help.AID_TYPE_COMPOSITION)
-        fig = plot_aid_type_stackedbar(hf_custom, selected_institution)
-        st.plotly_chart(fig, use_container_width=True)
+    # col1, col2 = st.columns(2)
+    st.button("𝒾", help=Help.AID_TYPE_COMPOSITION)
+    fig = plot_aid_type_stackedbar(hf_custom, selected_institution)
+    st.plotly_chart(fig, use_container_width=True)
     
     col3, col4 = st.columns(2)
     with col3:
-        st.button("𝒾", help="")
+        st.button("𝒾", help=Help.TOT_AMT_AID_COMPOSITION)
         fig = plot_total_aid_disbursed_linechart(hf_custom, selected_institution)
         st.plotly_chart(fig, use_container_width=True)
     
@@ -50,11 +49,11 @@ def show_financial_aid_page():
     
     st.markdown("""### :orange[Student Loan Analysis]""")
     col5, col6 = st.columns(2)
-    with col5:
-        fig = plot_student_loan_dualaxis(hf_custom, selected_institution)
-        st.plotly_chart(fig, use_container_width=True)
+    # with col5:
+    #     fig = plot_student_loan_dualaxis(hf_custom, selected_institution)
+    #     st.plotly_chart(fig, use_container_width=True)
     
-    with col6:
+    with col5:
         fig = plot_student_loan_percentages(hf_custom, selected_institution)
         st.plotly_chart(fig, use_container_width=True)
     
