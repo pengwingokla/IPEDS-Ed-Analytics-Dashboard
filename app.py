@@ -10,6 +10,7 @@ from views.enrollment.statewide import show_enrollment_state_wide_trends_page
 from views.enrollment.crossinst import show_enrollment_cross_institution_comparison_page
 from views.graduation import show_graduation_page
 from views.finaid import show_financial_aid_page
+from views.admission import show_admission_page
 
 # ---- Path Constants ----
 IMG_NJIT_LOGO_PATH = "components/img/njit_logo.jpg"
@@ -26,8 +27,8 @@ st.markdown("<h1 style='text-align: center;'>Higher Education Insights Dashboard
 # ---- Sidebar Navigation ----
 selected = option_menu(
     menu_title=None,
-    options=["Home", "Fall Enrollment", "Graduation", "Financial Aid"],
-    icons=["house", "person-workspace", "mortarboard", "currency-dollar"], #https://icons.getbootstrap.com/
+    options=["Home", "Admission", "Fall Enrollment", "Graduation", "Financial Aid"],
+    icons=["house", "book", "person-workspace", "mortarboard", "currency-dollar"], #https://icons.getbootstrap.com/
     orientation="horizontal",
 )
 
@@ -35,6 +36,11 @@ selected = option_menu(
 if selected == "Home":
     st.session_state.active_page = "Home"
     show_home_page()
+
+# 🔸🔸 Admission Page 🔸🔸
+elif selected == "Admission":
+    st.session_state.active_page = "Admission"
+    show_admission_page()
 
 # 🔸🔸 Enrollment Page 🔸🔸
 if selected == "Fall Enrollment":
@@ -51,8 +57,6 @@ if selected == "Fall Enrollment":
     elif selected_sub == "Cross-Institution Comparison":
         show_enrollment_cross_institution_comparison_page()
         
-
-
 # 🔸🔸 Graduation Page 🔸🔸
 elif selected == "Graduation":
     st.session_state.active_page = "Graduation"
@@ -62,3 +66,4 @@ elif selected == "Graduation":
 elif selected == "Financial Aid":
     st.session_state.active_page = "Financial Aid"
     show_financial_aid_page()
+
