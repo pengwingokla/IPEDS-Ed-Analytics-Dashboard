@@ -11,7 +11,7 @@ from components.viz.enrollment.enr_overview import (
     plot_ugenrollment_residence
     )
 
-from lib.info_text import Help
+from lib.text.helper import Help
 
 def show_enrollment_overview_page():
     # Load data
@@ -57,17 +57,3 @@ def show_enrollment_overview_page():
     with col6:
         fig = plot_ugenrollment_residence(hf_custom, selected_institution, selected_year)
         st.plotly_chart(fig, use_container_width=True)
-    # Placeholder for future content
-    # st.markdown("---")
-    # st.markdown("**Enrollment page content will be implemented here**")
-    
-    # # Example of how to add content sections
-    # with st.expander("📊 Enrollment Overview", expanded=True):
-    #     st.write("This section will contain enrollment overview charts and metrics.")
-        
-        
-    # with st.expander("📈 Trends Analysis", expanded=False):
-    #     st.write("This section will show enrollment trends over time.")
-        
-    # with st.expander("🏫 Institution Comparison", expanded=False):
-    #     st.write("This section will allow comparison between different institutions.")

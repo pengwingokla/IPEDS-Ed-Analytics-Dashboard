@@ -95,3 +95,33 @@ def selectivity_metrics(df, selected_institution="New Jersey Institute of Techno
         height="content"
     )
     return df_filtered
+
+
+def aid_metrics(df, selected_institution="New Jersey Institute of Technology"):
+    # Filter data for the selected institution
+    df_filtered = df[df['institution name'] == selected_institution].copy()
+
+    if df_filtered.empty:
+        raise ValueError(f"No data found for institution: {selected_institution}")
+
+    # Sort by year to ensure proper order
+    df_filtered = df_filtered.sort_values('year')
+    
+    # Get the aid percentage column
+    aid_col = 'Percent of full-time first-time undergraduates awarded any loans to students or grant aid  from federal state/local government or the institution'
+    aid_rates = df_filtered[aid_col].tolist()
+    
+    # Get the most recent aid rate and calculate delta
+    latest_aid = aid_rates[-1]
+    prev_aid = aid_rates[-2] if len(aid_rates) > 1 else latest_aid
+    delta = latest_aid - prev_aid
+
+    # Display metric with line chart
+    st.metric(
+        f"Students Receiving Aid {df_filtered['year'].iloc[-1]}", 
+        f"{latest_aid:.1f}%",
+        f"{delta:+.1f}%",
+        width="stretch",
+        height="content"
+    )
+    return df_filtered
