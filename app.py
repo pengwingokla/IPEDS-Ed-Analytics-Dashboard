@@ -11,6 +11,7 @@ from views.enrollment.crossinst import show_enrollment_cross_institution_compari
 from views.graduation import show_graduation_page
 from views.finaid import show_financial_aid_page
 from views.admission import show_admission_page
+from lib.text.footer import footer
 
 # ---- Path Constants ----
 IMG_NJIT_LOGO_PATH = "components/img/njit_logo.jpg"
@@ -67,3 +68,5 @@ elif selected == "Financial Aid":
     st.session_state.active_page = "Financial Aid"
     show_financial_aid_page()
 
+
+# footer()
