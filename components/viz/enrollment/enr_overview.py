@@ -32,7 +32,7 @@ def plot_ugenrollment_headcount(df, selected_institution):
         x='Year',
         y='Enrollment',
         color='Degree Level',
-        title=f"{selected_institution} Enrollment Trends by Degree Level",
+        title=f"{selected_institution} Enrollment Headcount by Degree Level",
         color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"]],
         text=plot_df['Enrollment'].round(0).astype(int)
     )
@@ -380,29 +380,31 @@ def plot_ugenrollment_residence(df, selected_institution, selected_year):
     }
     plot_df = pd.DataFrame(enrollment_data)
 
+    # Sort dataframe by percentage in descending order
+    plot_df = plot_df.sort_values('Percentage', ascending=False)
+
     # Create pie chart
     fig = px.pie(
         plot_df,
         values='Percentage',
         names='Residence',
         title=f"{selected_institution} First-Time Undergraduate Enrollment by Residence ({selected_year})",
+        color='Residence',
         color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"], NJIT_COLORS["gray"], NJIT_COLORS["white"]]
     )
 
     # Update layout
     fig.update_layout(
         template='plotly_white',
-        showlegend=True,
         height=600,
-        width=None
+        showlegend=True
     )
 
-    # Update traces
+    # Add percentage labels
     fig.update_traces(
         textposition='inside',
-        textinfo='percent+value',
-        marker_line_width=0,
-        texttemplate='%{percent}'
+        textinfo='percent+label',
+        texttemplate='%{label}<br>%{percent:.1f}%'
     )
 
     return fig

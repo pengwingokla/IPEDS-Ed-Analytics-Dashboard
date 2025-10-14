@@ -47,9 +47,9 @@ def plot_admission_selectivity(df, selected_institution):
     df_filtered['year'] = pd.to_numeric(df_filtered['year'], errors='coerce')
 
     cols = {
-        'Percent admitted - total': 'Total Selectivity',
-        'Percent admitted - men': 'Men Selectivity',
-        'Percent admitted - women': 'Women Selectivity'
+        'Percent admitted - total': 'Total',
+        # 'Percent admitted - men': 'Men',
+        # 'Percent admitted - women': 'Women'
     }
     keep = ['year'] + list(cols.keys())
     tmp = df_filtered[keep].dropna(how='all')

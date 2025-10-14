@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 from lib.utils import load_data, normalize_url
-from lib.info_text import Help
+from lib.text.helper import Help
 
 from components.viz.admission.graphs import (
     plot_admission_yield,

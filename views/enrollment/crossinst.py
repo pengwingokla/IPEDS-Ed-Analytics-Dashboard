@@ -3,7 +3,9 @@ import pandas as pd
 from lib.utils import load_data, normalize_url
 
 from components.viz.enrollment.enr_crossinst import (
-    plot_enrollment_cross_institution
+    plot_enrollment_cross_institution,
+    plot_ugenrollment_age_distribution_cross_institution,
+    plot_ugenrollment_residence_cross_institution
 )
 
 def show_enrollment_cross_institution_comparison_page():
@@ -28,3 +30,10 @@ def show_enrollment_cross_institution_comparison_page():
     with col1:
         fig = plot_enrollment_cross_institution(hf_custom, selected_multiple_institutions, selected_year)
         st.plotly_chart(fig, use_container_width=True)
+    with col2:
+        fig = plot_ugenrollment_age_distribution_cross_institution(hf_custom, selected_multiple_institutions, selected_year)
+        st.plotly_chart(fig, use_container_width=True)
+    
+    
+    fig = plot_ugenrollment_residence_cross_institution(hf_custom, selected_multiple_institutions, selected_year)
+    st.plotly_chart(fig, use_container_width=True)
