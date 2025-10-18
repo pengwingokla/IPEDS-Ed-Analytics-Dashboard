@@ -28,15 +28,30 @@ def plot_admission_yield(df, selected_institution):
 
     fig = px.line(
         plot_df, x='Year', y='Rate', color='Metric',
-        title='Admission Yield Rates Over Time', markers=True
+        title='Admission Yield Rates Over Time', 
+        markers=True,
+        color_discrete_sequence=px.colors.qualitative.Plotly
     )
     fig.update_layout(
         xaxis_title="Year", yaxis_title="Yield Rate (%)",
         xaxis=dict(tickformat="d"),
         legend=dict(orientation="v", yanchor="bottom", y=1.02, xanchor="right", x=1),
     )
-    fig.update_traces(texttemplate='%{y:.1f}%', textposition='top center')
+    fig.update_traces(
+        texttemplate='%{y:.1f}%',
+        textposition='top center')
 
+    # Make Total Yield line thicker
+    for trace in fig.data:
+        if trace.name == "Total Yield":
+            trace.line.width = 3
+            trace.marker.symbol = "triangle-up"
+            trace.marker.size = 11
+            
+    # Make part-time and full-time yield lines dashed
+    for trace in fig.data:
+        if trace.name in ["Part-time Yield", "Full-time Yield"]:
+            trace.line.dash = 'dash'
     return fig
 
 def plot_admission_selectivity(df, selected_institution):
@@ -94,7 +109,7 @@ def plot_admission_headcount(df, selected_institution):
             if column in df_filtered.columns:
                 value = year_data[column].iloc[0] if not year_data.empty else 0
                 admission_data.append({
-                    'Year': year,
+                    'Year': f"Fall {year}",
                     'Stage': stage,
                     'Count': value
                 })
@@ -108,7 +123,7 @@ def plot_admission_headcount(df, selected_institution):
         x='Year',
         y='Count',
         color='Stage',
-        title=f'Admission Funnel: Applications, Admissions, and Enrollment Headcount',
+        title=f'Fall Admission Funnel: Applications, Admissions, and Enrollment Headcount',
         barmode='group',
         color_discrete_sequence=px.colors.sequential.Blues[::-2]
     )

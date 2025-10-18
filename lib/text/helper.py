@@ -2,7 +2,8 @@ from textwrap import dedent
 
 class Help:
     UG_ENROLLMENT_HEADCOUNT = dedent("""
-        This stacked bar chart shows the total fall enrollment of undergraduate and graduate students at the selected institution over time.
+        This stacked bar chart shows the total fall enrollment of undergraduate and graduate students at the selected institution over time. 
+        Graduate students includes Masters/Non-matriculated Grad, Post-Baccalaureate Certificates, and Doctorates.
     """)
     GENERAL_AID_TYPE_COMPOSITION = dedent("""
         This graph displays the percentage of full-time, first-time undergraduate students who received financial aid at the selected institution over time. It compares two categories:

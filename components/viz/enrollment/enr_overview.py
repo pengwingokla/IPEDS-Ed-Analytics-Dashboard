@@ -26,6 +26,9 @@ def plot_ugenrollment_headcount(df, selected_institution):
         'Degree Level': ['Undergraduate'] * len(inst_df) + ['Graduate'] * len(inst_df)
     })
 
+    # Calculate total enrollment for each year
+    total_by_year = plot_df.groupby('Year')['Enrollment'].sum().reset_index()
+
     # Create stacked bar chart
     fig = px.bar(
         plot_df,
@@ -36,6 +39,17 @@ def plot_ugenrollment_headcount(df, selected_institution):
         color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"]],
         text=plot_df['Enrollment'].round(0).astype(int)
     )
+
+    # Add total enrollment annotations above each bar
+    for year, total in zip(total_by_year['Year'], total_by_year['Enrollment']):
+        fig.add_annotation(
+            x=year,
+            y=total,
+            text=f"{int(total):,}",
+            showarrow=False,
+            yshift=10,
+            font=dict(size=12)
+        )
 
     fig.update_traces(
         textposition="auto",
@@ -140,21 +154,6 @@ def plot_ugenrollment_age_distribution(df, selected_institution=None):
     return fig
 
 def plot_ugenrollment_gender(df, selected_institution):
-    """
-    Plot percentage of undergraduate enrollment that are women over time.
-
-    Parameters
-    ----------
-    df : pandas.DataFrame
-        The input dataframe containing enrollment data
-    selected_institution : str
-        Name of the selected institution to plot data for
-
-    Returns
-    -------
-    plotly.graph_objects.Figure
-        The plotly figure object containing the line plot
-    """
     # Filter for selected institution
     inst_df = df[df['institution name'] == selected_institution].copy()
 
@@ -204,6 +203,7 @@ def plot_ugenrollment_gender(df, selected_institution):
     )
 
     return fig
+
 def plot_ugenrollment_ft_pt(df, selected_institution):
     """
     Create a grouped bar chart showing full-time and part-time undergraduate enrollment trends over time for the selected institution
@@ -221,16 +221,16 @@ def plot_ugenrollment_ft_pt(df, selected_institution):
     # Create plot dataframe
     plot_df = pd.DataFrame({
         'Year': inst_df['year'],
-        'Full-time': inst_df['Full-time undergraduate enrollment'],
-        'Part-time': inst_df['Part-time undergraduate enrollment']
+        'UG Full-time': inst_df['Full-time undergraduate enrollment'],
+        'UG Part-time': inst_df['Part-time undergraduate enrollment']
     })
 
     # Create grouped bar chart
     fig = px.bar(
         plot_df,
         x='Year',
-        y=['Full-time', 'Part-time'],
-        title=f"{selected_institution} Full-Time vs Part-Time Enrollment",
+        y=['UG Full-time', 'UG Part-time'],
+        title=f"{selected_institution} Full-Time vs Part-Time Undergraduate Enrollment",
         color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"]],
         barmode='group'
     )
@@ -390,7 +390,7 @@ def plot_ugenrollment_residence(df, selected_institution, selected_year):
         names='Residence',
         title=f"{selected_institution} First-Time Undergraduate Enrollment by Residence ({selected_year})",
         color='Residence',
-        color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"], NJIT_COLORS["gray"], NJIT_COLORS["white"]]
+        color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"], NJIT_COLORS["gray"], "#F1F1F1"]
     )
 
     # Update layout
@@ -404,8 +404,145 @@ def plot_ugenrollment_residence(df, selected_institution, selected_year):
     fig.update_traces(
         textposition='inside',
         textinfo='percent+label',
-        texttemplate='%{label}<br>%{percent:.1f}%'
+        texttemplate='%{label}<br>%{percent}'
     )
 
     return fig
 
+def plot_enrollment_ft_pt_ug_piechart(df, selected_institution):
+    # Filter for selected institution
+    inst_df = df[df['institution name'] == selected_institution].copy()
+    
+    if inst_df.empty:
+        raise ValueError(f"No data found for institution: {selected_institution}")
+
+    # Get most recent year's data
+    latest_year = inst_df['year'].max()
+    latest_data = inst_df[inst_df['year'] == latest_year].iloc[0]
+
+    # Create plot dataframe
+    plot_df = pd.DataFrame({
+        'Enrollment Type': ['Full-time', 'Part-time'],
+        'Count': [
+            latest_data['Full-time undergraduate enrollment'],
+            latest_data['Part-time undergraduate enrollment']
+        ]
+    })
+
+    # Create pie chart
+    fig = px.pie(
+        plot_df,
+        values='Count',
+        names='Enrollment Type',
+        title=f"Full-Time vs Part-Time Undergraduate Enrollment ({latest_year})",
+        color='Enrollment Type',
+        color_discrete_sequence=[NJIT_COLORS["navy"], NJIT_COLORS["gray"]]
+    )
+
+    # Update layout
+    fig.update_layout(
+        template='plotly_white',
+        height=500,
+        showlegend=True
+    )
+
+    # Add percentage and count labels
+    fig.update_traces(
+        textposition='inside',
+        textinfo='percent+label+value',
+        texttemplate='%{label}<br>%{percent}'
+    )
+
+    return fig
+
+def plot_enrollment_ft_pt_gr_piechart(df, selected_institution):
+    # Filter for selected institution
+    inst_df = df[df['institution name'] == selected_institution].copy()
+    
+    if inst_df.empty:
+        raise ValueError(f"No data found for institution: {selected_institution}")
+
+    # Get most recent year's data
+    latest_year = inst_df['year'].max()
+    latest_data = inst_df[inst_df['year'] == latest_year].iloc[0]
+
+    # Create plot dataframe
+    plot_df = pd.DataFrame({
+        'Enrollment Type': ['Full-time', 'Part-time'],
+        'Count': [
+            latest_data['Full-time graduate enrollment'],
+            latest_data['Part-time graduate enrollment']
+        ]
+    })
+
+    # Create pie chart
+    fig = px.pie(
+        plot_df,
+        values='Count',
+        names='Enrollment Type',
+        title=f"Full-Time vs Part-Time Graduate Enrollment ({latest_year})",
+        color='Enrollment Type',
+        color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["gray"]]
+    )
+
+    # Update layout
+    fig.update_layout(
+        template='plotly_white',
+        height=500,
+        showlegend=True
+    )
+
+    # Add percentage and count labels
+    fig.update_traces(
+        textposition='inside',
+        textinfo='percent+label+value',
+        texttemplate='%{label}<br>%{percent}'
+    )
+
+    return fig
+
+def plot_enrollment_ft_pt_all_piechart(df, selected_institution):
+    # Filter for selected institution
+    inst_df = df[df['institution name'] == selected_institution].copy()
+    
+    if inst_df.empty:
+        raise ValueError(f"No data found for institution: {selected_institution}")
+
+    # Get most recent year's data
+    latest_year = inst_df['year'].max()
+    latest_data = inst_df[inst_df['year'] == latest_year].iloc[0]
+
+    # Create plot dataframe
+    plot_df = pd.DataFrame({
+        'Enrollment Type': ['Full-time', 'Part-time'],
+        'Count': [
+            latest_data['Full-time enrollment'],
+            latest_data['Part-time enrollment']
+        ]
+    })
+
+    # Create pie chart
+    fig = px.pie(
+        plot_df,
+        values='Count',
+        names='Enrollment Type',
+        title=f"Full-Time vs Part-Time Enrollment ({latest_year})",
+        color='Enrollment Type',
+        color_discrete_sequence=[NJIT_COLORS["red"], NJIT_COLORS["navy"]]
+    )
+
+    # Update layout
+    fig.update_layout(
+        template='plotly_white',
+        height=500,
+        showlegend=True
+    )
+
+    # Add percentage and count labels
+    fig.update_traces(
+        textposition='inside',
+        textinfo='percent+label+value',
+        texttemplate='%{label}<br>%{percent}'
+    )
+
+    return fig

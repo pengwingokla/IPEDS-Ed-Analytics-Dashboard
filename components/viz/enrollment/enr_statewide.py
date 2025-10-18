@@ -11,7 +11,7 @@ def plot_ug_enrollment_statewide(df, selected_institution, selected_state, selec
     Hugging Face source: `chloecodes/IPEDS_CUSTOM`
     """
     # Filter data for the selected state and year
-    state_df = df[(df['STATE'] == selected_state) & (df['year'] == selected_year)].copy()
+    state_df = df[(df['State'] == selected_state) & (df['year'] == selected_year)].copy()
 
     # Calculate enrollments
     selected_enrollment = state_df[state_df['institution name'] == selected_institution]['Undergraduate enrollment'].iloc[0]
@@ -37,7 +37,7 @@ def plot_ug_enrollment_statewide(df, selected_institution, selected_state, selec
 
     fig.update_traces(
         textposition='auto',
-        texttemplate='%{value:,.0f} (%{percent})'
+        texttemplate='%{percent}'
     )
 
     fig.update_layout(
@@ -56,7 +56,7 @@ def plot_gr_enrollment_statewide(df, selected_institution, selected_state, selec
     Hugging Face source: `chloecodes/IPEDS_CUSTOM`
     """
     # Filter data for the selected state and year
-    state_df = df[(df['STATE'] == selected_state) & (df['year'] == selected_year)].copy()
+    state_df = df[(df['State'] == selected_state) & (df['year'] == selected_year)].copy()
 
     # Calculate enrollments
     selected_enrollment = state_df[state_df['institution name'] == selected_institution]['Graduate enrollment'].iloc[0]
@@ -82,7 +82,7 @@ def plot_gr_enrollment_statewide(df, selected_institution, selected_state, selec
 
     fig.update_traces(
         textposition='auto',
-        texttemplate='%{value:,.0f} (%{percent})'
+        texttemplate='%{percent}'
     )
 
     fig.update_layout(
@@ -102,7 +102,7 @@ def plot_international_ug_statewide(df, selected_institution, selected_state, se
     Hugging Face source: `chloecodes/IPEDS_CUSTOM`
     """
     # Filter data for the selected state and year
-    state_df = df[(df['STATE'] == selected_state) & (df['year'] == selected_year)].copy()
+    state_df = df[(df['State'] == selected_state) & (df['year'] == selected_year)].copy()
 
     # Get selected institution's percentage
     selected_pct = state_df[state_df['institution name'] == selected_institution]['Percent of first-time undergraduates - foreign countries'].iloc[0]
@@ -152,7 +152,7 @@ def plot_instate_ug_statewide(df, selected_institution, selected_state, selected
     Hugging Face source: `chloecodes/IPEDS_CUSTOM`
     """
     # Filter data for the selected state and year
-    state_df = df[(df['STATE'] == selected_state) & (df['year'] == selected_year)].copy()
+    state_df = df[(df['State'] == selected_state) & (df['year'] == selected_year)].copy()
 
     # Get selected institution's percentage
     selected_pct = state_df[state_df['institution name'] == selected_institution]['Percent of first-time undergraduates - in-state'].iloc[0]
@@ -201,7 +201,7 @@ def plot_outstate_ug_statewide(df, selected_institution, selected_state, selecte
     Hugging Face source: `chloecodes/IPEDS_CUSTOM`
     """
     # Filter data for the selected state and year
-    state_df = df[(df['STATE'] == selected_state) & (df['year'] == selected_year)].copy()
+    state_df = df[(df['State'] == selected_state) & (df['year'] == selected_year)].copy()
 
     # Get selected institution's percentage
     selected_pct = state_df[state_df['institution name'] == selected_institution]['Percent of first-time undergraduates - out-of-state'].iloc[0]
@@ -250,7 +250,7 @@ def plot_women_ug_statewide(df, selected_institution, selected_state, selected_y
     Hugging Face source: `chloecodes/IPEDS_CUSTOM`
     """
     # Filter data for the selected state
-    state_df = df[df['STATE'] == selected_state].copy()
+    state_df = df[df['State'] == selected_state].copy()
 
     # Get selected institution's percentages over time
     selected_data = state_df[state_df['institution name'] == selected_institution]
