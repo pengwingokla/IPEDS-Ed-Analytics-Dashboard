@@ -8,7 +8,10 @@ from components.viz.enrollment.enr_overview import (
     plot_ugenrollment_gender,
     plot_ugenrollment_ft_pt,
     plot_ugenrollment_race,
-    plot_ugenrollment_residence
+    plot_ugenrollment_residence,
+    plot_enrollment_ft_pt_ug_piechart,
+    plot_enrollment_ft_pt_gr_piechart,
+    plot_enrollment_ft_pt_all_piechart
     )
 
 from lib.text.helper import Help
@@ -56,4 +59,15 @@ def show_enrollment_overview_page():
         st.plotly_chart(fig, use_container_width=True)
     with col6:
         fig = plot_ugenrollment_residence(hf_custom, selected_institution, selected_year)
+        st.plotly_chart(fig, use_container_width=True)
+
+    col7, col8, col9 = st.columns(3)
+    with col7:
+        fig = plot_enrollment_ft_pt_ug_piechart(hf_custom, selected_institution)
+        st.plotly_chart(fig, use_container_width=True)
+    with col8:
+        fig = plot_enrollment_ft_pt_gr_piechart(hf_custom, selected_institution)
+        st.plotly_chart(fig, use_container_width=True)
+    with col9:
+        fig = plot_enrollment_ft_pt_all_piechart(hf_custom, selected_institution)
         st.plotly_chart(fig, use_container_width=True)
