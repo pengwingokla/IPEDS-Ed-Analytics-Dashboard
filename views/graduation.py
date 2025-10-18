@@ -67,12 +67,12 @@ def show_graduation_page():
         selected_state = st.selectbox(
             label="Select a State",
             # Drop the 2-letters states indicating U.S. territories and freely associated states
-            options=sorted([state for state in hf_custom["STATE"].dropna().unique() if len(state) > 2]),
-            index=sorted([state for state in hf_custom["STATE"].dropna().unique() if len(state) > 2]).index(DEFAULT_STATE)
+            options=sorted([state for state in hf_custom['State'].dropna().unique() if len(state) > 2]),
+            index=sorted([state for state in hf_custom['State'].dropna().unique() if len(state) > 2]).index(DEFAULT_STATE)
         )
 
     # Filter institutions for selected state
-    state_institutions = sorted(hf_custom[hf_custom["STATE"] == selected_state]["institution name"].unique())
+    state_institutions = sorted(hf_custom[hf_custom['State'] == selected_state]["institution name"].unique())
     
     # Set default index for institution selectbox
     default_index = 0

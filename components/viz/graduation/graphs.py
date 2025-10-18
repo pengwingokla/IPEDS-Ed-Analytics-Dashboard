@@ -296,7 +296,7 @@ def plot_graduation_statewide_comparison(df, selected_institution, selected_stat
     Hugging Face source: `chloecodes/IPEDS_CUSTOM`
     """
     # Filter data for the selected state and year
-    state_df = df[(df['STATE'] == selected_state) & (df['year'] == selected_year)].copy()
+    state_df = df[(df['State'] == selected_state) & (df['year'] == selected_year)].copy()
 
     # Calculate average graduation rates
     selected_rate = state_df[state_df['institution name'] == selected_institution]['Graduation rate, total cohort'].iloc[0]
