@@ -38,16 +38,16 @@ def show_enrollment_state_wide_trends_page():
     # Filter institutions for selected state
     state_institutions = sorted(hf_custom[hf_custom['State'] == selected_state]["institution name"].unique())
     
-    # Set default index for institution selectbox
-    default_index = 0
+    # Set default selection for institution multiselect
+    default_selection = []
     if selected_state == DEFAULT_STATE and DEFAULT_INSTITUTION in state_institutions:
-        default_index = state_institutions.index(DEFAULT_INSTITUTION)
+        default_selection = [DEFAULT_INSTITUTION]
 
     with col2:
-        selected_institution = st.selectbox(
-            label="Select an Institution",
+        selected_institutions = st.multiselect(
+            label="Select Institution(s)",
             options=state_institutions,
-            index=default_index
+            default=default_selection
         )
 
     with col3:
@@ -59,23 +59,23 @@ def show_enrollment_state_wide_trends_page():
 
     col4, col5 = st.columns(2)
     with col4:
-        fig = plot_ug_enrollment_statewide(hf_custom, selected_institution, selected_state, selected_year)
+        fig = plot_ug_enrollment_statewide(hf_custom, selected_institutions, selected_state, selected_year)
         st.plotly_chart(fig, use_container_width=True)
     with col5:
-        fig = plot_gr_enrollment_statewide(hf_custom, selected_institution, selected_state, selected_year)
+        fig = plot_gr_enrollment_statewide(hf_custom, selected_institutions, selected_state, selected_year)
         st.plotly_chart(fig, use_container_width=True)
     
     col6, col7, col8 = st.columns(3)
     with col6:
-        fig = plot_international_ug_statewide(hf_custom, selected_institution, selected_state, selected_year)
+        fig = plot_international_ug_statewide(hf_custom, selected_institutions, selected_state, selected_year)
         st.plotly_chart(fig, use_container_width=True)
     with col7:
-        fig = plot_instate_ug_statewide(hf_custom, selected_institution, selected_state, selected_year)
+        fig = plot_instate_ug_statewide(hf_custom, selected_institutions, selected_state, selected_year)
         st.plotly_chart(fig, use_container_width=True)
     with col8:
-        fig = plot_outstate_ug_statewide(hf_custom, selected_institution, selected_state, selected_year)
+        fig = plot_outstate_ug_statewide(hf_custom, selected_institutions, selected_state, selected_year)
         st.plotly_chart(fig, use_container_width=True)
     
 
-    fig = plot_women_ug_statewide(hf_custom, selected_institution, selected_state, selected_year)
+    fig = plot_women_ug_statewide(hf_custom, selected_institutions, selected_state, selected_year)
     st.plotly_chart(fig, use_container_width=True)
