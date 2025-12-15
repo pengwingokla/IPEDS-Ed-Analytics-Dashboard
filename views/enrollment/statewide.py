@@ -28,11 +28,18 @@ def show_enrollment_state_wide_trends_page():
 
     with col1:
         # Create select box for state
+        valid_states = []
+        for state in hf_custom["State"].dropna().unique():
+            # Drop the 2-letters states indicating U.S. territories and freely associated states
+            if len(state) > 2:
+                valid_states.append(state)
+        valid_states = sorted(valid_states)
+
         selected_state = st.selectbox(
             label="Select a State",
             # Drop the 2-letters states indicating U.S. territories and freely associated states
-            options=sorted([state for state in hf_custom['State'].dropna().unique() if len(state) > 2]),
-            index=sorted([state for state in hf_custom['State'].dropna().unique() if len(state) > 2]).index(DEFAULT_STATE)
+            options=valid_states,
+            index=valid_states.index(DEFAULT_STATE)
         )
 
     # Filter institutions for selected state

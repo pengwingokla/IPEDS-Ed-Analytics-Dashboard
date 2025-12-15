@@ -431,10 +431,10 @@ def plot_women_ug_statewide(df, selected_institutions, selected_state, selected_
                                             'State Average (Graduate)'],
                                   var_name='Category', 
                                   value_name='Percentage')
-        color_map = {
-            'State Average (Undergraduate)': NJIT_COLORS["navy"],
-            'State Average (Graduate)': NJIT_COLORS["navy"]
-        }
+        # color_map = {
+        #     'State Average (Undergraduate)': NJIT_COLORS["navy"],
+        #     'State Average (Graduate)': NJIT_COLORS["navy"]
+        # }
     else:
         # Get selected institutions' percentages over time
         all_selected_data = []
@@ -470,28 +470,34 @@ def plot_women_ug_statewide(df, selected_institutions, selected_state, selected_
 
         # Create plot dataframe
         plot_df = pd.merge(selected_merged, other_means, on='year', how='outer')
-        
-        # Get column names for melting
-        value_vars = [col for col in plot_df.columns if col != 'year']
-        plot_df = plot_df.melt(id_vars=['year'], 
-                              value_vars=value_vars,
-                              var_name='Category', 
-                              value_name='Percentage')
+
+        # Get column names for melting (avoid list comprehension for compatibility with pyan3)
+        value_vars = []
+        for col in plot_df.columns:
+            if col != "year":
+                value_vars.append(col)
+
+        plot_df = plot_df.melt(
+            id_vars=["year"],
+            value_vars=value_vars,
+            var_name="Category",
+            value_name="Percentage",
+        )
 
         # Create color map - use Plotly Reds palette for selected institutions, navy for state average
-        reds_palette = px.colors.sequential.Reds[::-1]
-        color_map = {}
-        
-        # Assign red shades to selected institutions (each has UG and Grad)
-        for i, inst in enumerate(selected_institutions):
-            red_color = reds_palette[i] if i < len(reds_palette) else reds_palette[-1]
-            color_map[f'{inst} (Undergraduate)'] = red_color
-            color_map[f'{inst} (Graduate)'] = red_color
-        
-        # Add navy for state average (UG and Grad)
-        if len(other_institutions) > 0:
-            color_map['State Average (Undergraduate)'] = NJIT_COLORS["navy"]
-            color_map['State Average (Graduate)'] = NJIT_COLORS["navy"]
+        # reds_palette = px.colors.sequential.Reds[::-1]
+        # color_map = {}
+        # 
+        # # Assign red shades to selected institutions (each has UG and Grad)
+        # for i, inst in enumerate(selected_institutions):
+        #     red_color = reds_palette[i] if i < len(reds_palette) else reds_palette[-1]
+        #     color_map[f'{inst} (Undergraduate)'] = red_color
+        #     color_map[f'{inst} (Graduate)'] = red_color
+        # 
+        # # Add navy for state average (UG and Grad)
+        # if len(other_institutions) > 0:
+        #     color_map['State Average (Undergraduate)'] = NJIT_COLORS["navy"]
+        #     color_map['State Average (Graduate)'] = NJIT_COLORS["navy"]
 
     # Create line chart
     fig = px.line(
@@ -500,7 +506,8 @@ def plot_women_ug_statewide(df, selected_institutions, selected_state, selected_
         y='Percentage',
         color='Category',
         title=f"Women Enrollment Trends in {selected_state}",
-        color_discrete_map=color_map
+        # color_discrete_map=color_map  # Using Streamlit default color palette
+        color_discrete_sequence=px.colors.qualitative.Plotly
     )
 
     # Add markers
