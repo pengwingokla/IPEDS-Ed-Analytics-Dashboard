@@ -1,0 +1,203 @@
+digraph IPEDSDashboard_ByView {
+    rankdir=LR;
+    ranksep=1.4;
+    nodesep=0.5;
+    splines=ortho;
+
+    node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // ===== MAIN ENTRY =====
+    app_main [label="app.py\n(streamlit entry)", fillcolor="#2196F3", fontcolor=white, penwidth=2];
+
+    // ===== HOME VIEW & COMPONENTS =====
+    subgraph cluster_home {
+        label="Home Page (views.home)";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        page_home [label="show_home_page()", fillcolor="#4CAF50", fontcolor=white];
+
+        // Home metrics (components.viz.home.metrics)
+        home_grad_metrics       [label="grad_rate_metrics()", fillcolor="#FFB74D"];
+        home_adm_yield_metrics  [label="admission_yield_metrics()", fillcolor="#FFB74D"];
+        home_selectivity_metrics[label="selectivity_metrics()", fillcolor="#FFB74D"];
+        home_aid_metrics        [label="aid_metrics()", fillcolor="#FFB74D"];
+
+        // Home extras
+        home_header_image [label="load_header_image()\nlib.utils", fillcolor="#90CAF9"];
+        home_map          [label="create_njit_map()\ncomponents.map_render", fillcolor="#90CAF9"];
+
+        // Edges inside Home cluster
+        page_home -> {
+            home_grad_metrics
+            home_adm_yield_metrics
+            home_selectivity_metrics
+            home_aid_metrics
+            home_header_image
+            home_map
+        };
+    }
+
+    // ===== ADMISSION VIEW & COMPONENTS =====
+    subgraph cluster_admission {
+        label="Admission Page (views.admission)";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        page_adm [label="show_admission_page()", fillcolor="#4CAF50", fontcolor=white];
+
+        adm_yield      [label="plot_admission_yield()", fillcolor="#BA68C8"];
+        adm_selectivity[label="plot_admission_selectivity()", fillcolor="#BA68C8"];
+        adm_headcount  [label="plot_admission_headcount()", fillcolor="#BA68C8"];
+
+        page_adm -> {adm_yield adm_selectivity adm_headcount};
+    }
+
+    // ===== ENROLLMENT OVERVIEW & COMPONENTS =====
+    subgraph cluster_enr_overview {
+        label="Enrollment – Overview (views.enrollment.overview)";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        page_enr_overview [label="show_enrollment_overview_page()", fillcolor="#4CAF50", fontcolor=white];
+
+        enr_headcount      [label="plot_ugenrollment_headcount()", fillcolor="#BA68C8"];
+        enr_age            [label="plot_ugenrollment_age_distribution()", fillcolor="#BA68C8"];
+        enr_gender         [label="plot_ugenrollment_gender()", fillcolor="#BA68C8"];
+        enr_ftpt           [label="plot_ugenrollment_ft_pt()", fillcolor="#BA68C8"];
+        enr_race           [label="plot_ugenrollment_race()", fillcolor="#BA68C8"];
+        enr_residence      [label="plot_ugenrollment_residence()", fillcolor="#BA68C8"];
+        enr_ftpt_ug_pie    [label="plot_enrollment_ft_pt_ug_piechart()", fillcolor="#BA68C8"];
+        enr_ftpt_gr_pie    [label="plot_enrollment_ft_pt_gr_piechart()", fillcolor="#BA68C8"];
+        enr_ftpt_all_pie   [label="plot_enrollment_ft_pt_all_piechart()", fillcolor="#BA68C8"];
+
+        page_enr_overview -> {
+            enr_headcount
+            enr_age
+            enr_gender
+            enr_ftpt
+            enr_race
+            enr_residence
+            enr_ftpt_ug_pie
+            enr_ftpt_gr_pie
+            enr_ftpt_all_pie
+        };
+    }
+
+    // ===== ENROLLMENT CROSS-INSTITUTION & COMPONENTS =====
+    subgraph cluster_enr_crossinst {
+        label="Enrollment – Cross-Institution (views.enrollment.crossinst)";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        page_enr_crossinst [label="show_enrollment_cross_institution_comparison_page()", fillcolor="#4CAF50", fontcolor=white];
+
+        enr_ci_enr       [label="plot_enrollment_cross_institution()", fillcolor="#BA68C8"];
+        enr_ci_age       [label="plot_ugenrollment_age_distribution_cross_institution()", fillcolor="#BA68C8"];
+        enr_ci_residence [label="plot_ugenrollment_residence_cross_institution()", fillcolor="#BA68C8"];
+
+        page_enr_crossinst -> {enr_ci_enr enr_ci_age enr_ci_residence};
+    }
+
+    // ===== ENROLLMENT STATEWIDE & COMPONENTS =====
+    subgraph cluster_enr_statewide {
+        label="Enrollment – Statewide Trends (views.enrollment.statewide)";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        page_enr_statewide [label="show_enrollment_state_wide_trends_page()", fillcolor="#4CAF50", fontcolor=white];
+
+        enr_sw_ug       [label="plot_ug_enrollment_statewide()", fillcolor="#BA68C8"];
+        enr_sw_gr       [label="plot_gr_enrollment_statewide()", fillcolor="#BA68C8"];
+        enr_sw_intl     [label="plot_international_ug_statewide()", fillcolor="#BA68C8"];
+        enr_sw_instate  [label="plot_instate_ug_statewide()", fillcolor="#BA68C8"];
+        enr_sw_outstate [label="plot_outstate_ug_statewide()", fillcolor="#BA68C8"];
+        enr_sw_women    [label="plot_women_ug_statewide()", fillcolor="#BA68C8"];
+
+        page_enr_statewide -> {
+            enr_sw_ug
+            enr_sw_gr
+            enr_sw_intl
+            enr_sw_instate
+            enr_sw_outstate
+            enr_sw_women
+        };
+    }
+
+    // ===== FINANCIAL AID & COMPONENTS =====
+    subgraph cluster_finaid {
+        label="Financial Aid Page (views.finaid)";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        page_finaid [label="show_financial_aid_page()", fillcolor="#4CAF50", fontcolor=white];
+
+        fa_aid_type_stack  [label="plot_aid_type_stackedbar()", fillcolor="#BA68C8"];
+        fa_aid_received    [label="plot_aid_received_linechart()", fillcolor="#BA68C8"];
+        fa_total_aid_line  [label="plot_total_aid_disbursed_linechart()", fillcolor="#BA68C8"];
+        fa_tuition_pie     [label="plot_tuition_type_pie()", fillcolor="#BA68C8"];
+        fa_cat_aid_bar     [label="plot_category_aid_disbursed()", fillcolor="#BA68C8"];
+        fa_total_aid_bar   [label="plot_total_aid_disbursed()", fillcolor="#BA68C8"];
+        fa_loan_pct_line   [label="plot_student_loan_percentages()", fillcolor="#BA68C8"];
+        // fa_loan_dualaxis is defined but not currently used in view
+
+        page_finaid -> {
+            fa_aid_type_stack
+            fa_aid_received
+            fa_total_aid_line
+            fa_tuition_pie
+            fa_cat_aid_bar
+            fa_total_aid_bar
+            fa_loan_pct_line
+        };
+    }
+
+    // ===== GRADUATION & COMPONENTS =====
+    subgraph cluster_graduation {
+        label="Graduation Page (views.graduation)";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        page_grad [label="show_graduation_page()", fillcolor="#4CAF50", fontcolor=white];
+
+        grad_funnel        [label="plot_cohort_graduation_funnel()", fillcolor="#BA68C8"];
+        grad_cohort_line   [label="plot_cohort_graduation_line()", fillcolor="#BA68C8"];
+        grad_gender_line   [label="plot_graduation_gender()", fillcolor="#BA68C8"];
+        grad_ethnicity_bar [label="plot_graduation_ethnicity()", fillcolor="#BA68C8"];
+        grad_state_compare [label="plot_graduation_statewide_comparison()", fillcolor="#BA68C8"];
+
+        page_grad -> {
+            grad_funnel
+            grad_cohort_line
+            grad_gender_line
+            grad_ethnicity_bar
+            grad_state_compare
+        };
+    }
+
+    // ===== DATA & UTILS (shared) =====
+    subgraph cluster_backend {
+        label="Data & Utilities (lib.utils)";
+        style="rounded,filled";
+        fillcolor="#FAFAFA";
+
+        data_load [label="load_data()", fillcolor="#9E9E9E", fontcolor=white];
+        url_norm  [label="normalize_url()", fillcolor="#9E9E9E", fontcolor=white];
+    }
+
+    // ===== APP → PAGES =====
+    app_main -> {
+        page_home
+        page_adm
+        page_enr_overview
+        page_enr_crossinst
+        page_enr_statewide
+        page_finaid
+        page_grad
+    } [penwidth=2, color="#4CAF50"];
+
+    // ===== SHARED BACKEND EDGES (dotted) =====
+    { page_home page_adm page_enr_overview page_enr_crossinst page_enr_statewide page_finaid page_grad } -> data_load [style=dotted, color=gray];
+    { page_home page_adm page_enr_overview page_enr_crossinst page_enr_statewide page_finaid page_grad } -> url_norm  [style=dotted, color=gray];
+}

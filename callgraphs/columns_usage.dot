@@ -1,0 +1,130 @@
+digraph IPEDSDashboard_PlotsToDatasets {
+    // Graph attributes
+    rankdir=LR;
+    ranksep=2.0;
+    nodesep=0.7;
+    splines=ortho;
+
+    // Node styling
+    node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, fillcolor="#ffffff"];
+    edge [fontname="Helvetica", fontsize=9];
+
+    // ========== ADMISSION ==========
+    subgraph cluster_admission_cols {
+        label="Admission Plots → Hugging Face Datasets";
+        style="rounded,filled";
+        fillcolor="#FFF3E0";
+
+        adm_yield [label="plot_admission_yield()\n\ndataset: chloecodes/IPEDS_ADMISSION\nfile: adm20-23.csv\n\ncols:\n- Admissions yield - total\n- Admissions yield - full time\n- Admissions yield - part time"];
+
+        adm_selectivity [label="plot_admission_selectivity()\n\ndataset: chloecodes/IPEDS_ADMISSION\nfile: adm20-23.csv\n\ncols:\n- Percent admitted - total"];
+
+        adm_headcount [label="plot_admission_headcount()\n\ndataset: chloecodes/IPEDS_ADMISSION\nfile: adm20-23.csv\n\ncols:\n- Applicants total\n- Admissions total\n- Enrolled total"];
+    }
+
+    // ========== ENROLLMENT – OVERVIEW ==========
+    subgraph cluster_enr_overview_cols {
+        label="Enrollment Overview Plots → Hugging Face Datasets";
+        style="rounded,filled";
+        fillcolor="#E3F2FD";
+
+        enr_headcount [label="plot_ugenrollment_headcount()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Undergraduate enrollment\n- Graduate enrollment"];
+
+        enr_age [label="plot_ugenrollment_age_distribution()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of undergraduate enrollment under 18\n- Percent of undergraduate enrollment 18-24\n- Percent of undergraduate enrollment, 25-64\n- Percent of undergraduate enrollment over 65"];
+
+        enr_gender [label="plot_ugenrollment_gender()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of undergraduate enrollment that are women\n- Percent of graduate enrollment that are women"];
+
+        enr_ftpt [label="plot_ugenrollment_ft_pt()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Full-time undergraduate enrollment\n- Part-time undergraduate enrollment"];
+
+        enr_race [label="plot_ugenrollment_race()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of undergraduate enrollment that are Asian\n- Percent of undergraduate enrollment that are Asian/Native Hawaiian/Pacific Islander\n- Percent of undergraduate enrollment that are Black or African American\n- Percent of undergraduate enrollment that are Hispanic/Latino\n- Percent of undergraduate enrollment that are Native Hawaiian or Other Pacific Islander\n- Percent of undergraduate enrollment that are White\n- Percent of undergraduate enrollment that are Race/ethnicity unknown"];
+
+        enr_res [label="plot_ugenrollment_residence()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of first-time undergraduates - in-state\n- Percent of first-time undergraduates - out-of-state\n- Percent of first-time undergraduates - foreign countries\n- Percent of first-time undergraduates - residence unknown"];
+
+        enr_ftpt_ug [label="plot_enrollment_ft_pt_ug_piechart()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Full-time undergraduate enrollment\n- Part-time undergraduate enrollment"];
+
+        enr_ftpt_gr [label="plot_enrollment_ft_pt_gr_piechart()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Full-time graduate enrollment\n- Part-time graduate enrollment"];
+
+        enr_ftpt_all [label="plot_enrollment_ft_pt_all_piechart()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Full-time enrollment\n- Part-time enrollment"];
+    }
+
+    // ========== ENROLLMENT – CROSS-INSTITUTION ==========
+    subgraph cluster_enr_cross_cols {
+        label="Enrollment Cross-Institution Plots → Hugging Face Datasets";
+        style="rounded,filled";
+        fillcolor="#E8F5E9";
+
+        enr_ci_head [label="plot_enrollment_cross_institution()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Undergraduate enrollment\n- Graduate enrollment"];
+
+        enr_ci_age [label="plot_ugenrollment_age_distribution_cross_institution()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of undergraduate enrollment under 18\n- Percent of undergraduate enrollment 18-24\n- Percent of undergraduate enrollment, 25-64\n- Percent of undergraduate enrollment over 65"];
+
+        enr_ci_res [label="plot_ugenrollment_residence_cross_institution()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of first-time undergraduates - in-state\n- Percent of first-time undergraduates - out-of-state\n- Percent of first-time undergraduates - foreign countries\n- Percent of first-time undergraduates - residence unknown"];
+    }
+
+    // ========== ENROLLMENT – STATEWIDE ==========
+    subgraph cluster_enr_state_cols {
+        label="Enrollment Statewide Plots → Hugging Face Datasets";
+        style="rounded,filled";
+        fillcolor="#F3E5F5";
+
+        enr_sw_ug [label="plot_ug_enrollment_statewide()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Undergraduate enrollment"];
+
+        enr_sw_gr [label="plot_gr_enrollment_statewide()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Graduate enrollment"];
+
+        enr_sw_intl [label="plot_international_ug_statewide()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of first-time undergraduates - foreign countries"];
+
+        enr_sw_in [label="plot_instate_ug_statewide()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of first-time undergraduates - in-state"];
+
+        enr_sw_out [label="plot_outstate_ug_statewide()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of first-time undergraduates - out-of-state"];
+
+        enr_sw_women [label="plot_women_ug_statewide()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Percent of undergraduate enrollment that are women\n- Percent of graduate enrollment that are women"];
+    }
+
+    // ========== FINANCIAL AID ==========
+    subgraph cluster_finaid_cols {
+        label="Financial Aid Plots → Hugging Face Datasets";
+        style="rounded,filled";
+        fillcolor="#FFFDE7";
+
+        fa_type_stack [label="plot_aid_type_stackedbar()\n\ndataset: chloecodes/IPEDS_SFA\nfile: sfa.csv\n\ncols:\n- Percent of full-time first-time undergraduates awarded federal grant aid\n- Percent of full-time first-time undergraduates awarded state/local grant aid\n- Percent of full-time first-time undergraduates awarded institutional grant aid\n- Percent of full-time first-time undergraduates awarded Pell grants\n- Percent of full-time first-time undergraduates awarded other federal grant aid"];
+
+        fa_any_vs_grant [label="plot_aid_received_linechart()\n\ndataset: chloecodes/IPEDS_SFA\nfile: sfa.csv\n\ncols:\n- Percent of full-time first-time undergraduates awarded any loans to students or grant aid  from federal state/local government or the institution\n- Percent of full-time first-time undergraduates awarded federal, state, local or institutional grant aid"];
+
+        fa_total_disbursed_line [label="plot_total_aid_disbursed_linechart()\n\ndataset: chloecodes/IPEDS_SFA\nfile: sfa.csv\n\ncols:\n- Total amount of other federal grant aid awarded to full-time first-time undergraduates\n- Total amount of federal, state, local or institutional grant aid awarded to full-time first-time undergraduates\n- Total amount of student loans awarded to full-time first-time undergraduates"];
+
+        fa_tuition_pie [label="plot_tuition_type_pie()\n\ndataset: chloecodes/IPEDS_SFA\nfile: sfa.csv\n\ncols:\n- Percentage of students in fall cohort who are paying in-district tuition rates\n- Percentage of students in fall cohort who paying in-state tuition rates\n- Percentage of students in fall cohort who are paying out-of-state tuition rates\n- Percentage of students in fall cohort whose residence/ tuition rate is unknown"];
+
+        fa_cat_disbursed [label="plot_category_aid_disbursed()\n\ndataset: chloecodes/IPEDS_SFA\nfile: sfa.csv\n\ncols:\n- Total amount of federal grant aid awarded to full-time first-time undergraduates\n- Total amount of Pell grant aid awarded to full-time first-time undergraduates\n- Total amount of institutional grant aid awarded to full-time first-time undergraduates\n- Total amount of state/local grant aid awarded to full-time first-time undergraduates\n- Total amount of other federal grant aid awarded to full-time first-time undergraduates\n- Total amount of federal student loans awarded to full-time first-time undergraduates\n- Total amount of other student loans awarded to full-time first-time undergraduates"];
+
+        fa_total_disbursed_bar [label="plot_total_aid_disbursed()\n\ndataset: chloecodes/IPEDS_SFA\nfile: sfa.csv\n\ncols:\n- Total amount of student loans awarded to full-time first-time undergraduates\n- Total amount of federal, state, local or institutional grant aid awarded to full-time first-time undergraduates\n- Total amount of federal, state, local, institutional or other sources of grant aid awarded to undergraduate students"];
+
+        fa_loan_share [label="plot_student_loan_percentages()\n\ndataset: chloecodes/IPEDS_SFA\nfile: sfa.csv\n\ncols:\n- Percent of full-time first-time undergraduates awarded student loans\n- Percent of full-time first-time undergraduates awarded federal student loans\n- Percent of full-time first-time undergraduates awarded other student loans"];
+    }
+
+    // ========== GRADUATION ==========
+    subgraph cluster_grad_cols {
+        label="Graduation Plots → Hugging Face Datasets";
+        style="rounded,filled";
+        fillcolor="#E1F5FE";
+
+        grad_funnel [label="plot_cohort_graduation_funnel()\n\ndataset: chloecodes/IPEDS_GRADUATION\nfile: graduation.csv\n\ncols:\n- GR_TOTAL_ALL\n- GRAD_TYPE (various bachelor's cohort stages)\n- SURVEY_YEAR"];
+
+        grad_cohort [label="plot_cohort_graduation_line()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Graduation rate - Bachelor degree within 4 years, total\n- Graduation rate - Bachelor degree within 5 years, total\n- Graduation rate - Bachelor degree within 6 years, total\n- year (used to compute Cohort Year)"];
+
+        grad_gender [label="plot_graduation_gender()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Graduation rate, men\n- Graduation rate, women"];
+
+        grad_ethnicity [label="plot_graduation_ethnicity()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Graduation rate, American Indian or Alaska Native\n- Graduation rate, Asian\n- Graduation rate, Native Hawaiian or Other Pacific Islander\n- Graduation rate, Black, non-Hispanic\n- Graduation rate, Hispanic\n- Graduation rate, White, non-Hispanic"];
+
+        grad_state_comp [label="plot_graduation_statewide_comparison()\n\ndataset: chloecodes/IPEDS_CUSTOM\nfile: custom.csv\n\ncols:\n- Graduation rate, total cohort\n- State\n- year\n- institution name"];
+    }
+
+    // ========== HOME METRICS (HIGH-LEVEL) ==========
+    subgraph cluster_home_cols {
+        label="Home Metrics (High-Level)";
+        style="rounded,filled";
+        fillcolor="#F5F5F5";
+
+        home_metrics [label="Home metrics cards\n\nDatasets:\n- chloecodes/IPEDS_CUSTOM custom.csv\n- chloecodes/IPEDS_ADMISSION adm20-23.csv\n- chloecodes/IPEDS_GRADUATION graduation.csv\n- chloecodes/IPEDS_SFA sfa.csv"];
+    }
+}
+
+
